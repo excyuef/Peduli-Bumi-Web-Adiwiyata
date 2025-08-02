@@ -1,4 +1,9 @@
-    body {
+body {
       margin: 0;
       font-family: Arial, sans-serif;
+      height: 5000px;
+    }
+    
+    main {
+      padding: 20px;
     }
