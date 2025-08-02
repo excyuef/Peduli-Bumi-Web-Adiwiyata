@@ -1,0 +1,31 @@
+
+  .nama-web {
+      max-width: 160vh;
+      height: 70vh;
+      background-image: url('../images/namaweb2.jpg'); /* path gambar */
+      background-size: cover; /* agar gambar menutupi seluruh div */
+      background-position: center; /* posisi gambar di tengah */
+      background-repeat: no-repeat; /* agar gambar tidak diulang */
+      border: none;
+      border-radius: 50px;
+      margin-top: 7vh;
+      
+      display: grid;
+      place-items: center;
+  }
+  
+  a {
+    color: white;
+    font-size: 2vh;
+    font-family: "Edu QLD Beginner";
+    font-weight: 400;
+    font-style: normal;
+ }
+
+  
+  .judul {
+    font-size: 8vh;
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+  }
