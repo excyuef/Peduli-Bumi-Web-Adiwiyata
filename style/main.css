@@ -1,21 +1,21 @@
-
-  .ajakan1 {
-      max-width: 160vh;
-      height: 70vh;
-      background-image: url('../images/ajakan1.jpg'); /* path gambar */
-      background-size: cover; /* agar gambar menutupi seluruh div */
-      background-position: center; /* posisi gambar di tengah */
-      background-repeat: no-repeat; /* agar gambar tidak diulang */
-      border: none;
-      border-radius: 50px;
-      margin-top: 7vh;
-      
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      place-items: center;
+.hero {
+    max-width: 160vh;
+    width: 90%;
+    height: 70dvh;
+    background-image: url('../img/hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50px;
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    place-items: center;
+    border: 3px solid black;
   }
   
-  .ajakan-isi {
+  .hero-container {
     width: 50vh ;
     border: 10px solid pink;
     grid-column: 2;
@@ -23,7 +23,7 @@
     display: grid;
   }
   
-  .ajakan-teks{
+  .hero-teks{
     font-size: 4vh;
     color: #114a1f;
     font-weight: bold;
@@ -31,7 +31,7 @@
     text-align: center;
   }
   
-  .ajakan-btn {
+  .hero-btn {
     border: none;
     border-radius: 10px;
     background:#114a1f;
