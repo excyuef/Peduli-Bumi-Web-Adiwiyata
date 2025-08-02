@@ -1,8 +1,8 @@
 
-  .nama-web {
+  .ajakan1 {
       max-width: 160vh;
       height: 70vh;
-      background-image: url('../images/namaweb2.jpg'); /* path gambar */
+      background-image: url('../images/ajakan1.jpg'); /* path gambar */
       background-size: cover; /* agar gambar menutupi seluruh div */
       background-position: center; /* posisi gambar di tengah */
       background-repeat: no-repeat; /* agar gambar tidak diulang */
@@ -11,21 +11,32 @@
       margin-top: 7vh;
       
       display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       place-items: center;
   }
   
-  a {
-    color: white;
-    font-size: 2vh;
-    font-family: "Edu QLD Beginner";
-    font-weight: 400;
-    font-style: normal;
- }
-
+  .ajakan-isi {
+    width: 50vh ;
+    border: 10px solid pink;
+    grid-column: 2;
+    margin: 0px;
+    display: grid;
+  }
   
-  .judul {
-    font-size: 8vh;
+  .ajakan-teks{
+    font-size: 4vh;
+    color: #114a1f;
+    font-weight: bold;
     font-family: sans-serif;
     text-align: center;
-    display: block;
+  }
+  
+  .ajakan-btn {
+    border: none;
+    border-radius: 10px;
+    background:#114a1f;
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+    padding: 10px;
   }
