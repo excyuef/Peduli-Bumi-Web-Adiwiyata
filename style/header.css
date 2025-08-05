@@ -18,9 +18,11 @@ header.nav-container {
 }
 
 header .nav-jdl {
+  margin-left: 1rem;
   font-size: 2rem;
   font-weight: bold;
-  color: #5a6c3f;
+  color: #199523;
+  text-shadow: 1px 1px 5px black;
 }
 
 header .navbar {
@@ -42,8 +44,8 @@ header .nav-link a {
   transition: .4s all;
 }
 
-header .nav-link a{
-  font-size: 1.3rem;
+header .nav-link a {
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -53,6 +55,9 @@ header .nav-link a:hover {
   border-bottom: 1.5px solid #17de31;
 }
 
+header .house, header .tree, header .images, header .teams {
+  margin: 0;
+}
 
 @media (min-width: 768px) {
   
