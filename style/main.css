@@ -1,42 +1,287 @@
+/* Reset minimal */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgb(95, 175, 112);
+  border-bottom: 1px solid #e3e8ef;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #d1d8d2;
+  letter-spacing: -1px;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  color: #333;
+}
+.nav-links a:hover {
+  background: #e0e0e0;
+}
+
+/* Hero / Ajakan di beranda */
 .hero {
-    max-width: 160vh;
-    width: 90%;
-    height: 70dvh;
-    background-image: url('../img/hero.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    border-radius: 50px;
-    margin-top: 7vh;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    place-items: center;
-    border: 3px solid black;
+  position: relative;
+  margin-bottom: 5vh;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-box {
+  background: transparent;
+  border-radius: 32px;
+  padding: 24px 32px;
+  max-width: 420px;
+  box-shadow: 0 12px 32px rgba(31, 45, 58, 0.08);
+}
+.hero-box p {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #0f3d23;
+}
+.btn {
+  display: inline-block;
+  background: #154d23;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px); /* Efek tombol terangkat */
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-out;
+  filter: brightness(1.2);
+}
+.btn:active {
+  transform: scale3d(0.85, 0.85, 1); /* Efek tombol ditekan */
+}
+
+p {
+      margin: 0;
+    }
+    
+    .misi-gambar-container {
+      display: grid;
+      width: 100%;
+      padding: 0 25vh;
+      margin-top: 4vh;
+      height: 100%;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3vh;
+    }
+    
+    .misi-container {
+      width: 1fr;
+      height: 1fr;
+      border-radius: 2rem;
+      background-color: #CAE28C;
+    }
+    
+    .gambar-container {
+      display: grid;
+      grid-template-rows: 1.2fr 0.8fr;
+      row-gap: 3vh;
+    }
+    
+    .gambar1 {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+      background-image: url('../img/pemandangan1.jpg'); /* path gambar */
+      background-size: cover; /* agar gambar menutupi seluruh div */
+      background-position: center; /* posisi gambar di tengah */
+      background-repeat: no-repeat; /* agar gambar tidak diulang */
+      grid-row: 1;
+    }
+    
+    .gambar-bawah {
+      height: 100%;
+      width: 100%;
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3vh;
+    }
+    
+    .gambar2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+      background-image: url('../img/pemandangan2.jpg'); /* path gambar */
+      background-size: cover; /* agar gambar menutupi seluruh div */
+      background-position: center; /* posisi gambar di tengah */
+      background-repeat: no-repeat; /* agar gambar tidak diulang */
+      grid-column: 1;
+    }
+    
+    .judul-misi-container {
+      font-weight: bold;
+      font-size: 3rem;
+      padding-top: 4vh;
+      padding-left: 5vh;
+      padding-right: 5vh;
+    }
+    
+    .isi-misi-container {
+      font-size: 1.3rem;
+      padding: 2vh 5vh;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: #15141A;
+      color: #f3f3f3;
+      padding: 1.5vh 3vh;
+      border-radius: 25px;
+      font-size: 0.5em;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      position: relative;
+      z-index: 1;
+      margin-top: 3vh;
+      margin-bottom: 2vh;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+    
+    .tulisan p {
+      font-size: 1rem;
+      grid-column: 2;
+    }
+
+    /* ajakan */
+
+  .ajakan-container {
+      padding: 0 25vh;
+      margin-top: 5vh;
   }
-  
-  .hero-container {
-    width: 50vh ;
-    border: 10px solid pink;
-    grid-column: 2;
-    margin: 0px;
-    display: grid;
-  }
-  
-  .hero-teks{
-    font-size: 4vh;
-    color: #114a1f;
+
+  .ajakan-title {
+    font-size: 2.5rem;
     font-weight: bold;
-    font-family: sans-serif;
     text-align: center;
+    margin-bottom: 2vh;
+
+  }
+
+  .ajakan {
+    background: #e8f7eb;
+    padding: 2vh 5vh;
+    border-radius: 16px;
+  }
+  .ajakan .kiri,
+  .ajakan .kanan {
+    flex: 1 1 280px;
+    display: block;
+  }
+  .ajakan .left h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .ajakan .right p {
+    margin-bottom: 12px;
+  }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 80px;
+}
+@media (max-width: 900px) {
+  .hero-box p {
+    font-size: 1.2rem;
+  }
+}
+
+/* hp */
+@media (max-width: 1000px) {
+  .misi-gambar-container {
+    grid-template-columns: 1fr;
+    padding: 2vh;
   }
   
-  .hero-btn {
-    border: none;
-    border-radius: 10px;
-    background:#114a1f;
-    color: white;
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px;
+  .gambar-container {
+    grid-template-rows: 1fr 1fr;
   }
+  
+  .gambar-bawah {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 30px; 
+    row-gap: 30px;
+  }
+  
+  .judul-misi-container {
+    font-size: 25px;
+  }
+  
+  .isi-misi-container {
+    font-size: 15px;
+  }
+  
+  .gambar1 {
+    margin-top : 30px;
+  }
+
+  .ajakan-container {
+    padding: 0 2vh;
+  }
+  
+  .btn {
+    padding: 1.2vh 2.2vh;
+    font-size: 0.7em;
+  }
+}
