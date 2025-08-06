@@ -1,46 +1,13 @@
-/* Reset minimal */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 22px;
 }
 
-header {
-  background: rgb(95, 175, 112);
-  border-bottom: 1px solid #e3e8ef;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+
+.hero-background {
+  background-color:#ebebeb;
+  padding: 3.5vh 2vh 1vh 2vh
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #d1d8d2;
-  letter-spacing: -1px;
-}
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-.nav-links a {
-  padding: 5px 10px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-  color: #333;
-}
-.nav-links a:hover {
-  background: #e0e0e0;
-}
-
-/* Hero / Ajakan di beranda */
 .hero {
   position: relative;
   margin-bottom: 5vh;
@@ -242,9 +209,9 @@ footer {
 }
 
 /* hp */
-@media (max-width: 1500px) {
-  .hero-box p {
-    font-size: 1.2rem;
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
   }
  
   .misi-gambar-container {
@@ -263,14 +230,6 @@ footer {
     row-gap: 30px;
   }
   
-  .judul-misi-container {
-    font-size: 25px;
-  }
-  
-  .isi-misi-container {
-    font-size: 15px;
-  }
-  
   .gambar1 {
     margin-top : 30px;
   }
@@ -285,41 +244,16 @@ footer {
   }
 }
 
+
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 26px;
+  }
+}
+
 @media (min-width: 1920px) {
-  .hero-box p {
-    font-size: 2.5rem;
-  }
-  
-  .judul-misi-container {
-    font-size: 4.5rem;
-  }
-  
-  .isi-misi-container {
-    font-size: 2rem;
-  }
-  
-  .btn {
-    padding: 1.2vh 2.2vh;
-    font-size: 1.3rem;
-  }
-  
-  .ajakan-title {
-    font-size: 3.5rem;
-  }
-  
-  .ajakan .kiri h3 {
-    font-size: 2.5rem;
-  }
-  
-  .kanan p {
-    font-size: 1.7rem;
-  }
-  
-  .kiri p {
-    font-size: 1.7rem;
-  }
-  
-  .tulisan p {
-    font-size: 1.7rem;
+  html {
+    font-size: 32px;
   }
 }
