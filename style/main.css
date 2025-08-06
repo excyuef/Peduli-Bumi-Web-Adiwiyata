@@ -223,12 +223,12 @@ p {
     flex: 1 1 280px;
     display: block;
   }
-  .ajakan .left h3 {
+  .ajakan .kiri h3 {
     font-size: 1.4rem;
     margin-bottom: 8px;
   }
 
-  .ajakan .right p {
+  .ajakan .kanan p {
     margin-bottom: 12px;
   }
 
@@ -246,7 +246,7 @@ footer {
   .hero-box p {
     font-size: 1.2rem;
   }
-  
+ 
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
@@ -282,5 +282,44 @@ footer {
   .btn {
     padding: 1.2vh 2.2vh;
     font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-box p {
+    font-size: 2.5rem;
+  }
+  
+  .judul-misi-container {
+    font-size: 4.5rem;
+  }
+  
+  .isi-misi-container {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 1.2vh 2.2vh;
+    font-size: 1.3rem;
+  }
+  
+  .ajakan-title {
+    font-size: 3.5rem;
+  }
+  
+  .ajakan .kiri h3 {
+    font-size: 2.5rem;
+  }
+  
+  .kanan p {
+    font-size: 1.7rem;
+  }
+  
+  .kiri p {
+    font-size: 1.7rem;
+  }
+  
+  .tulisan p {
+    font-size: 1.7rem;
   }
 }
