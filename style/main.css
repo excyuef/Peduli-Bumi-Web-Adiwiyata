@@ -239,15 +239,13 @@ footer {
   font-size: 0.8rem;
   color: #666;
   margin-top: 80px;
-}
-@media (max-width: 900px) {
+
+/* hp */
+@media (max-width: 1500px) {
   .hero-box p {
     font-size: 1.2rem;
   }
-}
-
-/* hp */
-@media (max-width: 1000px) {
+  
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
