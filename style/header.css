@@ -60,10 +60,15 @@ header .house, header .tree, header .images, header .teams {
 }
 
 @media (min-width: 768px) {
-  
+  html {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
+  html {
+    font-size: 22px;
+  }
   header .navbar {
     display: none;
   }
@@ -77,6 +82,7 @@ header .house, header .tree, header .images, header .teams {
   html {
     font-size: 28px;
   }
+  
   header .navbar {
     display: none;
   }
