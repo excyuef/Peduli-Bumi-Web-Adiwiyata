@@ -4,9 +4,16 @@ html {
 
 
 .tips-aksi-container {
-  background-color: blue;
+  background-color: black;
+  margin-top: 3rem;
 }
 
+.tips-aksi-container .threer {
+
+}
+.theeR-cards {
+
+}
 h1 {
   font-size: 3rem;
 }
