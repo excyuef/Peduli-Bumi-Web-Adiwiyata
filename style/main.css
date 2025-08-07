@@ -3,6 +3,7 @@ html {
 }
 main {
   margin-top: 4rem;
+  min-height: 1vh;
 }
 .hero-background {
   background-color:#ebebeb;
@@ -48,55 +49,34 @@ main {
   font-weight: 600;
   color: #0f3d23;
 }
-.btn {
-  display: inline-block;
-  background: #154d23;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-.btn:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-out;
-  filter: brightness(1.2);
-}
-.btn:active {
-  transform: scale3d(0.85, 0.85, 1);
-}
     
     .misi-gambar-container {
       display: grid;
-      width: 100%;
-      padding: 0 25vh;
-      margin-top: 4vh;
-      height: 100%;
+      max-height: 25rem;
+      padding: 0rem 10rem;
+      margin-top: 1rem;
       grid-template-columns: 1fr 1fr;
       column-gap: 3vh;
     }
     
     .misi-container {
       width: 1fr;
-      height: 22rem;
+      max-height: 25rem;
       border-radius: 2rem;
+      padding: 2rem 2rem;
       background-color: #CAE28C;
     }
     
     .gambar-container {
       display: grid;
+      max-height: 25rem;
       grid-template-rows: 1.2fr 0.8fr;
       row-gap: 3vh;
     }
     
     .gambar1 {
-      width: 100%;
-      height: 100%;
       border-radius: 2rem;
+      height: 1fr;
       background-image: url('../img/pemandangan1.jpg'); 
       background-size: cover; 
       background-position: center;
@@ -105,8 +85,6 @@ main {
     }
     
     .gambar-bawah {
-      height: 100%;
-      width: 100%;
       grid-row: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -114,8 +92,6 @@ main {
     }
     
     .gambar2 {
-      width: 100%;
-      height: 100%;
       border-radius: 2rem;
       background-image: url('../img/pemandangan2.jpg'); /* path gambar */
       background-size: cover; /* agar gambar menutupi seluruh div */
@@ -126,31 +102,27 @@ main {
     
     .judul-misi-container {
       font-weight: bold;
-      font-size: 3rem;
-      padding-top: 4vh;
-      padding-left: 5vh;
-      padding-right: 5vh;
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
     }
     
     .isi-misi-container {
-      font-size: 1.3rem;
-      padding: 2vh 5vh;
+      font-size: 0.9rem;
     }
     
     .btn {
       display: inline-block;
       background: #15141A;
       color: #f3f3f3;
-      padding: 1.5vh 3vh;
-      border-radius: 25px;
-      font-size: 0.5em;
+      padding: 0.8rem 1.3rem;
+      border-radius: 1rem;
+      font-size: 0.7rem;
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s ease;
       position: relative;
       z-index: 1;
-      margin-top: 3vh;
-      margin-bottom: 2vh;
+      margin-top: 1rem;
     }
 
     .btn:hover {
@@ -158,29 +130,29 @@ main {
     }
     
     .tulisan p {
-      font-size: 1rem;
+      font-size: 0.7rem;
       grid-column: 2;
     }
 
     /* ajakan */
 
   .ajakan-container {
-      padding: 0 25vh;
-      margin-top: 5vh;
+      padding: 0 10rem;
+      margin-top: 5rem;
   }
 
   .ajakan-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 2vh;
+    margin-bottom: 1rem;
 
   }
 
   .ajakan {
     background: #e8f7eb;
     padding: 2vh 5vh;
-    border-radius: 16px;
+    border-radius: 1rem;
   }
   .ajakan .kiri,
   .ajakan .kanan {
@@ -188,12 +160,12 @@ main {
     display: block;
   }
   .ajakan .kiri h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .ajakan .kanan p {
-    margin-bottom: 12px;
+  .kanan p, .kiri p {
+    font-size: 0.9rem;
   }
 
 /* Footer */
@@ -208,11 +180,12 @@ footer {
 /* hp */
 @media (max-width: 1024px) {
   html {
-    font-size: 18px;
+    font-size: 10px;
   }
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
+    max-height: 50rem;
   }
   
   .gambar-container {
@@ -222,7 +195,6 @@ footer {
   .gambar-bawah {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-top: 30px; 
     row-gap: 30px;
   }
   
@@ -236,25 +208,18 @@ footer {
   
   .btn {
     padding: 1.2vh 2.2vh;
-    font-size: 0.7rem;
   }
 }
 
 @media (min-width: 1440px) {
   html {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 1920px) {
   html {
-    font-size: 32px;
+    font-size: 28px;
   }
-}
-p {
-  font-size: 1rem;
-}
 
-h1 {
-  font-size: 4rem;
 }
