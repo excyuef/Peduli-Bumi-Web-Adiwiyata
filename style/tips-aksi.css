@@ -4,16 +4,43 @@ html {
 
 
 .tips-aksi-container {
-  background-color: black;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
-.tips-aksi-container .threer {
+.tips-aksi-container {
 
 }
-.theeR-cards {
 
+.threeR {
+  display: grid;
+  justify-items: center;
 }
+
+.threeR-cards {
+  display: block;
+  width: 350px;
+  height: 500px;
+  border: 1px solid black;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.threeR-card-icon {
+  width: 250px;
+  height: 150px;
+  fill: #199523;
+  margin-bottom: ;
+}
+
+.threeR-cards h1 {
+  
+}
+
+
+
+
+
 h1 {
   font-size: 3rem;
 }
