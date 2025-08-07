@@ -1,8 +1,9 @@
 html {
   font-size: 22px;
 }
-
-
+main {
+  margin-top: 3rem;
+}
 .hero-background {
   background-color:#ebebeb;
   padding: 3.5vh 2vh 1vh 2vh
@@ -27,6 +28,7 @@ html {
   object-fit: cover;
   filter: brightness(0.9);
 }
+
 .hero-overlay {
   position: relative;
   width: 100%;
@@ -42,7 +44,6 @@ html {
   box-shadow: 0 12px 32px rgba(31, 45, 58, 0.08);
 }
 .hero-box p {
-  font-size: 1.5rem;
   margin-bottom: 16px;
   font-weight: 600;
   color: #0f3d23;
@@ -61,17 +62,13 @@ html {
 }
 .btn:hover {
   filter: brightness(1.1);
-  transform: translateY(-2px); /* Efek tombol terangkat */
+  transform: translateY(-2px);
   transition: transform 0.2s ease-in-out, filter 0.2s ease-out;
   filter: brightness(1.2);
 }
 .btn:active {
-  transform: scale3d(0.85, 0.85, 1); /* Efek tombol ditekan */
+  transform: scale3d(0.85, 0.85, 1);
 }
-
-p {
-      margin: 0;
-    }
     
     .misi-gambar-container {
       display: grid;
@@ -209,7 +206,7 @@ footer {
 }
 
 /* hp */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html {
     font-size: 16px;
   }
@@ -240,15 +237,13 @@ footer {
   
   .btn {
     padding: 1.2vh 2.2vh;
-    font-size: 0.7em;
+    font-size: 0.7rem;
   }
 }
 
-
-
 @media (min-width: 1440px) {
   html {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 
@@ -256,4 +251,8 @@ footer {
   html {
     font-size: 32px;
   }
+}
+
+p {
+  font-size: 1rem;
 }
