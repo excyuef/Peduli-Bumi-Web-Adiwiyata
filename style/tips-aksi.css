@@ -4,11 +4,11 @@ html {
 
 
 .tips-aksi-container {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .tips-aksi-container {
-
+  color: #15141a;
 }
 
 .threeR {
@@ -16,27 +16,37 @@ html {
   justify-items: center;
 }
 
-.threeR-cards {
-  display: block;
+.threeR .threeR-cards {
   width: 350px;
-  height: 500px;
-  border: 1px solid black;
-  display: grid;
-  justify-items: center;
+  height: 400px;
   text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0,0,0,.4);
+  border-radius: 3%;
 }
 
-.threeR-card-icon {
-  width: 250px;
+.threeR .threeR-card-icon {
+  margin-top: 1rem;
+  width: 150px;
   height: 150px;
-  fill: #199523;
-  margin-bottom: ;
+  fill: #179950;
 }
 
-.threeR-cards h1 {
-  
+.threeR .threeR-cards h1 {
+  padding: 0;
 }
 
+,.threeR .threeR-cards p {
+  color: #aeaeae;
+}
+
+.threeR .threeR-cards button {
+  width: 8rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  background-color: #17de31;
+  border-radius: 8%;
+}
 
 
 * {
