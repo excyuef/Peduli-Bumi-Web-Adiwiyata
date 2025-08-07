@@ -2,7 +2,7 @@ html {
   font-size: 22px;
 }
 main {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 .hero-background {
   background-color:#ebebeb;
@@ -39,7 +39,7 @@ main {
 .hero-box {
   background: transparent;
   border-radius: 32px;
-  padding: 24px 32px;
+  padding: 1.2rem 2rem;
   max-width: 420px;
   box-shadow: 0 12px 32px rgba(31, 45, 58, 0.08);
 }
@@ -82,7 +82,7 @@ main {
     
     .misi-container {
       width: 1fr;
-      height: 1fr;
+      height: 22rem;
       border-radius: 2rem;
       background-color: #CAE28C;
     }
@@ -97,10 +97,10 @@ main {
       width: 100%;
       height: 100%;
       border-radius: 2rem;
-      background-image: url('../img/pemandangan1.jpg'); /* path gambar */
-      background-size: cover; /* agar gambar menutupi seluruh div */
-      background-position: center; /* posisi gambar di tengah */
-      background-repeat: no-repeat; /* agar gambar tidak diulang */
+      background-image: url('../img/pemandangan1.jpg'); 
+      background-size: cover; 
+      background-position: center;
+      background-repeat: no-repeat;
       grid-row: 1;
     }
     
@@ -208,9 +208,8 @@ footer {
 /* hp */
 @media (max-width: 1024px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
- 
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
@@ -251,4 +250,11 @@ footer {
   html {
     font-size: 32px;
   }
+}
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
 }
