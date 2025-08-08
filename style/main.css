@@ -54,7 +54,7 @@ main {
 /* Misi */
     .misi-gambar-container {
       display: grid;
-      max-height: 25rem;
+      max-height: 27rem;
       padding: 0rem 10rem;
       margin-top: 1rem;
       grid-template-columns: 1fr 1fr;
