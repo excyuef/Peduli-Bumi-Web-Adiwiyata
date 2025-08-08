@@ -1,0 +1,96 @@
+html {
+  font-size: 16px;
+}
+
+.tips-aksi-container {
+  color: #15141a;
+  margin-top: 5rem;
+}
+
+.threeR .threeR-desc-jdl {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.threeR .threeR-card-container {
+  display: grid;
+  grid-column: 1;
+  grid-row-gap: 4rem;
+  justify-items: center;
+}
+
+.threeR .threeR-cards {
+  background-color: #fff;
+  box-shadow: 0 -4px 8px #1b3a1a;
+  width: 350px;
+  height: 370px;
+  text-align: center;
+  border-radius: 3%;
+  transition: .5s all;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.threeR .threeR-card-icon {
+  margin-top: 1rem;
+  width: 120px;
+  height: 120px;
+  fill: #0F2A1D;
+  transition: .5s all;
+}
+
+.threeR-desc .threeR-cards:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 8px #1b3a1a;
+}
+
+.threeR .threeR-desc .threeR-cards:hover .threeR-card-icon {
+  fill: #375534;
+}
+
+
+.threeR .threeR-cards h1 {
+  font-size: 2rem;
+}
+
+.threeR .threeR-cards p {
+  font-size: .8rem;
+}
+
+.threeR .threeR-cards a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11rem;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  background-color: #E3EED4;
+  border-radius: 10px;
+  border: none;
+}
+
+.threeR .threeR-cards a p {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1rem;
+}
