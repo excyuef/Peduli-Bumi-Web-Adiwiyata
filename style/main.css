@@ -179,9 +179,6 @@ footer {
 
 /* hp */
 @media (max-width: 1024px) {
-  html {
-    font-size: 10px;
-  }
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
@@ -209,17 +206,4 @@ footer {
   .btn {
     padding: 1.2vh 2.2vh;
   }
-}
-
-@media (min-width: 1440px) {
-  html {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1920px) {
-  html {
-    font-size: 28px;
-  }
-
 }
