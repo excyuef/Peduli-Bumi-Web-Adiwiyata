@@ -4,7 +4,7 @@ html {
 
 .tips-aksi-container {
   color: #15141a;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 body {
   width: 100%;
@@ -27,7 +27,7 @@ body {
   background-color: #A8CBA0;
   overflow: hidden;
   width: 22rem;
-  height: 19rem;
+  height: 20rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
@@ -36,7 +36,7 @@ body {
 }
 
 .hero .pengantar h1 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .hero .pengantar p {
@@ -46,9 +46,9 @@ body {
 
 .hero .gmbr-hero {
   width: 22rem;
-  height: 19rem;
+  height: 20rem;
   display: grid;
-  margin: auto 0;
+  align-items: center;
 }
 
 .hero .gmbr-hero img {
@@ -213,15 +213,14 @@ body {
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
   }
-  
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
   .threeR .threeR-card-container {
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
     justify-items: center;
   }
-}
-
-@media (min-width: 1024px) and (max-width: 1440px) {
   #recycle-card {
     position: relative;
     left: 50%;
@@ -234,6 +233,7 @@ body {
   }
   .threeR .threeR-card-container {
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
   }
   
   .threeR .threeR-desc .threeR-card-container .threeR-cards {
