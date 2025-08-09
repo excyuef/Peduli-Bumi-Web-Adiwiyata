@@ -28,6 +28,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left;
   filter: brightness(0.9);
 }
 
@@ -48,7 +49,7 @@ main {
 .hero-box p {
   margin-bottom: 16px;
   font-weight: 600;
-  color: #0f3d23;
+  color: #2C2C2C;
 }
 
 /* Misi */
