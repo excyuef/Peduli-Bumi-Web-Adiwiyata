@@ -182,6 +182,10 @@ footer {
 
 /* hp */
 @media (max-width: 1024px) {
+  .hero-box {
+    color: #F0F0F0;
+  }
+  
   .misi-gambar-container {
     grid-template-columns: 1fr;
     padding: 2vh;
