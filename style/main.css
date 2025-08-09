@@ -2,7 +2,7 @@ html {
   font-size: 16px;
 }
 main {
-  margin-top: 4rem;
+  margin-top: 5rem;
   min-height: 1vh;
 }
 .hero-background {
@@ -42,7 +42,7 @@ main {
   background: transparent;
   border-radius: 32px;
   padding: 1.2rem 2rem;
-  max-width: 420px;
+  max-width: 700px;
   box-shadow: 0 12px 32px rgba(31, 45, 58, 0.08);
 }
 .hero-box p {

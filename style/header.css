@@ -13,16 +13,15 @@ header.nav-container {
   right: 0;
   top: 0;
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   z-index: 999;
 }
 
 header .nav-jdl {
+  width: 10rem;
+  height: 2.5rem;
   margin-left: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #199523;
-  text-shadow: 1px 1px 1px black;
+  
 }
 
 header .navbar {

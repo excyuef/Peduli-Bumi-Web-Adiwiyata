@@ -77,11 +77,12 @@ body {
 
 .threeR-desc {
   display: grid;
+  padding-bottom: 5rem;
 }
 
 .threeR .threeR-desc-jdl {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .threeR .threeR-card-container {
@@ -92,7 +93,7 @@ body {
 }
 
 .threeR .threeR-cards {
-  background-color: #fff;
+  
   box-shadow: 0 -4px 8px rgba(55,85,52,.5);
   width: 350px;
   height: 370px;
@@ -158,12 +159,13 @@ body {
 
 .berita-scroll-container {
   display: flex;
-  gap: 1rem;
+  gap: 5rem;
   overflow-x: auto;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
   padding: 1rem;
+  scroll-snap-type: x mandatory;
 }
 
 .berita-scroll-container::-webkit-scrollbar {
@@ -171,6 +173,7 @@ body {
 }
 
 .berita-scroll-card {
+  scroll-snap-align: center;
   flex-shrink: 0;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,.6);
@@ -231,6 +234,10 @@ body {
   }
   .threeR .threeR-card-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .threeR .threeR-desc .threeR-card-container .threeR-cards {
+    box-shadow: none;
   }
 }
 
