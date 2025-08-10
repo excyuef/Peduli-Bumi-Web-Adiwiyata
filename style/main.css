@@ -123,7 +123,7 @@ main {
       font-size: 0.7rem;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
       position: relative;
       z-index: 1;
       margin-top: 1rem;
