@@ -182,7 +182,7 @@ footer {
 
 /* hp */
 @media (max-width: 1024px) {
-  .hero-box {
+  .hero-box p {
     color: #F0F0F0;
   }
   
