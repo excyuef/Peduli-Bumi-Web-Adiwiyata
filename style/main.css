@@ -131,6 +131,7 @@ main {
 
     .btn:hover {
       background: #333;
+      scale: 110%;
     }
     
     .tulisan p {
