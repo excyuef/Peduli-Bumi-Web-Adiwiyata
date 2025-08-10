@@ -250,53 +250,53 @@ body {
 }
 
 .berita-card {
-    scroll-snap-align: center;
-    flex-shrink: 0;
-    background: #fff;
-    border-radius: 0.8rem;
-    overflow: hidden;
-    width: 18rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.4s ease-out;
-  }
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  width: 18rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.4s ease-out;
+}
 
-  .berita-card:hover {
-    scale: 105%;
-  }
+.berita-card:hover {
+  scale: 105%;
+}
 
-  .berita-img {
-    width: 100%;
-    height: 12rem;
-    object-fit: cover;
-  }
+.berita-img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
 
-  .konten {
-    padding: 0.8rem;
-  }
+.konten {
+  padding: 0.8rem;
+}
 
-  .berita-judul {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.7rem;
-  }
+.berita-judul {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.7rem;
+}
 
-  .waktu {
-    font-size: 0.8rem;
-    color: #777;
-    margin-bottom: 0.7rem;
-  }
+.waktu {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 0.7rem;
+}
 
-  .sumber {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.sumber {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  .sumber-nama {
-    font-size: 0.8rem;
-    color: #555;
-  }
+.sumber-nama {
+  font-size: 0.8rem;
+  color: #555;
+}
 
 
 @media (min-width: 768px) {
