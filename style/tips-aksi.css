@@ -256,9 +256,9 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,.6);
   max-width: 20rem;
   max-height: 25rem;
-  margin-right: 1rem;
+  margin: 0 1.1rem;
   padding: 1rem;
-  border-radius: .1rem;
+  border-radius: 1rem;
 }
 
 
