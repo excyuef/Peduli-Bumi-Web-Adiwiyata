@@ -1,0 +1,123 @@
+html {
+  font-size: 16px;
+}
+
+header.nav-container {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 999;
+}
+
+header .nav-jdl {
+  width: 10rem;
+  height: 3rem;
+  margin-left: 1rem;
+  
+}
+
+header .navbar {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+}
+
+header nav {
+  display: none;
+  gap: 1.5rem;
+  position: absolute;
+  right: 1rem;
+}
+
+header .nav-link a {
+  text-decoration: none;
+  color: #15141a;
+  transition: .4s all;
+}
+
+header .nav-link a {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+header .nav-link a:hover {
+  transform: translateY(-3px);
+  color: #17de31;
+  border-bottom: 1.5px solid #17de31;
+}
+
+header .house, header .tree, header .images, header .teams {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 22px;
+  }
+  header .navbar {
+    display: none;
+  }
+  
+  header nav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 28px;
+  }
+  
+  header .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 32px;
+  }
+  header .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 40px;
+  }
+  header .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 3200px) {
+  html {
+    font-size: 46px;
+  }
+  header .navbar {
+    display: none;
+  }
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1rem;
+}
