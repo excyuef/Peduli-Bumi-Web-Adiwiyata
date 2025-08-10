@@ -249,31 +249,54 @@ body {
   display: none;
 }
 
-.berita-scroll-card {
-  scroll-snap-align: center;
-  flex-shrink: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,.6);
-  max-width: 20rem;
-  max-height: 25rem;
-  margin: 0 1.1rem;
-  padding: 1rem;
-  border-radius: 1rem;
-}
+.berita-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    width: 18rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.4s ease-out;
+  }
 
+  .berita-card:hover {
+    scale: 105%;
+  }
 
-.gambar-berita img{
-  width: 18rem;
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .berita-img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+  }
 
-.berita-scroll-card p {
-  margin-top: 0.5rem;
-  text-align: center;
-}
+  .konten {
+    padding: 0.8rem;
+  }
+
+  .berita-judul {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.7rem;
+  }
+
+  .waktu {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.7rem;
+  }
+
+  .sumber {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .sumber-nama {
+    font-size: 0.8rem;
+    color: #555;
+  }
 
 
 @media (min-width: 768px) {
