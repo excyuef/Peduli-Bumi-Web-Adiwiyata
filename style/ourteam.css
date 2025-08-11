@@ -1,0 +1,194 @@
+/* ======= GLOBAL ======= */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa 0%, #c8e6c9 100%);
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= CONTAINER ======= */
+.ourteam-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+}
+
+.ourteam-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #388e3c;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+}
+
+/* ======= TEAM GRID ======= */
+.team-wrapper {
+  display: grid;
+  grid-template-areas:
+    ". card-tengah ."
+    "card1 card-tengah card2"
+    "card3 . card4";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 0 10px;
+}
+
+/* Tambahkan ini untuk memperkecil jarak antar card bawah */
+.team-card[style*="grid-area:card3"],
+.team-card[style*="grid-area:card4"],
+.team-card:nth-child(4),
+.team-card:nth-child(5) {
+  margin-top: -16px;
+}
+
+/* Atur card 4 dan 5 agar berada di tengah grid baris bawah */
+.team-card:nth-child(4) {
+  grid-area: card3;
+  justify-self: center;
+}
+.team-card:nth-child(5) {
+  grid-area: card4;
+  justify-self: center;
+}
+
+/* ======= CARD ======= */
+.team-card {
+  background: linear-gradient(120deg, #fffde4 0%, #f9fbe7 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(56, 142, 60, 0.12);
+  padding: 24px 18px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(56, 142, 60, 0.18);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #388e3c;
+  margin-bottom: 16px;
+  transition: border-color 0.3s;
+}
+
+.team-card:hover img {
+  border-color: #43a047;
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ======= SOCIAL ======= */
+.team-card a {
+  display: inline-block;
+  margin: 6px 8px;
+  color: #388e3c;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: rgba(56, 142, 60, 0.07);
+}
+
+.team-card a:hover {
+  color: #fff;
+  background: #388e3c;
+}
+
+.team-card i {
+  margin-right: 6px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* ======= QUOTE ======= */
+.team-card blockquote {
+  margin-top: 14px;
+  font-style: italic;
+  color: #616161;
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  transition: background 0.2s;
+}
+
+.team-card:hover blockquote {
+  background: #c8e6c9;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 900px) {
+  .ourteam-container {
+    padding: 10px;
+  }
+  .team-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ourteam-container h2 {
+    font-size: 2rem;
+  }
+  .team-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .team-card {
+    padding: 18px 10px;
+  }
+  .team-card img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* ======= ANIMASI MASUK ======= */
+.team-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s forwards;
+}
+
+.team-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.team-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.team-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.team-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.team-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
