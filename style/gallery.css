@@ -3,6 +3,15 @@ html {
   font-size: 16px;
 }
 
+body {
+  padding-bottom: 10rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .gallery-main {
   display: block;
   margin-top: 4rem;
@@ -13,7 +22,6 @@ html {
 }
 
 .gallery-main h1 {
-  margin-left: ;
   color: #179523;
   text-align: center;
   font-weight: bold;
@@ -24,17 +32,16 @@ html {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-items: center;
-  grid-row-gap: 50px;
+  grid-row-gap: 2rem;
 }
 
 .img-container {
-  width: 270px;
-  height: 140px;
+  width: 18rem;
+  height: 9rem;
   background-color: #f3f3f3;
   border-radius: 4%;
   position: relative;
   overflow: hidden;
-  margin: 0;
 }
 
 .img-container img {
@@ -76,7 +83,7 @@ html {
   width: 100%;
   bottom: -50%;
   opacity: 0;
-  padding-left: 10px;
+  padding-left: 0.5rem;
   transition: .8s all;
 }
 
@@ -103,11 +110,6 @@ html {
   .hero-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .img-container {
-    width: 324px;
-    height: 168px;
-  }
 }
 
 /* ini laptop */
@@ -118,12 +120,6 @@ html {
   
   .hero-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 70px;
-  }
-  
-  .img-container {
-    width: 330px;
-    height: 185px;
   }
 }
 
@@ -135,12 +131,6 @@ html {
   
   .hero-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 90px;
-  }
-  
-  .img-container {
-    width: 400px;
-    height: 225px;
   }
 }
 
@@ -152,12 +142,6 @@ html {
   
   .hero-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 110px;
-  }
-  
-  .img-container {
-    width: 550px;
-    height: 310px;
   }
 }
 
@@ -169,12 +153,6 @@ html {
   
   .hero-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 130px;
-  }
-  
-  .img-container {
-    width: 700px;
-    height: 393px;
   }
 }
 
@@ -186,12 +164,6 @@ html {
   
   .hero-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 150px;
-  }
-  
-  .img-container {
-    width: 1000px;
-    height: 563px;
   }
 }
 /* ukuran default h1 sama p */
