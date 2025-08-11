@@ -54,7 +54,7 @@
           .innerHTML = `${result}`;
           
         document.querySelector('.you-n-computer-move-js')
-          .innerHTML = `You <img src="icon/${playerMove}-emoji.png" class="icon"> VS <img src="icon/${computerMove}-emoji.png" class="icon"> computer`;
+          .innerHTML = `You <img src="img/icon/${playerMove}-emoji.png" class="icon"> VS <img src="img/icon/${computerMove}-emoji.png" class="icon"> computer`;
         
         return result;
       }
