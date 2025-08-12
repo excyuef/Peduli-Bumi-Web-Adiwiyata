@@ -2,13 +2,21 @@ html {
   font-size: 16px;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .tips-aksi-container {
   color: #15141a;
   margin-top: 6rem;
 }
+
 body {
   width: 100%;
 }
+
+
 /* hero */
 .hero {
   width: 100vw;
@@ -213,25 +221,13 @@ body {
   font-weight: 600;
 }
 
-* {
-  
-}
-
-
-
-
 
 
 /* berita scroll */
-.berita {
-  margin: 10rem 0;
-  padding: 1rem;
-}
-
 .berita-jdl {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-block: 4rem 2rem;
 }
 
 .berita-scroll-container {
@@ -240,8 +236,7 @@ body {
   overflow-x: auto;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
-  padding: 1rem;
+  padding: 4rem;
   scroll-snap-type: x mandatory;
 }
 
@@ -251,17 +246,22 @@ body {
 
 .berita-card {
   scroll-snap-align: center;
-  flex-shrink: 0;
   background: #fff;
-  border-radius: 0.8rem;
+  flex-shrink: 0;
   overflow: hidden;
+  border-radius: 0.8rem;
+  transition: transform 0.3s ease;
   width: 18rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: all 0.4s ease-out;
 }
 
 .berita-card:hover {
-  scale: 105%;
+  transform: scale(1.08);
+}
+
+.berita-card a {
+  color: inherit;     
+  text-decoration: none; 
 }
 
 .berita-img {
