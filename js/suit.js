@@ -71,7 +71,7 @@
         
         if (randomMove >=0 && randomMove <= 1/3) {
           computerMove = 'streak'
-        } else if (randomMove >=1/3 &&           randomMove <= 2/3) {
+        } else if (randomMove >=1/3 && randomMove <= 2/3) {
             computerMove = 'air'
         } else if (randomMove >=2/3 && 
           randomMove <= 1) {
