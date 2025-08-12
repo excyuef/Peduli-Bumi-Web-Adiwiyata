@@ -69,7 +69,8 @@
     
         let computerMove = '';
         
-        if (randomMove >=0 && randomMove <= 1/3) {
+        if (randomMove >=0 && 
+        randomMove <= 1/3) {
           computerMove = 'streak'
         } else if (randomMove >=1/3 && 
           randomMove <= 2/3) {
