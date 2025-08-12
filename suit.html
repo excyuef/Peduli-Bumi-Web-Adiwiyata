@@ -9,21 +9,20 @@
     
     <style>
       body {
-        background-color:#F0F0F0;
-        color; #2C2C2C;
+        background-color:#ABCBA0;
+        color: #1B3A1A;
       }
       
       .icon {
         background-color: transparent;
-        height: 60px;
+        width: 60px;
       }
       
       .pick-move-button {
-        background-color: #141414;
-        color: white;
+        background-color: transparent;
         height: 120px;
         width: 120px;
-        border: 2px dashed white;
+        border: 2px dashed #1B3A1A;
         border-radius: 60px;
         margin: 3px;
       }
@@ -34,9 +33,8 @@
       
       .reset-score-button {
         background-color: transparent;
-        color: white;
         margin: 10px;
-        border: 1px solid white;
+        border: 1px solid #1B3A1A;
         border-radius: 20px;
         padding: 10px;
       }
@@ -54,24 +52,24 @@
     
       <div>
         <button onclick="
-        playGame('rock')
+        playGame('air')
         "
         class="pick-move-button">
-          <img src="icon/rock-emoji.png" 
+          <img src="img/icon/air.png" 
           class="icon">
         </button>
         <button onclick="
-        playGame('paper');
+        playGame('streak');
         "
         class="pick-move-button">
-          <img src="icon/paper-emoji.png" 
+          <img src="/img/icon/streak.png" 
           class="icon">
         </button>
         <button onclick="
-        playGame('scissors');
+        playGame('pohon');
         "
         class="pick-move-button">
-          <img src="icon/scissors-emoji.png" 
+          <img src="/img/icon/pohon.png" 
           class="icon">
         </button>
         <button onclick="
