@@ -12,28 +12,28 @@
         
         let result = ''
         
-        if (playerMove === 'scissors' ) {
-          if (computerMove === 'rock') {
+        if (playerMove === 'streak' ) {
+          if (computerMove === 'air') {
             result = 'You are loser.'
-          } else if (computerMove === 'paper') {
+          } else if (computerMove === 'pohon') {
             result = 'You are the winner!.'
-          } else if (computerMove === 'scissors') {
+          } else if (computerMove === 'streak') {
             result = 'Tie.'
           }
-        } else if (playerMove === 'paper') {
-            if (computerMove === 'rock') {
+        } else if (playerMove === 'air') {
+            if (computerMove === 'streak') {
               result = 'You are the winner!.'
-            } else if (computerMove === 'paper') {
+            } else if (computerMove === 'air') {
               result = 'Tie.'
-            } else if (computerMove === 'scissors') {
+            } else if (computerMove === 'pohon') {
               result = 'You are loser.'
            }
-          } else if (playerMove === 'rock') {
-              if (computerMove === 'rock') {
+          } else if (playerMove === 'pohon') {
+              if (computerMove === 'pohon') {
               result = 'Tie.'
-              } else if (computerMove === 'paper') {
+              } else if (computerMove === 'streak') {
               result = 'You are loser.'
-              } else if (computerMove === 'scissors') {
+              } else if (computerMove === 'air') {
               result = 'You are the winner!.'
               }
             }
@@ -54,7 +54,7 @@
           .innerHTML = `${result}`;
           
         document.querySelector('.you-n-computer-move-js')
-          .innerHTML = `You <img src="img/icon/${playerMove}-emoji.png" class="icon"> VS <img src="img/icon/${computerMove}-emoji.png" class="icon"> computer`;
+          .innerHTML = `You <img src="img/icon/${playerMove}.png" class="icon"> VS <img src="img/icon/${computerMove}.png" class="icon"> computer`;
         
         return result;
       }
@@ -70,12 +70,12 @@
         let computerMove = '';
         
         if (randomMove >=0 && randomMove <= 1/3) {
-          computerMove = 'rock'
+          computerMove = 'streak'
         } else if (randomMove >=1/3 &&           randomMove <= 2/3) {
-            computerMove = 'paper'
+            computerMove = 'air'
         } else if (randomMove >=2/3 && 
           randomMove <= 1) {
-            computerMove = 'scissors'
+            computerMove = 'pohon'
         }
         
         return computerMove;
