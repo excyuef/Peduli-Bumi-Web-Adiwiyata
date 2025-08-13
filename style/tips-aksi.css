@@ -27,8 +27,12 @@ body {
 .hero-container{
   display: grid;
   grid-row-gap: 1rem;
-  overflow: hidden;
+  overflow: visible;
   padding-bottom: 3rem;
+}
+
+.pengantar:hover, .gmbr-hero:hover {
+  scale: 110%;
 }
 
 .hero .pengantar {
@@ -41,6 +45,7 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   border-radius: 8%;
+  transition: all 0.5s ease;
 }
 
 .hero .pengantar h1 {
@@ -57,6 +62,7 @@ body {
   height: 20rem;
   display: grid;
   align-items: center;
+  transition: all 0.5s ease;
 }
 
 .hero .gmbr-hero img {
