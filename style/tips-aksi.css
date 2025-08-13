@@ -247,13 +247,37 @@ body {
   display: grid;
   justify-items: center;
   padding-top: 2rem;
+  row-gap: 1rem;
 }
 
 .recycle-container .fa-arrow-down {
   font-size: 5rem;
-  color: #fff;
+  color: #2f5233;
 }
 
+.produksicontainer {
+  background-color: #d4ecd4;
+}
+
+.produksicontainer .pnjlsnicon i, .produksicontainer .pnjlsnicon h1, .daurulangcontainer .pnjlsnicon  i, .memakaicontainer .pnjlsnicon h1  {
+  color: #1e5e4e;
+}
+
+.textpnjlsn {
+  color: #333;
+}
+
+.memakaicontainer {
+  background-color: #bcead5;
+}
+
+.modulerecycle .memakaicontainer .pnjlsnicon i, .memakaicontainer .pnjlsnicon h1 {
+  color: #007965;
+}
+
+.daurulangcontainer {
+  background-color: #d4ecd4;
+}
 
 .pnjlsncontainer {
   padding-left: 1.5rem;
@@ -261,8 +285,13 @@ body {
   width: 22rem;
   height: 15.5rem;
   border-radius: 10%;
-  background-color: #a4c3a2;
   padding-top: 1rem;
+  color: #1e5e4e;
+  transition: .6s all;
+}
+
+.pnjlsncontainer:hover {
+  transform: translateY(-5px);
 }
 
 .pnjlsnicon {
@@ -274,19 +303,14 @@ body {
 }
 
 .pnjlsnicon i {
-  color: #5f8d4e;
   font-size: 2rem;
   margin-bottom: .5rem;
 }
 
 .pnjlsnicon h1 {
   font-size: 2rem;
-  
 }
 
-.textpnjlsn {
-  color: #2c2c2c;
-}
 
 
 /* berita scroll */
