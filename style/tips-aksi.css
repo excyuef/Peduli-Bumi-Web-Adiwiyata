@@ -218,16 +218,20 @@ body {
 
 
 .modulerecycle {
-  background-color: #2f5233;
+  background-color: #f0f8f0;
   margin-top: 4rem;
   width: 100%;
   padding-bottom: 3rem;
 }
 
+.jdlrecyclecontainer{
+  background-color: #a4c3a2;
+}
+
 .modulerecycle .jdlrecycle{
   font-size: 2.5rem;
   text-align: center;
-  color: #5f8f4d;
+  color: #2f5233;
 }
 
 .modulerecycle .precycle{
@@ -235,7 +239,7 @@ body {
   text-align: center;
   padding-bottom: .3rem;
   border-bottom: .1rem solid black;
-  color: #fefefe;
+  color: #333;
 }
 
 .recycle-container {
