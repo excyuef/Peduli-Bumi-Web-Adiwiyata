@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Peduli Earth</title>
+  
+  <!-- css -->
   <link rel="stylesheet" href="style/tips-aksi.css">
   <link rel="stylesheet" href="style/general.css">
   <link rel="stylesheet" href="style/header.css">
+  
+  <!-- font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
    
     <!-- ini buat icon -->
-    <link rel="icon" href="icon/peduli-earth.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="icon" href="icon/peduli-earth.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body>
   <header class="nav-container">
       <img src="icon/PeduliEarth.png" alt="Peduli Earth" class="nav-jdl">
@@ -37,8 +42,9 @@
       </nav>
       <i class="fa-solid fa-bars navbar"></i>
   </header>
+  
   <main class="tips-aksi-container">
-    
+  <!-- hero -->
     <div class="hero">
       <div class="hero-container">
         <div class="pengantar">
@@ -51,46 +57,89 @@
         </div>
       </div>
     </div>
-    
+   
+    <!-- 3R -->
     <div class="threeR">
       <div class="threeR-desc">
         <h1 class="threeR-desc-jdl">Apa Itu 3R?</h1>
         <div class="threeR-card-container">
+          
+          <!-- Reduce -->
           <div id="reduce-card" class="threeR-cards">
             <svg class="threeR-card-icon">
-              <use href="icon/tips-aksi/reduce.svg" ></use>
+              <use href="icon/tips-aksi/reduce.svg">
+                </use>
             </svg>
             <h1>Reduce</h1>
             <p>Reduce adalah tindakan mengurangi pemakaian barang sekali pakai dan konsumsi berlebihan agar sampah tidak menumpuk.</p>
             <a>Pelajari Lebih Lanjut</a>
           </div>
+          
           <div id="reuse-card" class="threeR-cards">
             <svg class="threeR-card-icon">
-              <use href="icon/tips-aksi/reuse.svg" ></use>
+              <use href="icon/tips-aksi/reuse.svg">
+                
+              </use>
             </svg>
+            
+            <!-- Reuse -->
             <h1>Reuse</h1>
             <p>Reduce adalah tindakan mengurangi pemakaian barang sekali pakai dan konsumsi berlebihan agar sampah tidak menumpuk.</p>
             <a>Pelajari Lebih Lanjut</a>
+            
           </div>
+          
           <div class="recyclecardcontain">
             <div id="recycle-card" class="threeR-cards">
               <svg class="threeR-card-icon">
-                <use href="icon/tips-aksi/recycle.svg" ></use>
+                <use href="icon/tips-aksi/recycle.svg">
+                  
+                </use>
               </svg>
+              
+              <!-- Recycle -->
               <h1>Recycle</h1>
               <p>Reduce adalah tindakan mengurangi pemakaian barang sekali pakai dan konsumsi berlebihan agar sampah tidak menumpuk.</p>
               <a>Pelajari Lebih Lanjut</a>
+              
             </div>
           </div>
         </div>
       </div>
+      
       <div class="module3r">
+        
+        <div class="modulereduce">
+          <div class="reduce-container">
+            <div class="reduce-img-container">
+              
+              <div class="reduce12">
+               
+                <div class="reduce1">
+                  <img src="img/tipsaksi/reduce1.gif">
+                </div>
+                <div class="reduce1">
+                  <img src="img/tipsaksi/reduce2.jpg">
+                </div>
+                
+              </div>
+              
+              <div class="reduce1">
+                <img src="img/tipsaksi/reduce2.jpg">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
         <div class="modulereuse">
           <div class="reuse-container">
             <div class="img-reuse-container">
               <img src="img/tipsaksi/toplesbermanfaat.jpg" alt="Toples Bermanfaat">
             </div>
+            
             <div class="text-reuse-container">
+              
               <h1>Satu Toples: Seribu Manfaat</h1>
               <p><span class="big">G</span>unakan toples bekas untuk:</p>
               <span>
@@ -98,9 +147,11 @@
                 <p><i class="fa-solid fa-mortar-pestle"></i>Sebagai <span class="bold">Tempat Bumbu</span></p>
                 <p><i class="fa-solid fa-pencil"></i>Sebagai <span class="bold">Tempat Pensil</span></p>
               </span>
+              
             </div>
           </div>
         </div>
+        
         <div class="modulerecycle">
           <div class="jdlrecyclecontainer">
           <h1 class="jdlrecycle">Recycle</h1>
@@ -141,6 +192,7 @@
       </div>
     </div>
 
+    <!-- berita -->
     <section class="berita">
       <h1 class="berita-jdl">
         Berita Aksi Peduli Lingkungan
@@ -305,5 +357,17 @@
       </div>
     </section>
    </main>
+   
+  <script>
+    // biar bisa scroll tanpa shift di desktop
+    const container = document.querySelector('.berita-scroll-container');
+    
+    container.addEventListener('wheel', (evt) => {
+      evt.preventDefault();
+      container.scrollLeft += evt.deltaY;
+    }, { passive: false });
+    
+  </script>
+
 </body>
 </html>
