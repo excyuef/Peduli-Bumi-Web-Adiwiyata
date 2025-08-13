@@ -3,6 +3,7 @@ html {
 }
 
 * {
+  border: 1px solid black;
   padding: 0;
   margin: 0;
 }
@@ -13,7 +14,8 @@ html {
 }
 
 body {
-  width: 100%;
+  max-width: 300rem;
+  color: #2C2C2C;
 }
 
 
@@ -114,8 +116,7 @@ body {
   text-align: center;
   border-radius: 3%;
   transition: .5s all;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 2rem;
 }
 
 .threeR .threeR-card-icon {
@@ -165,12 +166,12 @@ body {
 
 .modulereuse {
   background-color: #1e3a2a;
-  width: 100%;
+  width: auto;
   height: 17rem;
   display: grid;
   justify-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
+  border-radius: 2rem;
 }
 
 .reuse-container {
@@ -289,9 +290,9 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 22rem;
-  height: 15.5rem;
+  height: 17rem;
   border-radius: 10%;
-  padding-top: 1rem;
+  padding-top: .8rem;
   color: #1e5e4e;
   transition: .6s all;
 }
@@ -301,7 +302,7 @@ body {
 }
 
 .pnjlsnicon {
-  width: 100%
+  width: 100%;
   height: 4rem;
   display: flex;
   justify-content: center;
@@ -317,7 +318,48 @@ body {
   font-size: 2rem;
 }
 
+.modulereduce {
+  margin-block: 1rem;
+  width: 100%;
+  height: 20rem;
+  padding: 0 2rem;
+}
 
+.reduce-container {
+  display: flex;
+  flex-direction: row;
+  margin-block: 1rem;
+}
+
+.reduce-img-container {
+  margin-block: 1rem;
+  height: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 14rem;
+}
+
+.reduce12 {
+  background-color: pink;
+}
+
+.reduce1 {  
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  background-color: #A8CBA0;
+  border-radius: 2.5rem;
+}
+
+.reduce1 img {
+  position: absolute;
+  width: 5rem;
+  border-radius: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* berita scroll */
 .berita-jdl {
@@ -399,6 +441,7 @@ body {
   html {
     font-size: 20px;
   }
+  
 }
 
 @media (min-width: 1024px) {
@@ -435,6 +478,11 @@ body {
   .threeR .threeR-desc .threeR-card-container .threeR-cards {
     box-shadow: none;
   }
+  
+  .modulereuse {
+    margin-inline: 9rem;
+  }
+  
 }
 
 @media (min-width: 1920px) {
@@ -459,5 +507,9 @@ body {
     width: 250px;
     height: 80px;
     font-size: .7rem;
+  }
+  
+  .modulereuse {
+    margin-inline: 9rem;
   }
 }
