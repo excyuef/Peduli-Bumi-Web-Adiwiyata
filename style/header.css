@@ -2,7 +2,7 @@ html {
   font-size: 16px;
 }
 
-header.nav-container {
+.nav-container {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -17,46 +17,98 @@ header.nav-container {
   z-index: 999;
 }
 
-header .nav-jdl {
+.nav-jdl {
   width: 10rem;
   height: 3rem;
   margin-left: 1rem;
-  
 }
 
-header .navbar {
+.fa-bars {
   font-size: 1.5rem;
   position: absolute;
   right: 1rem;
+  z-index: 9999;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-header nav {
-  display: none;
-  gap: 1.5rem;
-  position: absolute;
-  right: 1rem;
+nav {
+  position: fixed;
 }
 
-header .nav-link a {
+nav ul {
+  list-style: none;
+}
+
+.nav-link a {
   text-decoration: none;
   color: #15141a;
   transition: .4s all;
 }
 
-header .nav-link a {
+nav a {
   font-size: 1rem;
   font-weight: 400;
 }
 
-header .nav-link a:hover {
+.nav-link a:hover {
   transform: translateY(-3px);
-  color: #17de31;
-  border-bottom: 1.5px solid #17de31;
+  color: #a8cba0;
+  
 }
 
-header .house, header .tree, header .images, header .teams {
-  margin: 0;
+@media (max-width: 1024px) {
+  nav {
+    background-color: #fefefe;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20rem;
+    z-index: 9999;
+    padding: 1.6rem;
+    right: -100%;
+  }
+  
+  .ilang {
+    right: -100%;
+    animation: hilangkekanan 1s forwards;
+  }
+  
+  .muncul {
+    animation: munculkekiri 1s forwards;
+  }
+  
+  .navmobjdl {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .fa-xmark {
+    font-size: 2rem;
+    align-items: center;
+  }
+  
+  .navmobcontainer h1 {
+    font-size: 1.8rem;
+  }
+  
+  nav ul li {
+    margin-top: .5rem;
+  }
+  
+  nav a {
+    align-items: center;
+    width: 100%;
+    display: flex;
+  }
+  
+  nav a i {
+    margin-right: .3rem;
+  }
 }
+
 
 @media (min-width: 768px) {
   html {
@@ -68,12 +120,26 @@ header .house, header .tree, header .images, header .teams {
   html {
     font-size: 22px;
   }
-  header .navbar {
+  
+  .navmobjdl {
     display: none;
+  }
+  
+  
+  
+  header .fa-bars {
+    display: none;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
   }
   
   header nav {
     display: flex;
+    position: absolute;
+    right: 1rem;
   }
 }
 
@@ -82,36 +148,28 @@ header .house, header .tree, header .images, header .teams {
     font-size: 28px;
   }
   
-  header .navbar {
-    display: none;
-  }
+  
 }
 
 @media (min-width: 1920px) {
   html {
     font-size: 32px;
   }
-  header .navbar {
-    display: none;
-  }
+  
 }
 
 @media (min-width: 2560px) {
   html {
     font-size: 40px;
   }
-  header .navbar {
-    display: none;
-  }
+  
 }
 
 @media (min-width: 3200px) {
   html {
     font-size: 46px;
   }
-  header .navbar {
-    display: none;
-  }
+  
 }
 
 header h1 {
@@ -120,4 +178,25 @@ header h1 {
 
 header p {
   font-size: 1rem;
+}
+
+
+@keyframes munculkekiri {
+  from {
+    right: -100%;
+    opacity: 0;
+  } to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes hilangkekanan {
+  from {
+    right: 0;
+    opacity: 1;
+  } to {
+    right: -100%;
+    opacity: 0;
+  }
 }
