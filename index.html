@@ -11,6 +11,7 @@
     <!-- ini buat icon -->
     <link rel="icon" href="icon/peduli-bumi.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <header class="nav-container">
@@ -59,15 +60,15 @@
     <main>
       <!-- Hero / Ajakan utama -->
       <section class="hero-background">
-        <div class="hero">
+        <div data-aos="zoom-in" class="hero">
           <img src="img/hero.jpg" loading="lazy" alt="Hutan hijau" />
           <div class="hero-overlay">
-            <div class="hero-box">
+            <div data-aos="fade-left" class="hero-box">
               <p>
                 Langkah kecil, perubahan besar untuk bumi.<br />
                 Ayo Bersama jaga hutan demi masa depan kita.
               </p>
-              <a href="tips-aksi.html" class="btn">Tips & Aksi</a>
+              <a id="btnHero" class="btn">Jelajahi Tips & Aksi</a>
             </div>
           </div>
         </div>
@@ -75,7 +76,7 @@
 
       <!-- Misi -->
       <section class="misi-gambar-container">
-          <div class="misi-container">
+          <div data-aos="fade-right" class="misi-container">
             <div class="judul-misi-container">
               <p>Our Mission <br>
               To Achieve <br>
@@ -86,11 +87,11 @@
                 Misi kami adalah menginspirasi masyarakat untuk peduli lingkungan dengan memberikan edukasi, informasi, dan aksi nyata demi terciptanya bumi yang lebih hijau dan berkelanjutan.
               </p>
               
-              <a href="#" class="btn">Tips Dan Aksi</a>
+              <a id="btnMisi" class="btn">Tips Dan Aksi Kami</a>
             </div>
           </div>
           
-          <div class="gambar-container">
+          <div data-aos="fade-left" class="gambar-container">
             <div class="gambar1">
             </div>
             
@@ -115,8 +116,8 @@
 
       <section class="ajakan-section">
         <div class="ajakan-container">
-          <div class="ajakan-title">Kenapa Harus Bertindak?</div>
-          <div class="ajakan">
+          <div data-aos="fade-up" class="ajakan-title">Kenapa Harus Bertindak?</div>
+          <div data-aos="fade-up" class="ajakan">
             <div class="kiri">
               <h3>Lingkungan adalah warisan.</h3>
               <p>
@@ -129,7 +130,7 @@
                 Mulai dari hal kecil: membawa tas sendiri, memilah sampah, ikut
                 kegiatan penghijauan.
               </p>
-              <a href="tips-aksi.html" class="btn">Lihat Aksi Kami</a>
+              <a id="btnBawah" class="btn">Lihat Aksi Kami</a>
             </div>
           </div>
         </div>
@@ -141,6 +142,9 @@
         &copy; 2025 PEDULI BUMI. X PPLG SMKN 46.
       </div>
     </footer>
+    <script src="js/beranda.js"></script>
     <script src="js/header.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
   </body>
 </html>
