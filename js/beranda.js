@@ -39,7 +39,7 @@ function nextQuote() {
   showQuote();
 }
 
-function prevQuote() {
+function quoteBefore() {
   index = (index - 1 + quotes.length) % quotes.length;
   showQuote();
 }
