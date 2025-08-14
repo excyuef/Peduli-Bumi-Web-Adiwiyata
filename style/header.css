@@ -17,10 +17,24 @@ html {
   z-index: 999;
 }
 
-.nav-jdl {
-  width: 10rem;
-  height: 3rem;
-  margin-left: 1rem;
+.jdlnavcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 1rem;
+}
+
+.jdlnavcontainer img {
+  width: 3rem;
+}
+
+.jdlnavcontainer h1 {
+  font-size: 1.5rem;
+  color: #65A65A;
+}
+
+.jdlnavcontainer h1 span {
+  color: #2E542E;
 }
 
 .fa-bars {
@@ -95,7 +109,7 @@ nav a {
   }
   
   nav ul li {
-    margin-top: .5rem;
+    margin-top: .8rem;
   }
   
   nav a {

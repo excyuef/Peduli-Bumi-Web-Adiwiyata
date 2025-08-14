@@ -7,14 +7,10 @@ body {
   padding-bottom: 10rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .gallery-main {
   display: block;
-  margin-top: 4rem;
+  margin-top: 6rem;
   width: 100%;
   box-sizing: border-box;
   position: relative;
