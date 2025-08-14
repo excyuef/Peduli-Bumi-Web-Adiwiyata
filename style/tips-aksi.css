@@ -256,28 +256,8 @@ body {
   color: #2f5233;
 }
 
-.produksicontainer {
-  background-color: #d4ecd4;
-}
-
-.produksicontainer .pnjlsnicon i, .produksicontainer .pnjlsnicon h1, .daurulangcontainer .pnjlsnicon  i, .memakaicontainer .pnjlsnicon h1  {
-  color: #1e5e4e;
-}
-
 .textpnjlsn {
   color: #333;
-}
-
-.memakaicontainer {
-  background-color: #bcead5;
-}
-
-.modulerecycle .memakaicontainer .pnjlsnicon i, .memakaicontainer .pnjlsnicon h1 {
-  color: #007965;
-}
-
-.daurulangcontainer {
-  background-color: #d4ecd4;
 }
 
 .pnjlsncontainer {
@@ -289,6 +269,7 @@ body {
   padding-top: .8rem;
   color: #1e5e4e;
   transition: .6s all;
+   background-color: #d4ecd4;
 }
 
 .pnjlsncontainer:hover {
