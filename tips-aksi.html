@@ -21,26 +21,46 @@
 
 <body>
   <header class="nav-container">
-      <img src="icon/PeduliEarth.png" alt="Peduli Earth" class="nav-jdl">
-      <nav class="nav-link">
-      <a href="index.html">
-        <i class="fa-solid fa-house house"></i>
-        Beranda
-      </a>
-      <a href="tips-aksi.html">
-        <i class="fa-solid fa-tree tree"></i>
-        Tips & Aksi
-      </a>
-      <a href="gallery.html">
-        <i class="fa-solid fa-image images"></i>
-        Galeri
-      </a>
-      <a href="ourteam.html">
-        <i class="fa-solid fa-users teams"></i>
-        Tim Kami
-      </a>
+    <div class="jdlnavcontainer">
+        <img src="icon/peduli-bumi.png" alt="">
+        <h1>PEDULI <span>BUMI</span></h1>
+      </div>
+      <i id="navBar" class="fa-solid fa-bars"></i>
+      <nav  id="menuNavigasi" class="nav-link">
+        <div class="navmobcontainer">
+          <div class="navmobjdl">
+            <h1>Navigasi</h1>
+            <i id="xNavigasi" class="fa-solid fa-xmark"></i>
+          </div>
+          
+          <ul class="navlist">
+            <li id="navhome">
+              <a>
+                <i class="fa-solid fa-house house"></i>
+                Beranda
+              </a>
+            </li>
+            <li id="navtisi">
+              <a>
+                <i class="fa-solid fa-tree tree"></i>
+                Tips & Aksi
+              </a>
+            </li>
+            <li id="navgaleri">
+              <a>
+                <i class="fa-solid fa-image images"></i>
+                Galeri
+              </a>
+            </li>
+            <li id="navtim">
+              <a>
+                <i class="fa-solid fa-users teams"></i>
+                Tim Kami
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <i class="fa-solid fa-bars navbar"></i>
   </header>
   
   <main class="tips-aksi-container">
@@ -355,17 +375,13 @@
       </div>
     </section>
    </main>
-   
+   <script src="js/header.js"></script>
   <script>
-    // biar bisa scroll tanpa shift di desktop
     const container = document.querySelector('.berita-scroll-container');
-    
     container.addEventListener('wheel', (evt) => {
       evt.preventDefault();
       container.scrollLeft += evt.deltaY;
     }, { passive: false });
-    
   </script>
-
 </body>
 </html>
