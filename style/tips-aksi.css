@@ -8,14 +8,18 @@ html {
 }
 
 body {
-  max-width: 1000rem;
   color: #2C2C2C;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+}
 
 /* hero */
 .hero {
-  width: 100vw;
+  width: 100%;
   display: grid;
   justify-items: center;
 }
@@ -76,7 +80,7 @@ body {
 .threeR {
   background-color: #fff;
   padding-top: 3rem;
-  width: 100vw;
+  width: 100%;
   display: grid;
   justify-items: center;
 }
@@ -157,7 +161,7 @@ body {
 .modulereuse {
   background-color: #1e3a2a;
   width: auto;
-  height: 17rem;
+  height: 21rem;
   display: grid;
   justify-items: center;
   padding: 2rem 0;
@@ -172,7 +176,7 @@ body {
 
 .modulereuse .img-reuse-container {
   width: 55%;
-  height: 13rem;
+  height: 17rem;
   position: relative;
 }
 
@@ -284,48 +288,59 @@ body {
   font-size: 2rem;
 }
 
-.modulereduce {
-  padding: 0 2rem;
+/* module reduce */
+
+.module-reduce {
+  margin: 2rem 4rem;
 }
 
 .img-reduce-container {
-  height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid
   gap: 1rem;
-  max-width: 400rem;
 }
 
 .atas {
-  background-color: lightblue;
+  display: flex;
+  flex-direction: rows;
   text-align: center;
+  justify-content: space-evenly;
   font-size: 1.2rem;
   border-radius: 10px;
+  padding-block: 1rem;
 }
 
 .bawah {
-  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7rem;
-  height: 7rem;
-  background-color: pink;
+  width: 10rem;
+  height: 10rem;
+  background-color: green;
   border-radius: 2.5rem;
 }
 
 .background-img img {
-  width: 6rem;
+  width: 8.5rem;
   border-radius: 2rem;
 }
 
 
 
 /* berita scroll */
+
+.berita {
+  width: 100%;
+}
+
 .berita-jdl {
   text-align: center;
   font-size: 2rem;
@@ -405,7 +420,6 @@ body {
   html {
     font-size: 20px;
   }
-  
 }
 
 @media (min-width: 1024px) {
@@ -489,4 +503,5 @@ body {
   .modulereuse {
     margin-inline: 9rem;
   }
+
 }
