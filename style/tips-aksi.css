@@ -319,47 +319,45 @@ body {
 }
 
 .modulereduce {
-  margin-block: 1rem;
-  width: 100%;
-  height: 20rem;
   padding: 0 2rem;
 }
 
-.reduce-container {
-  display: flex;
-  flex-direction: row;
-  margin-block: 1rem;
-}
-
-.reduce-img-container {
-  margin-block: 1rem;
-  height: 15rem;
+.img-reduce-container {
+  height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 14rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid
+  gap: 1rem;
+  max-width: 400rem;
 }
 
-.reduce12 {
+.atas {
+  background-color: lightblue;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.bawah {
+  grid-column: 2;
+}
+
+.background-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
   background-color: pink;
-}
-
-.reduce1 {  
-  position: relative;
-  width: 6rem;
-  height: 6rem;
-  background-color: #A8CBA0;
   border-radius: 2.5rem;
 }
 
-.reduce1 img {
-  position: absolute;
-  width: 5rem;
+.background-img img {
+  width: 6rem;
   border-radius: 2rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
+
+
 
 /* berita scroll */
 .berita-jdl {
