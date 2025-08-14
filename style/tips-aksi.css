@@ -227,6 +227,7 @@ body {
 
 .jdlrecyclecontainer{
   background-color: #a4c3a2;
+  max-width: 800px;
 }
 
 .modulerecycle .jdlrecycle{
