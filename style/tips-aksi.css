@@ -27,11 +27,7 @@ body {
   padding-bottom: 3rem;
 }
 
-.pengantar:hover, .gmbr-hero:hover {
-  scale: 110%;
-}
-
-.hero .pengantar {
+.pengantar {
   background-color: #A8CBA0;
   overflow: hidden;
   width: 22rem;
@@ -53,7 +49,7 @@ body {
   margin-top: .8rem;
 }
 
-.hero .gmbr-hero {
+.gmbr-hero {
   width: 22rem;
   height: 20rem;
   display: grid;

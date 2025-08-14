@@ -17,6 +17,8 @@
     <!-- ini buat icon -->
   <link rel="icon" href="icon/peduli-earth.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -67,11 +69,11 @@
   <!-- hero -->
     <div class="hero">
       <div class="hero-container">
-        <div class="pengantar">
+        <div data-aos="fade-right" class="pengantar">
           <h1>Tahukah Kamu?<br>Ratusan Sampah Plastik Ada di Sekitar Kita.</h1>
           <p>Banyak dari sampah tersebut sebenarnya bisa kita kurangi, gunakan kembali, bahkan diolah menjadi barang baru. Itulah inti dari 3R: Reduce, Reuse, Recycle.</p>
         </div>
-        <div class="gmbr-hero">
+        <div data-aos="fade-left" class="gmbr-hero">
           <img src="img/tipsaksi/tumpukansampah.jpg" alt="Tumpukan Sampah">
           <p>Jangan biarkan Bumi tenggelam dengan sampah. Saatnya kita bertindak dengan cara yang benar. Mari pahami 3R.</p>
         </div>
@@ -383,5 +385,8 @@
       container.scrollLeft += evt.deltaY;
     }, { passive: false });
   </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
+
 </body>
 </html>
