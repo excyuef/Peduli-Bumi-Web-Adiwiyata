@@ -99,15 +99,19 @@
               <div class="gambar2">
               </div>
               <div class="tulisan">
-                <p>
+                <p id="quote">
                   "Satu pohon, satu aksi, satu perubahan. Mari kita bersama bergerak, menjaga, dan melestarikan bumi tercinta."
                 </p>
                 
-                <button class="btn">
-                  <==
+                <button 
+                class="btn"
+                onclick="prevQuote()">
+                  Kurang
                 </button>
-                <button class="btn">
-                 ==>
+                <button 
+                class="btn"
+                onclick="nextQuote()">
+                  Tambah
                 </button>
               </div>
             </div>
@@ -146,5 +150,36 @@
     <script src="js/header.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/aos.js"></script>
+    <script>
+      const quotes = [
+        '"Bumi bukan warisan dari nenek moyang kita, melainkan pinjaman dari anak cucu kita."',
+        
+        '"Satu pohon, satu aksi, satu perubahan. Mari kita bersama bergerak, menjaga, dan melestarikan bumi tercinta."',
+        
+        '"Satu langkah kecil untuk alam bisa jadi langkah besar untuk masa depan."',
+        
+        '"Hutan yang kita jaga hari ini adalah nafas yang akan menyelamatkan esok."'
+
+        ];
+
+      let index = 0;
+      
+      function showQuote() {
+        document.getElementById("quote").innerText = quotes[index];
+      }
+      
+      function nextQuote() {
+        index = (index + 1) % quotes.length;
+        showQuote();
+      }
+      
+      function prevQuote() {
+        index = (index - 1 + quotes.length) % quotes.length;
+        showQuote();
+      }
+      
+      showQuote();
+      
+    </script>
   </body>
 </html>
