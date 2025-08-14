@@ -388,12 +388,14 @@
     </section>
    </main>
    <script src="js/header.js"></script>
+
   <script>
     const container = document.querySelector('.berita-scroll-container');
-    container.addEventListener('wheel', (evt) => {
-      evt.preventDefault();
-      container.scrollLeft += evt.deltaY;
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
     }, { passive: false });
   </script>
+
 </body>
 </html>
