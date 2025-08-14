@@ -227,7 +227,6 @@ body {
 
 .jdlrecyclecontainer{
   background-color: #a4c3a2;
-  max-width: 800px;
 }
 
 .modulerecycle .jdlrecycle{
@@ -240,7 +239,6 @@ body {
   font-size: .9rem;
   text-align: center;
   padding-bottom: .3rem;
-  border-bottom: .1rem solid black;
   color: #333;
 }
 
