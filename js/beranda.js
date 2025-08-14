@@ -15,3 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.assign("../gallery.html")
     })
 })
+
+// ganti quoted
+const quotes = [
+  '"Bumi bukan warisan dari nenek moyang kita, melainkan pinjaman dari anak cucu kita."',
+  
+  '"Satu pohon, satu aksi, satu perubahan. Mari kita bersama bergerak, menjaga, dan melestarikan bumi tercinta."',
+  
+  '"Satu langkah kecil untuk alam bisa jadi langkah besar untuk masa depan."',
+  
+  '"Hutan yang kita jaga hari ini adalah nafas yang akan menyelamatkan esok."'
+
+  ];
+
+let index = 0;
+      
+function showQuote() {
+  document.getElementById("quote").innerText = quotes[index];
+}
+
+function nextQuote() {
+  index = (index + 1) % quotes.length;
+  showQuote();
+}
+
+function prevQuote() {
+  index = (index - 1 + quotes.length) % quotes.length;
+  showQuote();
+}
+
+showQuote();
