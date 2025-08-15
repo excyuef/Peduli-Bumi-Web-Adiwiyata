@@ -3,8 +3,9 @@ html {
   font-size: 16px;
 }
 
-body {
-  padding-bottom: 10rem;
+html body {
+  
+  background-color: linear-gradient(to bottom, #179930, #fefefe);
 }
 
 
@@ -32,8 +33,8 @@ body {
 }
 
 .img-container {
-  width: 18rem;
-  height: 9rem;
+  width: 20rem;
+  height: 11rem;
   background-color: #f3f3f3;
   border-radius: 4%;
   position: relative;
@@ -103,9 +104,6 @@ body {
     font-size: 20px;
   }
   
-  .hero-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* ini laptop */
@@ -115,7 +113,12 @@ body {
   }
   
   .hero-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .img-container {
+    width: 23rem;
+    height: 12rem;
   }
 }
 
@@ -125,9 +128,7 @@ body {
     font-size: 28px;
   }
   
-  .hero-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
 
 /* ini desktop */
@@ -136,9 +137,7 @@ body {
     font-size: 32px;
   }
   
-  .hero-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
 
 /* ini desktop yg lebih gede */
@@ -147,22 +146,19 @@ body {
     font-size: 40px;
   }
   
-  .hero-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
 
-/* ini 3200px keatas */
+
 @media (min-width: 3200px) {
   html {
     font-size: 46px;
   }
   
-  .hero-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
-/* ukuran default h1 sama p */
+
+
 body h1 {
   font-size: 3rem;
 }
