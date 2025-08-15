@@ -1,15 +1,12 @@
-/* ======= GLOBAL ======= */
+
 body {
-  font-family: "Poppins", Arial, sans-serif;
   background: linear-gradient(135deg, #e0f7fa 0%, #c8e6c9 100%);
-  margin: 0;
-  padding: 0;
 }
 
 /* ======= CONTAINER ======= */
 .ourteam-container {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 6rem auto;
   padding: 20px;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 24px;
@@ -32,11 +29,11 @@ body {
     "card1 card-tengah card2"
     "card3 . card4";
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 1rem;
   padding: 0 10px;
 }
 
-/* Tambahkan ini untuk memperkecil jarak antar card bawah */
+
 .team-card[style*="grid-area:card3"],
 .team-card[style*="grid-area:card4"],
 .team-card:nth-child(4),
@@ -160,35 +157,5 @@ body {
   .team-card img {
     width: 90px;
     height: 90px;
-  }
-}
-
-/* ======= ANIMASI MASUK ======= */
-.team-card {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.7s forwards;
-}
-
-.team-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.team-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.team-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.team-card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.team-card:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
