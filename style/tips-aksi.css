@@ -292,19 +292,32 @@ body {
 /* module reduce */
 
 .modulereduce {
-  position: relative;
-  margin: 2rem 3rem;
-  height: 10rem;
+  margin: 5rem 3rem;
+  height: 14rem;
   border-radius: 2rem;
 }
 
 .reduce-container {
   position: relative;
-  height: 10rem;
-  background-color: green;
+  height: 100%;
+  width: 80%;
+  background-image: url('../img/hero.jpg');
   border-radius: 2rem;
 }
 
+.text-reduce-container {
+  position: absolute;
+  top: 15%;
+  left: 75%;
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  background-color: red;
+}
 /* berita scroll */
 
 .berita {
