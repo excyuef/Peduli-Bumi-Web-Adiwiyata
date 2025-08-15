@@ -279,6 +279,7 @@ body {
 
 /* module reduce */
 
+<<<<<<< HEAD
 .module-reduce {
   margin: 2rem 4rem;
 }
@@ -311,17 +312,21 @@ body {
   justify-content: center;
   align-items: center;
   width: 10rem;
+=======
+.modulereduce {
+  position: relative;
+  margin: 2rem 3rem;
+>>>>>>> 7462a03d2e636ee12f135f642cbd2a6f51e28c91
   height: 10rem;
-  background-color: green;
-  border-radius: 2.5rem;
-}
-
-.background-img img {
-  width: 8.5rem;
   border-radius: 2rem;
 }
 
-
+.reduce-container {
+  position: relative;
+  height: 10rem;
+  background-color: green;
+  border-radius: 2rem;
+}
 
 /* berita scroll */
 
