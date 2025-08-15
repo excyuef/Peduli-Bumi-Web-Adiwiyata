@@ -12,11 +12,6 @@ body {
   color: #2C2C2C;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  border: 1px solid black;
-}
 
 /* hero */
 .hero {
@@ -89,6 +84,7 @@ body {
 .threeR-desc {
   display: grid;
   padding-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .threeR .threeR-desc-jdl {
@@ -119,14 +115,7 @@ body {
   width: 120px;
   height: 120px;
   fill: #1e3a2a;
-  transition: .5s all;
 }
-
-.threeR-desc .threeR-cards:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 8px rgba(5,5,5,.5);
-}
-
 
 .threeR .threeR-cards h1 {
   font-size: 20px;
@@ -134,7 +123,7 @@ body {
 }
 
 .threeR .threeR-cards p {
-  font-size: .8rem;
+  font-size: .9rem;
   color: #2c2c2c;
 }
 
@@ -166,7 +155,6 @@ body {
   display: grid;
   justify-items: center;
   padding: 2rem 0;
-  border-radius: 2rem;
 }
 
 .reuse-container {
@@ -291,9 +279,46 @@ body {
 
 /* module reduce */
 
+<<<<<<< HEAD
+.module-reduce {
+  margin: 2rem 4rem;
+}
+
+.img-reduce-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.atas {
+  display: flex;
+  flex-direction: rows;
+  text-align: center;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding-block: 1rem;
+}
+
+.bawah {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+}
 .modulereduce {
   margin: 5rem 3rem;
   height: 14rem;
+  position: relative;
+  margin: 2rem 3rem;
+  height: 10rem;
   border-radius: 2rem;
 }
 
@@ -421,11 +446,17 @@ body {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+}
 
-  
+@media (max-width: 1440px) {
 
+#reduce-card:hover, #reuse-card:hover, #recycle-card:hover {
+  transform: translateY(-8px);
+}
 
-
+#reduce, #reuse, #recycle {
+  transition: .8s all;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1440px) {
@@ -451,10 +482,12 @@ body {
   
   .threeR .threeR-desc .threeR-card-container .threeR-cards {
     box-shadow: none;
+    width: 500px;
   }
   
   .modulereuse {
     margin-inline: 9rem;
+     border-radius: 2rem;
   }
   
 }
