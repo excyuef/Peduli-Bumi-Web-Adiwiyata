@@ -311,12 +311,11 @@ body {
   align-items: center;
   width: 10rem;
 }
+
 .modulereduce {
-  margin: 5rem 3rem;
-  height: 14rem;
+  margin: 5rem 1.5rem;
+  max-height: 50rem;
   position: relative;
-  margin: 2rem 3rem;
-  height: 10rem;
   border-radius: 2rem;
 }
 
@@ -324,8 +323,18 @@ body {
   position: relative;
   height: 100%;
   width: 80%;
-  background-image: url('../img/hero.jpg');
+  background-color: darkgreen;
   border-radius: 2rem;
+  padding: .50rem;
+}
+
+.reduce-img-container {
+  height: 100%;
+}
+
+.reduce-img-container img{
+  width: 100%;
+  border-radius: 1.85rem;
 }
 
 .text-reduce-container {
@@ -334,13 +343,15 @@ body {
   left: 75%;
   width: 55%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1.5rem;
-  background-color: red;
+  border-radius: 1.5rem 1.5rem 1.5rem 0;
+  background-color: green;
+  color: #F0F0F0;
+  font-size: .7rem;
+  padding-left: .5rem ;
+  padding-top: 1.rem;
 }
+
+
 /* berita scroll */
 
 .berita {
@@ -488,6 +499,9 @@ body {
      border-radius: 2rem;
   }
   
+  .modulereduce {
+    margin-inline: 9rem;
+  }
 }
 
 @media (min-width: 1920px) {
