@@ -98,11 +98,11 @@ body {
   background-color: #fff;
   box-shadow: 0 -4px 8px rgba(55,85,52,.5);
   width: 350px;
-  height: 370px;
+  height: 21rem;
   text-align: center;
   border-radius: 3%;
   transition: .5s all;
-  padding: 0 2rem;
+  padding: 1.5rem 0 1rem 0;
 }
 
 .threeR .threeR-card-icon {
@@ -466,7 +466,7 @@ body {
   }
   #recycle-card {
     position: relative;
-    left: 50%;
+    left: 59%;
   }
   
 }
