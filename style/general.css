@@ -1,4 +1,4 @@
-body {
+html, body {
   background-color: #F5F5F5;
   user-select: none;
   font-family: 'Poppins', sans-serif;
@@ -6,6 +6,7 @@ body {
   color: #15141A;
   min-height: 1vh;
   max-width: 100vw;
+  overflow-x: hidden;
 }
 
 * {
