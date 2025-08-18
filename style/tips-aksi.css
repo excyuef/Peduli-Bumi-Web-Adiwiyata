@@ -316,7 +316,7 @@ body {
   border-radius: 1.5rem 1.5rem 1.5rem 0;
   background-color: #4E6E4D;
   color: #F0F0F0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0 1rem;
 }
 
@@ -441,10 +441,6 @@ body {
     transform: translateX(-50%);
   }
   
-  .text-reduce-container p:nth-child(2) {
-  display: none;
-  }
-  
 }
 
 
@@ -468,6 +464,10 @@ body {
   #recycle-card {
     position: relative;
     left: 50%;
+  }
+  
+  .text-reduce-container p:nth-child(2) {
+  display: none;
   }
 }
 
