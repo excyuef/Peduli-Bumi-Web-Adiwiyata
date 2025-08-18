@@ -18,18 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   
   home.addEventListener("click", () => {
-    window.location.assign("../index.html")
+    window.location.assign("/index.html")
   })
   
   tipsaksi.addEventListener("click", () => {
-    window.location.assign("../tips-aksi.html")
+    window.location.assign("/tips-aksi.html")
   })
   
   galeri.addEventListener("click", () => {
-    window.location.assign("../gallery.html")
+    window.location.assign("/gallery.html")
   })
   
   tim.addEventListener("click", () => {
-    window.location.assign("../ourteam.html")
+    window.location.assign("/ourteam.html")
   })
 })
