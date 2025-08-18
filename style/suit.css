@@ -1,0 +1,113 @@
+body {
+  background-color:#ABCBA0;
+  color: #1B3A1A;
+}
+
+main {
+  position: absolute;
+  background-color: #fff;
+  width: 90%;
+  height: 450px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10rem;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#game-content {
+  width: 90%;
+  height: 90%;
+}
+
+.game-icon {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  background-color: transparent;
+  width: 60px;
+}
+
+.pick-move-button {
+  background-color: transparent;
+  height: 5rem;
+  width: 5rem;
+  border: 2px solid #1B3A1A;        
+  border-radius: 60px;
+  transition: .4s all;
+}
+
+.pick-move-button:hover {
+  background-color: #1b3a1a;
+}
+
+
+.vs {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-score-button {   
+  background-color: transparent;
+  margin-top: 20px;
+  border: 1px solid #1B3A1A;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  transition: .4s all;
+}
+
+.reset-score-button:hover {
+  color: #ddd;
+  background-color: #1b3a1a;
+}
+
+.result {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.score-js {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 800px;
+    height: 520px;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    width: 900px;
+    height: 650px;
+  }
+}
+
+@media (min-width: 1920px) {
+  main {
+    width: 1200px;
+    height: 800px;
+  }
+}
