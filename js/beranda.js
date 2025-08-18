@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnBawah = document.getElementById("btnBawah")
 
     btnHero.addEventListener("click", () => {
-        window.location.assign("../tips-aksi.html")
+        window.location.assign("/tips-aksi.html")
     })
 
     btnMisi.addEventListener("click", () => {
-        window.location.assign("../tips-aksi.html")
+        window.location.assign("/tips-aksi.html")
     })
 
     btnBawah.addEventListener("click", () => {
-        window.location.assign("../gallery.html")
+        window.location.assign("/gallery.html")
     })
 })
 
