@@ -37,6 +37,14 @@ h1 {
   gap: 1rem;
 }
 
+.game-icon button {
+  transition: all 1s ease-out;
+}
+
+.game-icon button:hover {
+  scale: 115%;
+}
+
 .icon {
   background-color: transparent;
   width: 60px;
