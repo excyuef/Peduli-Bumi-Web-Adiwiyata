@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const tipsaksi = document.getElementById("navtisi")
   const galeri = document.getElementById("navgaleri")
   const tim = document.getElementById("navtim")
+  const suit = document.getElementById("navsuit")
+  
   
   bar.addEventListener("click", () => {
     menu.classList.remove("ilang")
@@ -31,5 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   tim.addEventListener("click", () => {
     window.location.assign("/ourteam.html")
+  })
+  
+  suit.addEventListener("click", () => {
+    window.location.assign("/suit.html")
   })
 })
