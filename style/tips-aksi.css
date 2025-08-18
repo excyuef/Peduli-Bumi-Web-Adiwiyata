@@ -466,9 +466,6 @@ body {
     left: 50%;
   }
   
-  .text-reduce-container p:nth-child(2) {
-  display: none;
-  }
 }
 
 @media (min-width: 1440px) {
