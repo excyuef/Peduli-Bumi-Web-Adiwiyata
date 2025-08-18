@@ -12,8 +12,8 @@ body {
   color: #2C2C2C;
 }
 
-
 /* hero */
+
 .hero {
   width: 100%;
   display: grid;
@@ -278,42 +278,9 @@ body {
 }
 
 /* module reduce */
-.module-reduce {
-  margin: 2rem 4rem;
-}
-
-.img-reduce-container {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.atas {
-  display: flex;
-  flex-direction: rows;
-  text-align: center;
-  justify-content: space-evenly;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  padding-block: 1rem;
-}
-
-.bawah {
-  grid-row: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.background-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10rem;
-}
 
 .modulereduce {
-  margin: 5rem 1.5rem;
+  margin: 5rem 1.5rem 7.5rem 1.5rem;
   max-height: 50rem;
   position: relative;
   border-radius: 2rem;
@@ -325,33 +292,37 @@ body {
   width: 80%;
   background-color: darkgreen;
   border-radius: 2rem;
-  padding: .50rem;
 }
 
 .reduce-img-container {
   height: 100%;
+  padding-inline: .5rem;
 }
 
 .reduce-img-container img{
   width: 100%;
   border-radius: 1.85rem;
+  margin-top: .5rem;
 }
 
 .text-reduce-container {
   position: absolute;
+  display: center;
+  align-content: center;
   top: 15%;
-  left: 75%;
+  left: 70%;
   width: 55%;
-  height: 100%;
+  height: 105%;
   border-radius: 1.5rem 1.5rem 1.5rem 0;
-  background-color: green;
+  background-color: #4E6E4D;
   color: #F0F0F0;
-  font-size: .7rem;
-  padding-left: .5rem ;
-  padding-top: 1.rem;
+  font-size: 1rem;
+  padding: 0 1rem;
 }
 
-
+.text-reduce-container span {
+  font-weight: bold;
+}
 /* berita scroll */
 
 .berita {
@@ -433,9 +404,22 @@ body {
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   html {
     font-size: 20px;
+  }
+  
+  .reduce-img-container {
+    padding: 0 .5rem;
+  }
+  
+  .text-reduce-container {
+    font-size: .85rem;
+    padding: 0 .5rem;
+  }
+  
+  .text-reduce-container p:nth-child(2) {
+    display: none;
   }
 }
 
@@ -443,6 +427,7 @@ body {
   html {
     font-size: 22px;
   }
+  
   .hero-container {
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
@@ -455,7 +440,13 @@ body {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+  
+  .text-reduce-container p:nth-child(2) {
+  display: none;
+  }
+  
 }
+
 
 @media (max-width: 1440px) {
 
