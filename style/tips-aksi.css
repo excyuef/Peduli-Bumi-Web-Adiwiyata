@@ -301,7 +301,7 @@ body {
 
 .reduce-img-container img{
   width: 100%;
-  border-radius: 1.85rem;
+  border-radius: 0 .85rem .85rem 2.75rem;
   margin-top: .5rem;
 }
 
