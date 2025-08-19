@@ -372,13 +372,13 @@ body {
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 0.8rem;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease;
   width: 18rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .berita-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.09);
 }
 
 .berita-card a {
