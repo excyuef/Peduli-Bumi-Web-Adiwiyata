@@ -23,3 +23,8 @@ footer {
   color: #666;
   margin-top: 80px;
 }
+
+a {
+  color: inherit;     
+  text-decoration: none; 
+}
