@@ -35,6 +35,12 @@ body {
   height: 20rem;
   padding: 1rem 2rem;
   border-radius: 8%;
+  transition: all 1s ease;
+}
+
+.pengantar:hover,
+.gmbr-hero:hover {
+  scale: 108%;
 }
 
 .hero .pengantar h1 {
@@ -51,6 +57,7 @@ body {
   height: 20rem;
   display: grid;
   align-items: center;
+  transition: all 1s ease;
 }
 
 .hero .gmbr-hero img {
@@ -251,12 +258,14 @@ body {
   border-radius: 10%;
   padding-top: .8rem;
   color: #1e5e4e;
-  transition: .6s all;
+  transition: transform .6s ease;
+  will-change: transform;
   background-color: #d4ecd4;
 }
 
 .pnjlsncontainer:hover {
-  transform: translateY(-5px);
+  transform: translateY(0) scale(1.05);
+  z-index: 10;
 }
 
 .pnjlsnicon {
@@ -363,13 +372,13 @@ body {
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 0.8rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   width: 18rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .berita-card:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .berita-card a {
