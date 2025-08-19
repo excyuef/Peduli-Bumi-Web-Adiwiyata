@@ -150,6 +150,7 @@ body {
   display: grid;
   justify-items: center;
   padding: 2rem 0;
+  scroll-margin-top: 19rem;
 }
 
 .reuse-container {
@@ -209,6 +210,7 @@ body {
   padding-bottom: 3rem;
   display: grid;
   justify-items: center;
+  scroll-margin-top: 19rem;
 }
 
 .modulerecycle .jdlrecycle{
@@ -281,6 +283,7 @@ body {
   max-height: 50rem;
   position: relative;
   border-radius: 2rem;
+  scroll-margin-top: 19rem;
 }
 
 .reduce-container {
