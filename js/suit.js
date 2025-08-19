@@ -113,3 +113,4 @@
     return result
   }
   
+  setTimeout(hasil, 500);
