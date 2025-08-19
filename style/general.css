@@ -14,3 +14,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 80px;
+}
