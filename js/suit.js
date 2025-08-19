@@ -52,7 +52,7 @@
     updateScore();
     document.querySelector('.result-js').innerHTML = `${result}`;
     document.querySelector('.you-n-computer-move-js').innerHTML = `Kamu <img src="img/icon/${playerMove}.png" class="icon" alt="${playerMove}"> VS <img src="img/icon/${computerMove}.png" class="icon" alt="${computerMove}"> Mr. Eko`;
-    hasil()
+    setTimeout(hasil, 500);
     return result;
   }
   
