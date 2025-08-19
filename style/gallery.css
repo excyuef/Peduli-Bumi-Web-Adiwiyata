@@ -4,7 +4,6 @@ html {
 }
 
 html body {
-  
   background-color: linear-gradient(to bottom, #179930, #fefefe);
 }
 
@@ -33,8 +32,8 @@ html body {
 }
 
 .img-container {
-  width: 20rem;
-  height: 11rem;
+  width: 19rem;
+  height: 13rem;
   background-color: #f3f3f3;
   border-radius: 4%;
   position: relative;
@@ -118,7 +117,7 @@ html body {
   
   .img-container {
     width: 23rem;
-    height: 12rem;
+    height: 15rem;
   }
 }
 
