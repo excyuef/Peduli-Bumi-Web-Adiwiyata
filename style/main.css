@@ -173,15 +173,6 @@ main {
     font-size: 0.9rem;
   }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 28px 16px;
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 80px;
-}
-
 /* hp */
 @media (max-width: 1024px) {
   .hero-box p {
