@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Sampah VS Komputer - Eco Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0dbc79);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .game-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+            overflow: hidden;
+        }
+
+        .game-header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 100;
+        }
+
+        .score-display {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .player-score {
+            color: #3498db;
+            border: 3px solid #3498db;
+        }
+
+        .computer-score {
+            color: #e74c3c;
+            border: 3px solid #e74c3c;
+        }
+
+        .timer-display {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #f39c12;
+        }
+
+        .trash-bins {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 50px;
+            z-index: 50;
+        }
+
+        .trash-bin {
+            width: 120px;
+            height: 140px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .trash-bin:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+
+        .trash-bin.organik {
+            background: linear-gradient(145deg, #2ecc71, #27ae60);
+        }
+
+        .trash-bin.anorganik {
+            background: linear-gradient(145deg, #f1c40f, #f39c12);
+        }
+
+        .trash-bin.b3 {
+            background: linear-gradient(145deg, #e74c3c, #c0392b);
+        }
+
+        .bin-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .bin-label {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .trash-item {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #fff;
+        }
+
+        .trash-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .trash-item.selected {
+            transform: scale(1.3);
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+            border-color: #3498db;
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        .trash-item.computer-selected {
+            transform: scale(1.2);
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+            border-color: #e74c3c;
+            animation: computerPulse 0.3s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1.3); }
+            50% { transform: scale(1.4); }
+        }
+
+        @keyframes computerPulse {
+            0%, 100% { transform: scale(1.2); }
+            50% { transform: scale(1.3); }
+        }
+
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none;
+            max-width: 500px;
+        }
+
+        .game-over h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .winner-announcement {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .player-wins {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+
+        .computer-wins {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+
+        .tie-game {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f39c12;
+        }
+
+        .final-scores {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .final-score {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .player-final {
+            color: #3498db;
+        }
+
+        .computer-final {
+            color: #e74c3c;
+        }
+
+        .motivation-message {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #34495e;
+        }
+
+        .restart-btn {
+            background: linear-gradient(145deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .instructions {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #2c3e50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .music-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .music-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .music-btn.active {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .difficulty-selector {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .difficulty-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 2px;
+        }
+
+        .difficulty-btn.active {
+            background: #9b59b6;
+            color: white;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(calc(100vh + 100px));
+            }
+        }
+
+        .falling {
+            animation: fall linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <div class="game-header">
+            <div class="score-display player-score">
+                <div>👤 PEMAIN</div>
+                <div>Skor: <span id="playerScore">0</span></div>
+            </div>
+            <div class="timer-display">
+                Waktu: <span id="timer">60</span>s
+            </div>
+            <div class="score-display computer-score">
+                <div>🤖 KOMPUTER</div>
+                <div>Skor: <span id="computerScore">0</span></div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            Mode VS Komputer! Berlomba dengan AI untuk memilah sampah. Klik sampah lalu tempat sampah yang benar!
+        </div>
+
+        <div class="trash-bins">
+            <div class="trash-bin organik" data-type="organik">
+                <div class="bin-icon">🌱</div>
+                <div class="bin-label">ORGANIK</div>
+            </div>
+            <div class="trash-bin anorganik" data-type="anorganik">
+                <div class="bin-icon">♻️</div>
+                <div class="bin-label">ANORGANIK</div>
+            </div>
+            <div class="trash-bin b3" data-type="b3">
+                <div class="bin-icon">☠️</div>
+                <div class="bin-label">B3</div>
+            </div>
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h2>Permainan Selesai!</h2>
+            <div class="winner-announcement" id="winnerAnnouncement"></div>
+            <div class="final-scores">
+                <div class="final-score player-final">
+                    👤 Pemain: <span id="finalPlayerScore">0</span>
+                </div>
+                <div class="final-score computer-final">
+                    🤖 Komputer: <span id="finalComputerScore">0</span>
+                </div>
+            </div>
+            <div class="motivation-message" id="motivationMessage"></div>
+            <button class="restart-btn" onclick="restartGame()">Main Lagi</button>
+        </div>
+    </div>
+
+    <script>
+        let playerScore = 0;
+        let computerScore = 0;
+        let timeLeft = 60;
+        let gameActive = true;
+        let gameTimer;
+        let spawnTimer;
+        let selectedTrash = null;
+        let musicEnabled = true;
+        let soundEnabled = true;
+        let backgroundMusic = null;
+        let difficulty = 'easy';
+        let computerAI = null;
+
+        // Audio context for generating sounds
+        let audioContext = null;
+
+        // Computer AI settings based on difficulty
+        const difficultySettings = {
+            easy: { speed: 2000, accuracy: 0.7 },
+            medium: { speed: 1200, accuracy: 0.85 },
+            hard: { speed: 800, accuracy: 0.95 }
+        };
+
+        // Initialize audio context
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Generate background music using Web Audio API
+        function createBackgroundMusic() {
+            if (!audioContext || !musicEnabled) return;
+
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88];
+            let noteIndex = 0;
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(notes[0], audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            
+            const changeNote = () => {
+                if (musicEnabled && gameActive) {
+                    noteIndex = (noteIndex + 1) % notes.length;
+                    oscillator.frequency.setValueAtTime(notes[noteIndex], audioContext.currentTime);
+                    setTimeout(changeNote, 500);
+                }
+            };
+            
+            oscillator.start();
+            changeNote();
+            
+            return oscillator;
+        }
+
+        // Play sound effect
+        function playSound(frequency, duration = 0.2, type = 'sine') {
+            if (!audioContext || !soundEnabled) return;
+
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.type = type;
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+
+        // Sound effects
+        function playCorrectSound() {
+            playSound(523.25, 0.3);
+        }
+
+        function playWrongSound() {
+            playSound(146.83, 0.5, 'sawtooth');
+        }
+
+        function playClickSound() {
+            playSound(440, 0.1);
+        }
+
+        function playGameOverSound() {
+            setTimeout(() => playSound(392), 0);
+            setTimeout(() => playSound(349.23), 200);
+            setTimeout(() => playSound(293.66), 400);
+            setTimeout(() => playSound(261.63), 600);
+        }
+
+        // Toggle functions
+        function toggleMusic() {
+            musicEnabled = !musicEnabled;
+            const musicBtn = document.getElementById('musicBtn');
+            
+            if (musicEnabled) {
+                musicBtn.classList.add('active');
+                musicBtn.textContent = '🎵';
+                if (gameActive) {
+                    backgroundMusic = createBackgroundMusic();
+                }
+            } else {
+                musicBtn.classList.remove('active');
+                musicBtn.textContent = '🔇';
+                if (backgroundMusic) {
+                    backgroundMusic.stop();
+                    backgroundMusic = null;
+                }
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const soundBtn = document.getElementById('soundBtn');
+            
+            if (soundEnabled) {
+                soundBtn.classList.add('active');
+                soundBtn.textContent = '🔊';
+            } else {
+                soundBtn.classList.remove('active');
+                soundBtn.textContent = '🔇';
+            }
+        }
+
+        function setDifficulty(level) {
+            difficulty = level;
+            document.querySelectorAll('.difficulty-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        const trashTypes = {
+            organik: [
+                { emoji: '🍎', name: 'apel' },
+                { emoji: '🍌', name: 'pisang' },
+                { emoji: '🍃', name: 'daun' },
+                { emoji: '🥕', name: 'wortel' },
+                { emoji: '🌽', name: 'jagung' }
+            ],
+            anorganik: [
+                { emoji: '🍶', name: 'botol' },
+                { emoji: '📦', name: 'kardus' },
+                { emoji: '🥤', name: 'kaleng' },
+                { emoji: '📰', name: 'kertas' },
+                { emoji: '👕', name: 'kain' }
+            ],
+            b3: [
+                { emoji: '🔋', name: 'baterai' },
+                { emoji: '💡', name: 'lampu' },
+                { emoji: '🧴', name: 'deterjen' },
+                { emoji: '💊', name: 'obat' },
+                { emoji: '🎨', name: 'cat' }
+            ]
+        };
+
+        function updatePlayerScore(points) {
+            playerScore += points;
+            document.getElementById('playerScore').textContent = playerScore;
+        }
+
+        function updateComputerScore(points) {
+            computerScore += points;
+            document.getElementById('computerScore').textContent = computerScore;
+        }
+
+        function updateTimer() {
+            document.getElementById('timer').textContent = timeLeft;
+            if (timeLeft <= 0) {
+                endGame();
+            } else {
+                timeLeft--;
+            }
+        }
+
+        function createTrashItem() {
+            if (!gameActive) return;
+
+            const types = Object.keys(trashTypes);
+            const randomType = types[Math.floor(Math.random() * types.length)];
+            const randomTrash = trashTypes[randomType][Math.floor(Math.random() * trashTypes[randomType].length)];
+
+            const trashItem = document.createElement('div');
+            trashItem.className = 'trash-item falling';
+            trashItem.textContent = randomTrash.emoji;
+            trashItem.dataset.type = randomType;
+            trashItem.dataset.name = randomTrash.name;
+
+            const randomX = Math.random() * (window.innerWidth - 100) + 50;
+            trashItem.style.left = randomX + 'px';
+            trashItem.style.top = '-100px';
+
+            const fallDuration = Math.random() * 3 + 4;
+            trashItem.style.animationDuration = fallDuration + 's';
+
+            document.getElementById('gameContainer').appendChild(trashItem);
+
+            // Player click handler
+            trashItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!trashItem.classList.contains('computer-selected')) {
+                    playClickSound();
+                    selectTrash(this);
+                }
+            });
+
+            // Computer AI decision
+            setTimeout(() => {
+                if (gameActive && trashItem.parentNode && !selectedTrash) {
+                    computerDecision(trashItem);
+                }
+            }, Math.random() * difficultySettings[difficulty].speed + 500);
+
+            // Remove after animation
+            setTimeout(() => {
+                if (trashItem.parentNode) {
+                    trashItem.remove();
+                    if (selectedTrash === trashItem) {
+                        selectedTrash = null;
+                    }
+                }
+            }, fallDuration * 1000);
+        }
+
+        function computerDecision(trashItem) {
+            if (!gameActive || !trashItem.parentNode) return;
+
+            const settings = difficultySettings[difficulty];
+            const willAct = Math.random() < 0.6; // 60% chance computer will act on this item
+
+            if (willAct) {
+                // Computer selects the trash
+                trashItem.classList.add('computer-selected');
+                trashItem.style.animation = 'none';
+
+                setTimeout(() => {
+                    if (gameActive && trashItem.parentNode) {
+                        const correctType = trashItem.dataset.type;
+                        let chosenType;
+
+                        if (Math.random() < settings.accuracy) {
+                            chosenType = correctType; // Correct choice
+                        } else {
+                            // Wrong choice
+                            const types = Object.keys(trashTypes);
+                            const wrongTypes = types.filter(type => type !== correctType);
+                            chosenType = wrongTypes[Math.floor(Math.random() * wrongTypes.length)];
+                        }
+
+                        // Computer makes the choice
+                        const bin = document.querySelector(`.trash-bin[data-type="${chosenType}"]`);
+                        if (bin) {
+                            if (chosenType === correctType) {
+                                updateComputerScore(10);
+                                showFeedback('Komputer +10', '#e74c3c', bin);
+                                playCorrectSound();
+                            } else {
+                                updateComputerScore(-5);
+                                showFeedback('Komputer -5', '#e74c3c', bin);
+                                playWrongSound();
+                            }
+                        }
+
+                        trashItem.remove();
+                    }
+                }, 300);
+            }
+        }
+
+        function selectTrash(trashItem) {
+            if (!gameActive || trashItem.classList.contains('computer-selected')) return;
+
+            if (selectedTrash) {
+                selectedTrash.classList.remove('selected');
+            }
+
+            selectedTrash = trashItem;
+            trashItem.classList.add('selected');
+            trashItem.style.animation = 'none';
+        }
+
+        function handleBinClick(bin) {
+            if (!gameActive || !selectedTrash) return;
+
+            const binType = bin.dataset.type;
+            const trashType = selectedTrash.dataset.type;
+
+            if (binType === trashType) {
+                updatePlayerScore(10);
+                showFeedback('Pemain +10', '#3498db', bin);
+                playCorrectSound();
+            } else {
+                updatePlayerScore(-5);
+                showFeedback('Pemain -5', '#3498db', bin);
+                playWrongSound();
+            }
+
+            selectedTrash.remove();
+            selectedTrash = null;
+        }
+
+        function showFeedback(message, color, bin) {
+            const feedback = document.createElement('div');
+            feedback.textContent = message;
+            feedback.style.cssText = `
+                position: absolute;
+                top: -40px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: ${color};
+                font-weight: bold;
+                font-size: 14px;
+                pointer-events: none;
+                z-index: 1000;
+            `;
+            
+            bin.appendChild(feedback);
+            
+            setTimeout(() => {
+                feedback.remove();
+            }, 1000);
+        }
+
+        function startGame() {
+            gameActive = true;
+            playerScore = 0;
+            computerScore = 0;
+            timeLeft = 60;
+            selectedTrash = null;
+            
+            initAudio();
+            
+            updatePlayerScore(0);
+            updateComputerScore(0);
+            updateTimer();
+
+            if (musicEnabled) {
+                backgroundMusic = createBackgroundMusic();
+            }
+
+            document.querySelectorAll('.trash-bin').forEach(bin => {
+                bin.addEventListener('click', function() {
+                    handleBinClick(this);
+                });
+            });
+
+            gameTimer = setInterval(updateTimer, 1000);
+            spawnTimer = setInterval(createTrashItem, 1500);
+
+            document.getElementById('gameOver').style.display = 'none';
+        }
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(gameTimer);
+            clearInterval(spawnTimer);
+
+            if (backgroundMusic) {
+                backgroundMusic.stop();
+                backgroundMusic = null;
+            }
+
+            playGameOverSound();
+
+            document.querySelectorAll('.trash-item').forEach(item => item.remove());
+
+            const gameOverDiv = document.getElementById('gameOver');
+            const winnerDiv = document.getElementById('winnerAnnouncement');
+            const finalPlayerDiv = document.getElementById('finalPlayerScore');
+            const finalComputerDiv = document.getElementById('finalComputerScore');
+            const motivationDiv = document.getElementById('motivationMessage');
+
+            finalPlayerDiv.textContent = playerScore;
+            finalComputerDiv.textContent = computerScore;
+
+            // Determine winner
+            let winnerMessage;
+            if (playerScore > computerScore) {
+                winnerMessage = "🎉 KAMU MENANG! 🎉";
+                winnerDiv.className = "winner-announcement player-wins";
+            } else if (computerScore > playerScore) {
+                winnerMessage = "🤖 KOMPUTER MENANG! 🤖";
+                winnerDiv.className = "winner-announcement computer-wins";
+            } else {
+                winnerMessage = "🤝 SERI! 🤝";
+                winnerDiv.className = "winner-announcement tie-game";
+            }
+            winnerDiv.textContent = winnerMessage;
+
+            // Environmental quotes
+            const environmentalQuotes = [
+                "🌍 'Bumi tidak kita warisi dari nenek moyang, tapi kita pinjam dari anak cucu kita.'",
+                "🌱 'Setiap tindakan kecil untuk lingkungan adalah langkah besar untuk masa depan.'",
+                "♻️ 'Sampah yang kita buang hari ini akan menentukan dunia yang kita tinggalkan besok.'",
+                "🌿 'Jadilah perubahan yang ingin kamu lihat di dunia - mulai dari memilah sampah.'",
+                "🌳 'Alam tidak membutuhkan manusia, tapi manusia membutuhkan alam.'",
+                "💚 'Cintai bumi seperti kamu mencintai dirimu sendiri.'",
+                "🌊 'Laut yang bersih dimulai dari sampah yang kita pilah dengan benar.'",
+                "🦋 'Setiap spesies yang kita selamatkan adalah hadiah untuk generasi mendatang.'",
+                "🌸 'Bumi yang hijau adalah warisan terindah untuk anak-anak kita.'",
+                "🌟 'Kamu adalah pahlawan lingkungan! Setiap pilihan bijak membuat perbedaan.'",
+                "🍃 'Sampah organik hari ini adalah kompos subur untuk tanaman besok.'",
+                "🔄 'Daur ulang bukan hanya tentang sampah, tapi tentang memberi kehidupan kedua.'",
+                "🌈 'Lingkungan yang bersih adalah hak setiap makhluk hidup di bumi.'",
+                "🌺 'Keindahan alam akan lestari jika kita peduli dari hal-hal kecil.'",
+                "💎 'Bumi adalah permata yang harus kita jaga bersama-sama.'"
+            ];
+
+            const quote = environmentalQuotes[Math.floor(Math.random() * environmentalQuotes.length)];
+            
+            motivationDiv.innerHTML = `
+                <div style="font-style: italic; color: #27ae60; font-size: 14px; line-height: 1.4; padding: 15px; background: rgba(46, 204, 113, 0.1); border-radius: 10px; border-left: 4px solid #27ae60;">${quote}</div>
+            `;
+            
+            gameOverDiv.style.display = 'block';
+        }
+
+        function restartGame() {
+            if (backgroundMusic) {
+                backgroundMusic.stop();
+                backgroundMusic = null;
+            }
+            
+            document.querySelectorAll('.trash-item').forEach(item => item.remove());
+            selectedTrash = null;
+            startGame();
+        }
+
+        window.addEventListener('load', startGame);
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971e0931b562c6b2',t:'MTc1NTY1MjQ4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
