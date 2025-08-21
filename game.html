@@ -106,132 +106,14 @@
         let gameTimer;
         let spawnTimer;
         let selectedTrash = null;
-        let musicEnabled = true;
-        let soundEnabled = true;
-        let backgroundMusic = null;
         let difficulty = 'easy';
         let computerAI = null;
 
-        // Audio context for generating sounds
-        let audioContext = null;
-
-        // Computer AI settings based on difficulty
         const difficultySettings = {
             easy: { speed: 2000, accuracy: 0.7 },
             medium: { speed: 1200, accuracy: 0.85 },
             hard: { speed: 800, accuracy: 0.95 }
         };
-
-        // Initialize audio context
-        function initAudio() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
-        }
-
-        // Generate background music using Web Audio API
-        function createBackgroundMusic() {
-            if (!audioContext || !musicEnabled) return;
-
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88];
-            let noteIndex = 0;
-            
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(notes[0], audioContext.currentTime);
-            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-            
-            const changeNote = () => {
-                if (musicEnabled && gameActive) {
-                    noteIndex = (noteIndex + 1) % notes.length;
-                    oscillator.frequency.setValueAtTime(notes[noteIndex], audioContext.currentTime);
-                    setTimeout(changeNote, 500);
-                }
-            };
-            
-            oscillator.start();
-            changeNote();
-            
-            return oscillator;
-        }
-
-        // Play sound effect
-        function playSound(frequency, duration = 0.2, type = 'sine') {
-            if (!audioContext || !soundEnabled) return;
-
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.type = type;
-            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-            
-            oscillator.start();
-            oscillator.stop(audioContext.currentTime + duration);
-        }
-
-        // Sound effects
-        function playCorrectSound() {
-            playSound(523.25, 0.3);
-        }
-
-        function playWrongSound() {
-            playSound(146.83, 0.5, 'sawtooth');
-        }
-
-        function playClickSound() {
-            playSound(440, 0.1);
-        }
-
-        function playGameOverSound() {
-            setTimeout(() => playSound(392), 0);
-            setTimeout(() => playSound(349.23), 200);
-            setTimeout(() => playSound(293.66), 400);
-            setTimeout(() => playSound(261.63), 600);
-        }
-
-        // Toggle functions
-        function toggleMusic() {
-            musicEnabled = !musicEnabled;
-            const musicBtn = document.getElementById('musicBtn');
-            
-            if (musicEnabled) {
-                musicBtn.classList.add('active');
-                musicBtn.textContent = '🎵';
-                if (gameActive) {
-                    backgroundMusic = createBackgroundMusic();
-                }
-            } else {
-                musicBtn.classList.remove('active');
-                musicBtn.textContent = '🔇';
-                if (backgroundMusic) {
-                    backgroundMusic.stop();
-                    backgroundMusic = null;
-                }
-            }
-        }
-
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            const soundBtn = document.getElementById('soundBtn');
-            
-            if (soundEnabled) {
-                soundBtn.classList.add('active');
-                soundBtn.textContent = '🔊';
-            } else {
-                soundBtn.classList.remove('active');
-                soundBtn.textContent = '🔇';
-            }
-        }
 
         function setDifficulty(level) {
             difficulty = level;
@@ -308,7 +190,6 @@
             trashItem.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!trashItem.classList.contains('computer-selected')) {
-                    playClickSound();
                     selectTrash(this);
                 }
             });
@@ -362,11 +243,9 @@
                             if (chosenType === correctType) {
                                 updateComputerScore(10);
                                 showFeedback('Komputer +10', '#e74c3c', bin);
-                                playCorrectSound();
                             } else {
                                 updateComputerScore(-5);
                                 showFeedback('Komputer -5', '#e74c3c', bin);
-                                playWrongSound();
                             }
                         }
 
@@ -397,11 +276,9 @@
             if (binType === trashType) {
                 updatePlayerScore(10);
                 showFeedback('Pemain +10', '#3498db', bin);
-                playCorrectSound();
             } else {
                 updatePlayerScore(-5);
                 showFeedback('Pemain -5', '#3498db', bin);
-                playWrongSound();
             }
 
             selectedTrash.remove();
@@ -437,15 +314,9 @@
             timeLeft = 60;
             selectedTrash = null;
             
-            initAudio();
-            
             updatePlayerScore(0);
             updateComputerScore(0);
             updateTimer();
-
-            if (musicEnabled) {
-                backgroundMusic = createBackgroundMusic();
-            }
 
             document.querySelectorAll('.trash-bin').forEach(bin => {
                 bin.addEventListener('click', function() {
@@ -463,13 +334,6 @@
             gameActive = false;
             clearInterval(gameTimer);
             clearInterval(spawnTimer);
-
-            if (backgroundMusic) {
-                backgroundMusic.stop();
-                backgroundMusic = null;
-            }
-
-            playGameOverSound();
 
             document.querySelectorAll('.trash-item').forEach(item => item.remove());
 
