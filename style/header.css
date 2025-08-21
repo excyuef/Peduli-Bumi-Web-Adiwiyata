@@ -121,6 +121,15 @@ nav a {
   nav a i {
     margin-right: .3rem;
   }
+
+  .anavgame {
+    display: block;
+  }
+
+  .nav-link .anavgame a:hover .nav-link .anavgame a p {
+    color: #15141a;
+    transform: translateY(0);
+  }
 }
 
 
