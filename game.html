@@ -484,10 +484,6 @@
         }
 
         function restartGame() {
-            if (backgroundMusic) {
-                backgroundMusic.stop();
-                backgroundMusic = null;
-            }
             
             document.querySelectorAll('.trash-item').forEach(item => item.remove());
             selectedTrash = null;
