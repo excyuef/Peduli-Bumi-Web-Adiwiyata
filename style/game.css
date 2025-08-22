@@ -1,6 +1,6 @@
 body {
    background: linear-gradient(135deg, #74b9ff, #0dbc79);
-    min-height: 100vh;
+    min-height: 90vh;
     
     justify-content: center;
     align-items: center;
@@ -14,29 +14,29 @@ body {
 
 .game-container {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     position: relative;
     background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
     overflow: hidden;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .game-header {
     position: absolute;
-    top: 20px;
+    top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 30px;
+    gap: 2rem;
     z-index: 100;
 }
 
 .score-display {
     background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-align: center;
 }
@@ -53,10 +53,10 @@ body {
 
 .timer-display {
     background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     color: #f39c12;
     border: 3px solid #f39c12;
@@ -64,18 +64,18 @@ body {
 
 .trash-bins {
     position: absolute;
-    bottom: 20px;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 50px;
+    gap: 2rem;
     z-index: 50;
 }
 
 .trash-bin {
-    width: 120px;
-    height: 140px;
-    border-radius: 15px;
+    width: 7rem;
+    height: 8rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,26 +104,26 @@ body {
 }
 
 .bin-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: .5rem;
 }
 
 .bin-label {
     color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: .8rem;
     text-align: center;
 }
 
 .trash-item {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -169,27 +169,27 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 20px;
+    padding: 2rem;
+    border-radius: 1rem;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     z-index: 1000;
     display: none;
-    max-width: 500px;
+    max-width: 25rem;
 }
 
 .game-over h2 {
     color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 28px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .winner-announcement {
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
+    margin-bottom: .7rem;
+    padding: .8rem;
+    border-radius: .5rem;
 }
 
 .player-wins {
@@ -210,11 +210,11 @@ body {
 .final-scores {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .final-score {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -227,8 +227,8 @@ body {
 }
 
 .motivation-message {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: #34495e;
 }
 
@@ -236,9 +236,9 @@ body {
     background: linear-gradient(145deg, #3498db, #2980b9);
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 16px;
+    padding: .8rem 1.5rem;
+    border-radius: 1rem;
+    font-size: .8rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -252,31 +252,31 @@ body {
 
 .instructions {
     position: absolute;
-    top: 150px;
+    top: 10rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.9);
-    padding: 15px 25px;
-    border-radius: 15px;
+    padding: .8rem 1rem;
+    border-radius: 1rem;
     text-align: center;
-    font-size: 14px;
+    font-size: .7rem;
     color: #2c3e50;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .difficulty-selector {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 2rem;
+    left: 1rem;
     z-index: 100;
 }
 
 .difficulty-btn {
     background: rgba(255, 255, 255, 0.9);
     border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: .5rem .8rem;
+    border-radius: 1rem;
+    font-size: .6rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -284,7 +284,7 @@ body {
     margin: 2px;
 }
 
-.difficulty-btn.active:nth-child(1) {
+.difficulty-btn.active {
     background: #9b59b6;
     color: white;
 }
@@ -292,7 +292,7 @@ body {
 
 @keyframes fall {
     from {
-        transform: translateY(-100px);
+        transform: translateY(-5rem);
     }
     to {
         transform: translateY(calc(100vh + 100px));
