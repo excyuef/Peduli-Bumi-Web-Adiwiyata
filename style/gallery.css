@@ -7,7 +7,6 @@ html body {
   background-color: linear-gradient(to bottom, #179930, #fefefe);
 }
 
-
 .gallery-main {
   display: block;
   margin-top: 6rem;
@@ -45,7 +44,7 @@ html body {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: .8s all;
+  transition: 0.8s all;
 }
 
 .img-container .overlay {
@@ -53,9 +52,9 @@ html body {
   bottom: -80%;
   width: 100%;
   height: 80%;
-  background: linear-gradient(to top, rgba(10,10,10,1), rgba(10,10,10,0));
+  background: linear-gradient(to top, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0));
   opacity: 0;
-  transition: .8s all;
+  transition: 0.8s all;
 }
 
 .img-container:hover img {
@@ -72,7 +71,6 @@ html body {
   bottom: 0;
 }
 
-
 .info {
   color: #fefefe;
   position: absolute;
@@ -80,7 +78,7 @@ html body {
   bottom: -50%;
   opacity: 0;
   padding-left: 0.5rem;
-  transition: .8s all;
+  transition: 0.8s all;
 }
 
 .img-container .info h6 {
@@ -94,27 +92,23 @@ html body {
   text-align: left;
 }
 
-
-
-
 /* ini tab */
 @media (min-width: 768px) {
   html {
     font-size: 17px;
   }
-  
 }
 
 /* ini laptop */
 @media (min-width: 1024px) {
   html {
-    font-size: 20px;
+    font-size: 22px;
   }
-  
+
   .hero-container {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .img-container {
     width: 23rem;
     height: 15rem;
@@ -124,19 +118,15 @@ html body {
 /* ini laptop yg large */
 @media (min-width: 1440px) {
   html {
-    font-size: 24px;
+    font-size: 26px;
   }
-  
-  
 }
 
 /* ini desktop */
 @media (min-width: 1920px) {
   html {
-    font-size: 28px;
+    font-size: 30px;
   }
-  
-  
 }
 
 /* ini desktop yg lebih gede */
@@ -144,19 +134,13 @@ html body {
   html {
     font-size: 35px;
   }
-  
-  
 }
-
 
 @media (min-width: 3200px) {
   html {
     font-size: 40px;
   }
-  
-  
 }
-
 
 body h1 {
   font-size: 3rem;
@@ -166,6 +150,6 @@ body h6 {
   font-size: 1.2rem;
 }
 
- body p {
+body p {
   font-size: 1rem;
 }
