@@ -100,7 +100,7 @@ html body {
 /* ini tab */
 @media (min-width: 768px) {
   html {
-    font-size: 20px;
+    font-size: 17px;
   }
   
 }
@@ -108,7 +108,7 @@ html body {
 /* ini laptop */
 @media (min-width: 1024px) {
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
   
   .hero-container {
@@ -124,7 +124,7 @@ html body {
 /* ini laptop yg large */
 @media (min-width: 1440px) {
   html {
-    font-size: 28px;
+    font-size: 24px;
   }
   
   
@@ -133,7 +133,7 @@ html body {
 /* ini desktop */
 @media (min-width: 1920px) {
   html {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   
@@ -142,7 +142,7 @@ html body {
 /* ini desktop yg lebih gede */
 @media (min-width: 2560px) {
   html {
-    font-size: 40px;
+    font-size: 35px;
   }
   
   
@@ -151,7 +151,7 @@ html body {
 
 @media (min-width: 3200px) {
   html {
-    font-size: 46px;
+    font-size: 40px;
   }
   
   
