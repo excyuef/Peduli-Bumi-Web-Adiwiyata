@@ -16,7 +16,8 @@ body {
     width: 100vw;
     height: 95vh;
     position: relative;
-    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+    background-image: url('/img/sortir.jpg');
+    background-size: cover;
     overflow: hidden;
     margin-top: 5rem;
 }
