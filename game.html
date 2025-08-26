@@ -82,7 +82,7 @@
         <div class="game-header">
             <div class="score-display player-score">
                 <div>
-                    👤 PEMAIN
+                    👤 Pemain
                 </div>
                 
                 <div>
@@ -91,29 +91,29 @@
 
             </div>
             <div class="timer-display">
-                Waktu: <span id="timer">60</span>s
+                Waktu: <div class="timerangka"><span id="timer">60</span>s
+            </div>
             </div>
             <div class="score-display computer-score">
-                <div>🤖 KOMPUTER</div>
+                <div>🤖 Mr. Eko</div>
                 <div>Skor: <span id="computerScore">0</span></div>
             </div>
         </div>
 
         <div class="instructions">
-            Mode VS Komputer! Berlomba dengan AI untuk memilah sampah. 
-            Klik sampah lalu tempat sampah yang benar!
+            Berlomba dengan Mr. Eko untuk memilah sampah. 
+            Klik sampah lalu arahkan ke tempat sampah yang benar!
         </div>
         
         <div class="difficulty-selector">
-            <div 
+            <h1 
                 style="
-                color: white; 
-                font-size: 12px;
+                color: white;
                 margin-bottom: 5px; 
                 font-weight: bold;">
                 Tingkat Kesulitan:
-            </div>
-
+            </h1>
+            <div class="difficulty-wrap">
             <button 
                 class="difficulty-btn active" 
                 onclick="setDifficulty('easy')">
@@ -130,6 +130,7 @@
                 onclick="setDifficulty('hard')">
                 Sulit
             </button>
+          </div>
         </div>
 
         <div class="trash-bins">
@@ -176,7 +177,7 @@
                     👤 Pemain: <span id="finalPlayerScore">0</span>
                 </div>
                 <div class="final-score computer-final">
-                    🤖 Komputer: <span id="finalComputerScore">0</span>
+                    🤖 Mr. Eko: <span id="finalComputerScore">0</span>
                 </div>
             </div>
             
@@ -281,7 +282,7 @@
 
             document.getElementById('gameContainer').appendChild(trashItem);
 
-            // Player click handler
+            
             trashItem.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!trashItem.classList.contains('computer-selected')) {
@@ -289,14 +290,13 @@
                 }
             });
 
-            // Computer AI decision
+            
             setTimeout(() => {
                 if (gameActive && trashItem.parentNode && !selectedTrash) {
                     computerDecision(trashItem);
                 }
             }, Math.random() * difficultySettings[difficulty].speed + 500);
 
-            // Remove after animation
             setTimeout(() => {
                 if (trashItem.parentNode) {
                     trashItem.remove();
@@ -311,10 +311,9 @@
             if (!gameActive || !trashItem.parentNode) return;
 
             const settings = difficultySettings[difficulty];
-            const willAct = Math.random() < 0.6; // 60% chance computer will act on this item
+            const willAct = Math.random() < 0.6;
 
             if (willAct) {
-                // Computer selects the trash
                 trashItem.classList.add('computer-selected');
                 trashItem.style.animation = 'none';
 
@@ -324,15 +323,14 @@
                         let chosenType;
 
                         if (Math.random() < settings.accuracy) {
-                            chosenType = correctType; // Correct choice
+                            chosenType = correctType; 
                         } else {
-                            // Wrong choice
                             const types = Object.keys(trashTypes);
                             const wrongTypes = types.filter(type => type !== correctType);
                             chosenType = wrongTypes[Math.floor(Math.random() * wrongTypes.length)];
                         }
 
-                        // Computer makes the choice
+                        
                         const bin = document.querySelector(`.trash-bin[data-type="${chosenType}"]`);
                         if (bin) {
                             if (chosenType === correctType) {
@@ -441,13 +439,12 @@
             finalPlayerDiv.textContent = playerScore;
             finalComputerDiv.textContent = computerScore;
 
-            // Determine winner
             let winnerMessage;
             if (playerScore > computerScore) {
                 winnerMessage = "🎉 KAMU MENANG! 🎉";
                 winnerDiv.className = "winner-announcement player-wins";
             } else if (computerScore > playerScore) {
-                winnerMessage = "🤖 KOMPUTER MENANG! 🤖";
+                winnerMessage = "🤖 Mr. EKO MENANG! 🤖";
                 winnerDiv.className = "winner-announcement computer-wins";
             } else {
                 winnerMessage = "🤝 SERI! 🤝";
@@ -455,7 +452,6 @@
             }
             winnerDiv.textContent = winnerMessage;
 
-            // Environmental quotes
             const environmentalQuotes = [
                 "🌍 'Bumi tidak kita warisi dari nenek moyang, tapi kita pinjam dari anak cucu kita.'",
                 "🌱 'Setiap tindakan kecil untuk lingkungan adalah langkah besar untuk masa depan.'",
@@ -493,5 +489,5 @@
         window.addEventListener('load', startGame);
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971e0931b562c6b2',t:'MTc1NTY1MjQ4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
