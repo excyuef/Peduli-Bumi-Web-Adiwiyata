@@ -18,7 +18,7 @@ body {
     position: relative;
     background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
     overflow: hidden;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 
 .game-header {
@@ -60,6 +60,7 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     color: #f39c12;
     border: 3px solid #f39c12;
+    display: grid;
 }
 
 .trash-bins {
@@ -252,7 +253,7 @@ body {
 
 .instructions {
     position: absolute;
-    top: 8rem;
+    top: 10rem;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.9);
@@ -261,14 +262,24 @@ body {
     text-align: center;
     font-size: .7rem;
     color: #2c3e50;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 1px solid black;
 }
 
 .difficulty-selector {
     position: absolute;
-    top: 2rem;
-    left: 1rem;
+    top: 9rem;
+    left: 0rem;
     z-index: 100;
+    display: grid;
+}
+
+.difficulty-selector h1 {
+  font-size: 12px;
+}
+
+.difficulty-wrap {
+  display: grid;
 }
 
 .difficulty-btn {
@@ -282,6 +293,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     margin: 2px;
+    width: 4rem;
 }
 
 .difficulty-btn.active {
@@ -301,4 +313,42 @@ body {
 
 .falling {
     animation: fall linear;
+}
+
+@media (min-width: 768px) {
+  .difficulty-selector {
+    top: 2rem;
+  }
+  html {
+    font-size: 18px;
+  }
+  
+  .difficulty-selector h1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .difficulty-wrap {
+    display: flex;
+  }
+  html {
+    font-size: 20px;
+  }
+  
+  .difficulty-selector h1 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .difficulty-selector h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .difficulty-selector {
+    font-size: 34px;
+  }
 }
