@@ -276,11 +276,18 @@ body {
 }
 
 .difficulty-selector h1 {
-  font-size: 12px;
+    font-size: 12px;
+    color: #F0F0F0;
+    text-shadow:
+    0 0 3px gray,
+    0 0 3px gray,
+    0 0 3px gray;
+    margin-bottom: 5px; 
+    font-weight: bold;
 }
 
 .difficulty-wrap {
-  display: grid;
+    display: grid;
 }
 
 .difficulty-btn {
