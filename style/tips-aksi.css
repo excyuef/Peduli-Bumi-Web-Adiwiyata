@@ -347,7 +347,7 @@ body {
 
 .berita-jdl {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-block: 4rem 2rem;
 }
 
@@ -370,9 +370,10 @@ body {
   background: #fff;
   flex-shrink: 0;
   overflow: hidden;
+  height: 70%;
   border-radius: 0.8rem;
   transition: transform 0.5s ease;
-  width: 18rem;
+  width: 15rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -387,7 +388,7 @@ body {
 
 .berita-img {
   width: 100%;
-  height: 12rem;
+  height: 10rem;
   object-fit: cover;
 }
 
@@ -396,14 +397,14 @@ body {
 }
 
 .berita-judul {
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 0.7rem;
 }
 
 .waktu {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #777;
   margin-bottom: 0.7rem;
 }
@@ -415,7 +416,7 @@ body {
 }
 
 .sumber-nama {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #555;
 }
 
