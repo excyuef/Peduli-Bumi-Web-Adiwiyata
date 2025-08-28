@@ -273,15 +273,16 @@ body {
     left: 0rem;
     z-index: 100;
     display: grid;
+    margin-left: .5rem;
 }
 
 .difficulty-selector h1 {
     font-size: 12px;
     color: #F0F0F0;
     text-shadow:
-    0 0 3px gray,
-    0 0 3px gray,
-    0 0 3px gray;
+    0 0 3px rgb(177, 177, 177),
+    0 0 3px rgb(177, 177, 177),
+    0 0 3px rgb(177, 177, 177);
     margin-bottom: 5px; 
     font-weight: bold;
 }
