@@ -106,12 +106,12 @@ main {
     
     .judul-misi-container {
       font-weight: bold;
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       margin-bottom: 0.5rem;
     }
     
     .isi-misi-container {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     
     .btn {
@@ -119,9 +119,9 @@ main {
       background: #2C2C2C;
       color: #F0F0F0;
       border: none;
-      padding: 0.8rem 1.3rem;
-      border-radius: 1rem;
-      font-size: 0.7rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: .8rem;
+      font-size: 0.65rem;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
