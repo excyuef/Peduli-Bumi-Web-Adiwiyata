@@ -297,15 +297,15 @@ body {
 
 .reduce-container {
   position: relative;
-  height: 100%;
-  width: 80%;
+  height: 80%;
+  width: 60%;
   background-color: #1e3a2a;
   border-radius: 0 1rem 1rem 3rem;
   transition: all 1s ease-out;
 }
 
 .reduce-img-container {
-  height: 100%;
+  height: 80%;
   padding-inline: .5rem;
 }
 
@@ -323,12 +323,11 @@ body {
 
 .text-reduce-container {
   position: absolute;
-  display: center;
   align-content: center;
   top: 15%;
   left: 50%;
   width: 50%;
-  height: 105%;
+  height: 100%;
   border-radius: 1.5rem 1.5rem 1.5rem 0;
   background-color: #4E6E4D;
   color: #F0F0F0;
@@ -423,7 +422,7 @@ body {
 
 @media (min-width: 8px) and (max-width: 1023px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .reduce-img-container {
@@ -442,7 +441,7 @@ body {
 
 @media (min-width: 1024px) {
   html {
-    font-size: 22px;
+    font-size: 18px;
   }
   
   .hero-container {
@@ -485,7 +484,7 @@ body {
 
 @media (min-width: 1440px) {
   html {
-    font-size: 28px;
+    font-size: 24px;
   }
   .threeR .threeR-card-container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -509,7 +508,7 @@ body {
 
 @media (min-width: 1920px) {
   html {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .threeR .threeR-cards {
