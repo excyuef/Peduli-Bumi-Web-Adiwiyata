@@ -1,5 +1,5 @@
 body {
-   background: linear-gradient(135deg, #74b9ff, #0dbc79);
+    background: linear-gradient(135deg, #74b9ff, #0dbc79);
     min-height: 90vh;
     
     justify-content: center;
@@ -8,15 +8,15 @@ body {
 }
 
 .footer {
-  text-align: center;
-  background: #fefefe;
+    text-align: center;
+    background: #fefefe;
 }
 
 .game-container {
     width: 100vw;
     height: 95vh;
     position: relative;
-    background-image: url('/img/sortir.jpg');
+    background-image: url('/img/foto_sekolah_46.webp');
     background-size: cover;
     overflow: hidden;
     margin-top: 5rem;
