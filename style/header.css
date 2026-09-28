@@ -14,7 +14,7 @@ html {
   top: 0;
   width: 100%;
   height: 5rem;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .jdlnavcontainer {

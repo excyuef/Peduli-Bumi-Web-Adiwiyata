@@ -87,7 +87,9 @@
         </div>
       </nav>
     </header>
+
     <div class="game-container" id="gameContainer">
+      
       <div class="game-header">
         <div class="score-display player-score">
           <div>👤 Pemain</div>
@@ -164,6 +166,11 @@
       </div>
     </div>
     <div class="footer">
+      <div class="jenis-sampah">
+        <h2>Jenis Sampah</h2>
+        <div class="jenis-grid" id="jenisGrid"></div>
+      </div>
+
       &copy; 2025 PEDULI BUMI. KELOMPOK 4, X PPLG SMKN 46.
     </div>
     <script src="js/header.js"></script>
@@ -205,7 +212,7 @@
           { emoji: "📦", name: "kardus" },
           { emoji: "🥤", name: "kaleng" },
           { emoji: "📰", name: "kertas" },
-          { emoji: "👕", name: "kain" },
+          { emoji: "🛍️", name: "plastik" },
         ],
         b3: [
           { emoji: "🔋", name: "baterai" },
@@ -219,7 +226,7 @@
           { emoji: "🧻", name: "tisu" },
           { emoji: "🪥", name: "sikat gigi" },
           { emoji: "🍬", name: "bungkus permen" },
-          { emoji: "🧦", name: "kaus kaki" },
+          { emoji: "🥡", name: "styrofoam" },
         ],
       };
 
@@ -402,6 +409,7 @@
         updatePlayerScore(0);
         updateComputerScore(0);
         updateTimer();
+        renderJenisSampah();
 
         document.querySelectorAll(".trash-bin").forEach((bin) => {
           bin.addEventListener("click", function () {
@@ -486,6 +494,48 @@
 
       window.addEventListener("load", startGame);
       document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      const binInfo = {
+        organik: {
+          icon: "🌱",
+          color: "#27ae60",
+          desc: "Sisa makhluk hidup yang mudah membusuk.",
+        },
+        anorganik: {
+          icon: "♻️",
+          color: "#3498db",
+          desc: "Sulit membusuk, tapi bisa didaur ulang.",
+        },
+        b3: {
+          icon: "☠️",
+          color: "#e74c3c",
+          desc: "Bahan berbahaya dan beracun.",
+        },
+        residu: {
+          icon: "🧻",
+          color: "#7f8c8d",
+          desc: "Sisa sampah yang tidak bisa didaur ulang.",
+        },
+      };
+
+      function renderJenisSampah() {
+        document.getElementById("jenisGrid").innerHTML = Object.entries(
+          trashTypes,
+        )
+          .map(
+            ([type, items]) => `
+      <div class="jenis-card" style="--c:${binInfo[type].color}">
+        <h3>${binInfo[type].icon} ${type.toUpperCase()}</h3>
+        <p>${binInfo[type].desc}</p>
+        <ul>
+          ${items.map((i) => `<li><span>${i.emoji}</span> ${i.name}</li>`).join("")}
+        </ul>
+      </div>`,
+          )
+          .join("");
+      }
+
+
     </script>
   </body>
 </html>
