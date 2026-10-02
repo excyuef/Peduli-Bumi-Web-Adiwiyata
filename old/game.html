@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peduli Bumi</title>
+    <link rel="stylesheet" href="/style/game.css" />
+    <link rel="stylesheet" href="style/general.css" />
+    <link rel="stylesheet" href="style/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    />
+    <!-- ini buat icon -->
+    <link rel="icon" href="icon/peduli-bumi.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="nav-container">
+      <div class="jdlnavcontainer">
+        <img src="icon/peduli-bumi.png" alt="" />
+        <h1>PEDULI <span>BUMI</span></h1>
+      </div>
+      <i id="navBar" class="fa-solid fa-bars"></i>
+      <nav id="menuNavigasi" class="nav-link">
+        <div class="navmobcontainer">
+          <div class="navmobjdl">
+            <h1>Navigasi</h1>
+            <i id="xNavigasi" class="fa-solid fa-xmark"></i>
+          </div>
+
+          <ul class="navlist">
+            <li id="navhome">
+              <a>
+                <i class="fa-solid fa-house house"></i>
+                Beranda
+              </a>
+            </li>
+            <li id="navtisi">
+              <a>
+                <i class="fa-solid fa-hand-point-up"></i>
+                Tips & Aksi
+              </a>
+            </li>
+            <li id="navgaleri">
+              <a>
+                <i class="fa-solid fa-image images"></i>
+                Galeri
+              </a>
+            </li>
+            <li id="navtim">
+              <a>
+                <i class="fa-solid fa-users teams"></i>
+                Tim Kami
+              </a>
+            </li>
+            <li id="navgame">
+              <div id="listnavgame" class="navgim min">
+                <p id="pNavGame">
+                  <i class="fa-solid fa-gamepad"></i>
+                  Eko Gim
+                  <i id="navcepron" class="fa-solid fa-chevron-right"></i>
+                </p>
+                <ul>
+                  <li id="navsuit">
+                    <a>
+                      <i class="fa-solid fa-hand-scissors"></i>
+                      Eko Suit
+                    </a>
+                  </li>
+                  <li id="navsortir">
+                    <a>
+                      <i class="fa-solid fa-sort"></i>
+                      Eko Sortir
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="game-container" id="gameContainer">
+      
+      <div class="game-header">
+        <div class="score-display player-score">
+          <div>👤 Pemain</div>
+
+          <div>Skor: <span id="playerScore">0</span></div>
+        </div>
+        <div class="timer-display">
+          Waktu:
+          <div class="timerangka"><span id="timer">60</span>s</div>
+        </div>
+        <div class="score-display computer-score">
+          <div>🤖 Mr. Eko</div>
+          <div>Skor: <span id="computerScore">0</span></div>
+        </div>
+      </div>
+
+      <div class="instructions">
+        Berlomba dengan Mr. Eko untuk memilah sampah. Klik sampah lalu arahkan
+        ke tempat sampah yang benar!
+      </div>
+
+      <div class="difficulty-selector">
+        <h1>Tingkat Kesulitan:</h1>
+        <div class="difficulty-wrap">
+          <button class="difficulty-btn active" onclick="setDifficulty('easy')">
+            Mudah
+          </button>
+
+          <button class="difficulty-btn" onclick="setDifficulty('medium')">
+            Sedang
+          </button>
+          <button class="difficulty-btn" onclick="setDifficulty('hard')">
+            Sulit
+          </button>
+        </div>
+      </div>
+
+      <div class="trash-bins">
+        <div class="trash-bin organik" data-type="organik">
+          <div class="bin-icon">🌱</div>
+
+          <div class="bin-label">ORGANIK</div>
+        </div>
+
+        <div class="trash-bin anorganik" data-type="anorganik">
+          <div class="bin-icon">♻️</div>
+          <div class="bin-label">ANORGANIK</div>
+        </div>
+        <div class="trash-bin b3" data-type="b3">
+          <div class="bin-icon">☠️</div>
+          <div class="bin-label">B3</div>
+        </div>
+        <div class="trash-bin residu" data-type="residu">
+          <div class="bin-icon">🧻</div>
+          <div class="bin-label">RESIDU</div>
+        </div>
+      </div>
+
+      <div class="game-over" id="gameOver">
+        <h2>Permainan Selesai!</h2>
+        <div class="winner-announcement" id="winnerAnnouncement"></div>
+        <div class="final-scores">
+          <div class="final-score player-final">
+            👤 Pemain: <span id="finalPlayerScore">0</span>
+          </div>
+          <div class="final-score computer-final">
+            🤖 Mr. Eko: <span id="finalComputerScore">0</span>
+          </div>
+        </div>
+
+        <div class="motivation-message" id="motivationMessage"></div>
+
+        <button class="restart-btn" onclick="restartGame()">Main Lagi</button>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="jenis-sampah">
+        <h2>Jenis Sampah</h2>
+        <div class="jenis-grid" id="jenisGrid"></div>
+      </div>
+
+      &copy; 2025 PEDULI BUMI. KELOMPOK 4, X PPLG SMKN 46.
+    </div>
+    <script src="js/header.js"></script>
+    <script>
+      let playerScore = 0;
+      let computerScore = 0;
+      let timeLeft = 60;
+      let gameActive = true;
+      let gameTimer;
+      let spawnTimer;
+      let selectedTrash = null;
+      let difficulty = "easy";
+      let computerAI = null;
+
+      const difficultySettings = {
+        easy: { speed: 2000, accuracy: 0.7 },
+        medium: { speed: 1200, accuracy: 0.85 },
+        hard: { speed: 800, accuracy: 0.95 },
+      };
+
+      function setDifficulty(level) {
+        difficulty = level;
+        document
+          .querySelectorAll(".difficulty-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+      }
+
+      const trashTypes = {
+        organik: [
+          { emoji: "🍎", name: "apel" },
+          { emoji: "🍌", name: "pisang" },
+          { emoji: "🍃", name: "daun" },
+          { emoji: "🥕", name: "wortel" },
+          { emoji: "🌽", name: "jagung" },
+        ],
+        anorganik: [
+          { emoji: "🍶", name: "botol" },
+          { emoji: "📦", name: "kardus" },
+          { emoji: "🥤", name: "kaleng" },
+          { emoji: "📰", name: "kertas" },
+          { emoji: "🛍️", name: "plastik" },
+        ],
+        b3: [
+          { emoji: "🔋", name: "baterai" },
+          { emoji: "💡", name: "lampu" },
+          { emoji: "🧴", name: "deterjen" },
+          { emoji: "💊", name: "obat" },
+          { emoji: "🎨", name: "cat" },
+        ],
+        residu: [
+          { emoji: "🚬", name: "puntung rokok" },
+          { emoji: "🧻", name: "tisu" },
+          { emoji: "🪥", name: "sikat gigi" },
+          { emoji: "🍬", name: "bungkus permen" },
+          { emoji: "🥡", name: "styrofoam" },
+        ],
+      };
+
+      function updatePlayerScore(points) {
+        playerScore += points;
+        document.getElementById("playerScore").textContent = playerScore;
+      }
+
+      function updateComputerScore(points) {
+        computerScore += points;
+        document.getElementById("computerScore").textContent = computerScore;
+      }
+
+      function updateTimer() {
+        document.getElementById("timer").textContent = timeLeft;
+        if (timeLeft <= 0) {
+          endGame();
+        } else {
+          timeLeft--;
+        }
+      }
+
+      function createTrashItem() {
+        if (!gameActive) return;
+
+        const types = Object.keys(trashTypes);
+        const randomType = types[Math.floor(Math.random() * types.length)];
+        const randomTrash =
+          trashTypes[randomType][
+            Math.floor(Math.random() * trashTypes[randomType].length)
+          ];
+
+        const trashItem = document.createElement("div");
+        trashItem.className = "trash-item falling";
+        trashItem.textContent = randomTrash.emoji;
+        trashItem.dataset.type = randomType;
+        trashItem.dataset.name = randomTrash.name;
+
+        const randomX = Math.random() * (window.innerWidth - 100) + 50;
+        trashItem.style.left = randomX + "px";
+        trashItem.style.top = "-100px";
+
+        const fallDuration = Math.random() * 3 + 4;
+        trashItem.style.animationDuration = fallDuration + "s";
+
+        document.getElementById("gameContainer").appendChild(trashItem);
+
+        trashItem.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (!trashItem.classList.contains("computer-selected")) {
+            selectTrash(this);
+          }
+        });
+
+        setTimeout(
+          () => {
+            if (gameActive && trashItem.parentNode && !selectedTrash) {
+              computerDecision(trashItem);
+            }
+          },
+          Math.random() * difficultySettings[difficulty].speed + 1000,
+        );
+
+        setTimeout(() => {
+          if (trashItem.parentNode) {
+            trashItem.remove();
+            if (selectedTrash === trashItem) {
+              selectedTrash = null;
+            }
+          }
+        }, fallDuration * 1000);
+      }
+
+      function computerDecision(trashItem) {
+        if (!gameActive || !trashItem.parentNode) return;
+
+        const settings = difficultySettings[difficulty];
+        const willAct = Math.random() < 0.6;
+
+        if (willAct) {
+          trashItem.classList.add("computer-selected");
+          trashItem.style.animation = "none";
+
+          setTimeout(() => {
+            if (gameActive && trashItem.parentNode) {
+              const correctType = trashItem.dataset.type;
+              let chosenType;
+
+              if (Math.random() < settings.accuracy) {
+                chosenType = correctType;
+              } else {
+                const types = Object.keys(trashTypes);
+                const wrongTypes = types.filter((type) => type !== correctType);
+                chosenType =
+                  wrongTypes[Math.floor(Math.random() * wrongTypes.length)];
+              }
+
+              const bin = document.querySelector(
+                `.trash-bin[data-type="${chosenType}"]`,
+              );
+              if (bin) {
+                if (chosenType === correctType) {
+                  updateComputerScore(10);
+                  showFeedback("Komputer +10", "#e74c3c", bin);
+                } else {
+                  updateComputerScore(-5);
+                  showFeedback("Komputer -5", "#e74c3c", bin);
+                }
+              }
+
+              trashItem.remove();
+            }
+          }, 300);
+        }
+      }
+
+      function selectTrash(trashItem) {
+        if (!gameActive || trashItem.classList.contains("computer-selected"))
+          return;
+
+        if (selectedTrash) {
+          selectedTrash.classList.remove("selected");
+        }
+
+        selectedTrash = trashItem;
+        trashItem.classList.add("selected");
+        trashItem.style.animation = "none";
+      }
+
+      function handleBinClick(bin) {
+        if (!gameActive || !selectedTrash) return;
+
+        const binType = bin.dataset.type;
+        const trashType = selectedTrash.dataset.type;
+
+        if (binType === trashType) {
+          updatePlayerScore(10);
+          showFeedback("Pemain +10", "#3498db", bin);
+        } else {
+          updatePlayerScore(-5);
+          showFeedback("Pemain -5", "#3498db", bin);
+        }
+
+        selectedTrash.remove();
+        selectedTrash = null;
+      }
+
+      function showFeedback(message, color, bin) {
+        const feedback = document.createElement("div");
+        feedback.textContent = message;
+        feedback.style.cssText = `
+          background-color: rgba(255, 255, 255, 0.9);
+          position: absolute;
+          top: -60px;
+          left: 50%;
+          padding: 0.5rem;
+          transform: translateX(-50%);
+          color: ${color};
+          font-weight: bold;
+          font-size: 14px;
+          pointer-events: none;
+          z-index: 1000;
+          border-radius: 0.5rem;
+        `;
+
+        bin.appendChild(feedback);
+
+        setTimeout(() => {
+          feedback.remove();
+        }, 1000);
+      }
+
+      function startGame() {
+        gameActive = true;
+        playerScore = 0;
+        computerScore = 0;
+        timeLeft = 60;
+        selectedTrash = null;
+
+        updatePlayerScore(0);
+        updateComputerScore(0);
+        updateTimer();
+        renderJenisSampah();
+
+        document.querySelectorAll(".trash-bin").forEach((bin) => {
+          bin.addEventListener("click", function () {
+            handleBinClick(this);
+          });
+        });
+
+        gameTimer = setInterval(updateTimer, 1000);
+        spawnTimer = setInterval(createTrashItem, 1500);
+
+        document.getElementById("gameOver").style.display = "none";
+      }
+
+      function endGame() {
+        gameActive = false;
+        clearInterval(gameTimer);
+        clearInterval(spawnTimer);
+
+        document
+          .querySelectorAll(".trash-item")
+          .forEach((item) => item.remove());
+
+        const gameOverDiv = document.getElementById("gameOver");
+        const winnerDiv = document.getElementById("winnerAnnouncement");
+        const finalPlayerDiv = document.getElementById("finalPlayerScore");
+        const finalComputerDiv = document.getElementById("finalComputerScore");
+        const motivationDiv = document.getElementById("motivationMessage");
+
+        finalPlayerDiv.textContent = playerScore;
+        finalComputerDiv.textContent = computerScore;
+
+        let winnerMessage;
+        if (playerScore > computerScore) {
+          winnerMessage = "🎉 KAMU MENANG! 🎉";
+          winnerDiv.className = "winner-announcement player-wins";
+        } else if (computerScore > playerScore) {
+          winnerMessage = "🤖 Mr. EKO MENANG! 🤖";
+          winnerDiv.className = "winner-announcement computer-wins";
+        } else {
+          winnerMessage = "🤝 SERI! 🤝";
+          winnerDiv.className = "winner-announcement tie-game";
+        }
+        winnerDiv.textContent = winnerMessage;
+
+        const environmentalQuotes = [
+          "🌍 'Bumi tidak kita warisi dari nenek moyang, tapi kita pinjam dari anak cucu kita.'",
+          "🌱 'Setiap tindakan kecil untuk lingkungan adalah langkah besar untuk masa depan.'",
+          "♻️ 'Sampah yang kita buang hari ini akan menentukan dunia yang kita tinggalkan besok.'",
+          "🌿 'Jadilah perubahan yang ingin kamu lihat di dunia - mulai dari memilah sampah.'",
+          "🌳 'Alam tidak membutuhkan manusia, tapi manusia membutuhkan alam.'",
+          "💚 'Cintai bumi seperti kamu mencintai dirimu sendiri.'",
+          "🌊 'Laut yang bersih dimulai dari sampah yang kita pilah dengan benar.'",
+          "🦋 'Setiap spesies yang kita selamatkan adalah hadiah untuk generasi mendatang.'",
+          "🌸 'Bumi yang hijau adalah warisan terindah untuk anak-anak kita.'",
+          "🌟 'Kamu adalah pahlawan lingkungan! Setiap pilihan bijak membuat perbedaan.'",
+          "🍃 'Sampah organik hari ini adalah kompos subur untuk tanaman besok.'",
+          "🔄 'Daur ulang bukan hanya tentang sampah, tapi tentang memberi kehidupan kedua.'",
+          "🌈 'Lingkungan yang bersih adalah hak setiap makhluk hidup di bumi.'",
+          "🌺 'Keindahan alam akan lestari jika kita peduli dari hal-hal kecil.'",
+          "💎 'Bumi adalah permata yang harus kita jaga bersama-sama.'",
+        ];
+
+        const quote =
+          environmentalQuotes[
+            Math.floor(Math.random() * environmentalQuotes.length)
+          ];
+
+        motivationDiv.innerHTML = `
+                <div style="font-style: italic; color: #27ae60; font-size: 14px; line-height: 1.4; padding: 15px; background: rgba(46, 204, 113, 0.1); border-radius: 10px; border-left: 4px solid #27ae60;">${quote}</div>
+            `;
+
+        gameOverDiv.style.display = "block";
+      }
+
+      function restartGame() {
+        document
+          .querySelectorAll(".trash-item")
+          .forEach((item) => item.remove());
+        selectedTrash = null;
+        startGame();
+      }
+
+      window.addEventListener("load", startGame);
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      const binInfo = {
+        organik: {
+          icon: "🌱",
+          color: "#27ae60",
+          desc: "Sisa makhluk hidup yang mudah membusuk.",
+        },
+        anorganik: {
+          icon: "♻️",
+          color: "#3498db",
+          desc: "Sulit membusuk, tapi bisa didaur ulang.",
+        },
+        b3: {
+          icon: "☠️",
+          color: "#e74c3c",
+          desc: "Bahan berbahaya dan beracun.",
+        },
+        residu: {
+          icon: "🧻",
+          color: "#7f8c8d",
+          desc: "Sisa sampah yang tidak bisa didaur ulang.",
+        },
+      };
+
+      function renderJenisSampah() {
+        document.getElementById("jenisGrid").innerHTML = Object.entries(
+          trashTypes,
+        )
+          .map(
+            ([type, items]) => `
+      <div class="jenis-card" style="--c:${binInfo[type].color}">
+        <h3>${binInfo[type].icon} ${type.toUpperCase()}</h3>
+        <p>${binInfo[type].desc}</p>
+        <ul>
+          ${items.map((i) => `<li><span>${i.emoji}</span> ${i.name}</li>`).join("")}
+        </ul>
+      </div>`,
+          )
+          .join("");
+      }
+
+
+    </script>
+  </body>
+</html>
