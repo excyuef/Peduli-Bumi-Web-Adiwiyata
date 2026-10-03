@@ -1,63 +1,111 @@
-function NavBar() {
-    return (
-        <nav  id="menuNavigasi" class="nav-link">
-            <div class="navmobcontainer">
-                <div class="navmobjdl">
-                    <h1>Navigasi</h1>
-                    <i id="xNavigasi" class="fa-solid fa-xmark"></i>
-                </div>
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 
-                <ul class="navlist">
-                    <li id="navhome">
-                        <a>
-                            <i class="fa-solid fa-house house"></i>
-                            Beranda
-                        </a>
-                    </li>
-                    <li id="navtisi">
-                        <a>
-                            <i class="fa-solid fa-hand-point-up"></i>
-                            Tips & Aksi
-                        </a>
-                    </li>
-                    <li id="navgaleri">
-                        <a>
-                            <i class="fa-solid fa-image images"></i>
-                            Galeri
-                        </a>
-                    </li>
-                    <li id="navtim">
-                        <a>
-                            <i class="fa-solid fa-users teams"></i>
-                            Tim Kami
-                        </a>
-                    </li>
-                    <li id="navgame">
-                        <div id="listnavgame" class="navgim min">
-                            <p id="pNavGame">
-                                <i class="fa-solid fa-gamepad"></i>
-                                Eko Gim
-                                <i id="navcepron" class="fa-solid fa-chevron-right"></i>
-                            </p>
-                            <ul>
-                                <li id="navsuit">
-                                    <a>
-                                    <i class="fa-solid fa-hand-scissors"></i>
-                                    Eko Suit
-                                    </a>
-                                </li>
-                                <li id="navsortir">
-                                    <a>
-                                    <i class="fa-solid fa-sort"></i>
-                                    Eko Sortir
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+const NavItem = ({ label }) => (
+    <NavigationMenuItem>
+        <NavigationMenuLink>
+            {label}
+        </NavigationMenuLink>
+    </NavigationMenuItem>
+)
+
+const GamesMenu = () => (
+    <NavigationMenuItem>
+        <NavigationMenuTrigger>
+            Games
+        </NavigationMenuTrigger>
+
+        <NavigationMenuContent>
+            <NavigationMenuLink>
+                Eko Suit
+            </NavigationMenuLink>
+
+            <NavigationMenuLink>
+                Olah Pilih Sampah
+            </NavigationMenuLink>
+        </NavigationMenuContent>
+    </NavigationMenuItem>
+)
+
+function NavBar() {
+    let menuItems = [
+        { label: "Home", href: "/" },
+        { label: "Tips Dan Aksi", href: "/tips" },
+        { label: "Galeri", href: "/galeri" },
+    ]
+
+    return (
+        <>
+            <div className="hidden md:block">
+                <NavigationMenu>
+                    <NavigationMenuList>
+                        {menuItems.map((item) => {
+                            return (
+                                <NavItem 
+                                key={item.label}
+                                label={item.label} />
+                            )
+                        })}
+                        
+                        <GamesMenu />           
+                    </NavigationMenuList>
+                </NavigationMenu>
             </div>
-        </nav>
+
+            <div className="md:hidden">
+                <Sheet>
+                    <SheetTrigger>
+                        =
+                    </SheetTrigger>
+
+                    <SheetContent
+                    className="!w-50">
+                        <SheetHeader>
+                            <SheetTitle>
+                                Navigation Menu
+                            </SheetTitle>
+                            <SheetDescription>
+                                Take your time.
+                            </SheetDescription>
+                        </SheetHeader>
+                        
+                        <div
+                        className="flex justify-center">
+                            <NavigationMenu>
+                                <NavigationMenuList
+                                className="flex flex-col gap-2">
+                                    {menuItems.map((item) => {
+                                        return (
+                                            <NavItem 
+                                            label={item.label} 
+                                            key={item.label} />
+                                        )
+                                    })}
+
+                                    <GamesMenu />      
+                                </NavigationMenuList>
+                            </NavigationMenu>
+                        </div>
+                    </SheetContent>
+                </Sheet>
+            </div>
+        </>
     )
 }
 
