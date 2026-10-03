@@ -1,23 +1,109 @@
-import { Link } from 'react-router-dom'
-import { Earth, House, Leaf, Image } from 'lucide-react'
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 
-const navItems = [
-    { name: 'Beranda', path: '/', icon: 'House'},
-    { name: 'Tips dan Aksi', path: '/tips-dan-aksi', icon: 'Leaf'},
-    { name: 'Galeri', path: '/galeri', icon: 'Image'}
-]
+const NavItem = ({ label }) => (
+    <NavigationMenuItem>
+        <NavigationMenuLink>
+            {label}
+        </NavigationMenuLink>
+    </NavigationMenuItem>
+)
+
+const GamesMenu = () => (
+    <NavigationMenuItem>
+        <NavigationMenuTrigger>
+            Games
+        </NavigationMenuTrigger>
+
+        <NavigationMenuContent>
+            <NavigationMenuLink>
+                Eko Suit
+            </NavigationMenuLink>
+
+            <NavigationMenuLink>
+                Olah Pilih Sampah
+            </NavigationMenuLink>
+        </NavigationMenuContent>
+    </NavigationMenuItem>
+)
 
 function NavBar() {
-    return (
-        <nav className='w-full h-16 bg-green-500 flex items-center p-4'>
-            <div className='flex items-center gap-1'>
-                <Earth className='text-custom-white font-semibold' />
-                <h1 className='text-custom-white font-semibold text-xl '>PeduliBumi</h1>
-            </div>
-            <div className='w-full'>
+    let menuItems = [
+        { label: "Home", href: "/" },
+        { label: "Tips Dan Aksi", href: "/tips" },
+        { label: "Galeri", href: "/galeri" },
+    ]
 
+    return (
+        <>
+            <div className="hidden md:block">
+                <NavigationMenu>
+                    <NavigationMenuList>
+                        {menuItems.map((item) => {
+                            return (
+                                <NavItem 
+                                key={item.label}
+                                label={item.label} />
+                            )
+                        })}
+                        
+                        <GamesMenu />           
+                    </NavigationMenuList>
+                </NavigationMenu>
             </div>
-        </nav>
+
+            <div className="md:hidden">
+                <Sheet>
+                    <SheetTrigger>
+                        =
+                    </SheetTrigger>
+
+                    <SheetContent
+                    className="w-50!">
+                        <SheetHeader>
+                            <SheetTitle>
+                                Navigation Menu
+                            </SheetTitle>
+                            <SheetDescription>
+                                Take your time.
+                            </SheetDescription>
+                        </SheetHeader>
+                        
+                        <div
+                        className="flex justify-center">
+                            <NavigationMenu>
+                                <NavigationMenuList
+                                className="flex flex-col gap-2">
+                                    {menuItems.map((item) => {
+                                        return (
+                                            <NavItem 
+                                            label={item.label} 
+                                            key={item.label} />
+                                        )
+                                    })}
+
+                                    <GamesMenu />      
+                                </NavigationMenuList>
+                            </NavigationMenu>
+                        </div>
+                    </SheetContent>
+                </Sheet>
+            </div>
+        </>
     )
 }
 
