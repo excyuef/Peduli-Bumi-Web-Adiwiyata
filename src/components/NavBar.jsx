@@ -67,10 +67,6 @@ export default function NavBar() {
             {/* Mobile */}
             <div className="md:hidden">
                 <Sheet>
-                    <SheetTrigger>
-                        =
-                    </SheetTrigger>
-
                     <SheetContent
                     className="w-50!">
                         <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
