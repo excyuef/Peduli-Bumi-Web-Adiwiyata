@@ -5,7 +5,6 @@ function App() {
   
   return (
     <>
-      <p className="bg-red-700">Nice Day</p>
     </>
   )
 }
