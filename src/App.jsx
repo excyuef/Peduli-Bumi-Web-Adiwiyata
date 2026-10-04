@@ -1,17 +1,17 @@
-// import { Routes, Route } from 'react-router-dom'
-// import { useState } from 'react'
+import { Routes, Route } from "react-router-dom"
 import './App.css'
 import NavBar from './components/NavBar'
-import TipsAksi from './pages/TipsAksi.jsx'
 
 function App() {
-  
   return (
-      <div>
-        <NavBar />
-
-        <TipsAksi />
-      </div>
+    <>
+      {/* <Header /> */}
+      <Routes>
+        <Route index element={<NavBar />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </>
   )
 }
 
