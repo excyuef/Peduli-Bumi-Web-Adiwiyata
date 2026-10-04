@@ -31,7 +31,7 @@ const games = [
 const NavItem = ({ label, href }) => (
     <NavigationMenuItem>
         <NavigationMenuLink asChild>
-        <a href={href}>{label}</a>
+            <a href={href}>{label}</a>
         </NavigationMenuLink>
     </NavigationMenuItem>
 )
@@ -75,13 +75,15 @@ export default function NavBar() {
                     className="w-50!">
                         <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
                     </SheetContent>
-                    <SheetContent>
+                    <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
+                    <SheetContent
+                    className="w-50!">
                         <SheetHeader>
                             <SheetTitle>Navigation Menu</SheetTitle>
                             <SheetDescription>Take your time.</SheetDescription>
                         </SheetHeader>
 
-                        <nav className="flex flex-col gap-2 px-4">
+                        <nav className="flex flex-col gap-2">
                             {[...menuItems, ...games].map((item) => (
                                 <SheetClose asChild key={item.href}>
                                     <a href={item.href}>{item.label}</a>
