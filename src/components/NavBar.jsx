@@ -1,24 +1,94 @@
-import { Link } from 'react-router-dom'
-import { Earth, House, Leaf, Image } from 'lucide-react'
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 
-const navItems = [
-    { name: 'Beranda', path: '/', icon: 'House'},
-    { name: 'Tips dan Aksi', path: '/tips-dan-aksi', icon: 'Leaf'},
-    { name: 'Galeri', path: '/galeri', icon: 'Image'}
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+
+const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "Tips Dan Aksi", href: "/tips" },
+    { label: "Galeri", href: "/galeri" },
 ]
 
-function NavBar() {
-    return (
-        <nav className='w-full h-16 bg-green-500 flex items-center p-4'>
-            <div className='flex items-center gap-1'>
-                <Earth className='text-custom-white font-semibold' />
-                <h1 className='text-custom-white font-semibold text-xl '>PeduliBumi</h1>
-            </div>
-            <div className='w-full'>
+const games = [
+    { label: "Eko Suit", href: "/games/eko-suit" },
+    { label: "Olah Pilih Sampah", href: "/games/olah-pilih-sampah" },
+]
 
+const NavItem = ({ label, href }) => (
+    <NavigationMenuItem>
+        <NavigationMenuLink asChild>
+            <a href={href}>{label}</a>
+        </NavigationMenuLink>
+    </NavigationMenuItem>
+)
+
+const GamesMenu = () => (
+    <NavigationMenuItem>
+        <NavigationMenuTrigger>Games</NavigationMenuTrigger>
+        <NavigationMenuContent>
+            {games.map((g) => (
+                <NavigationMenuLink key={g.href} asChild>
+                    <a href={g.href}>{g.label}</a>
+                </NavigationMenuLink>
+            ))}
+        </NavigationMenuContent>
+    </NavigationMenuItem>
+)
+
+export default function NavBar() {
+    return (
+        <>
+            {/* Desktop */}
+            <div className="hidden md:block">
+                <NavigationMenu>
+                    <NavigationMenuList>
+                        {menuItems.map((item) => (
+                            <NavItem key={item.href} {...item} />
+                        ))}
+                        <GamesMenu />
+                    </NavigationMenuList>
+                </NavigationMenu>
             </div>
-        </nav>
+
+            {/* Mobile */}
+            <div className="md:hidden">
+                <Sheet>
+                    <SheetContent
+                    className="w-50!">
+                        <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
+                    </SheetContent>
+                    <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
+                    <SheetContent
+                    className="w-50!">
+                        <SheetHeader>
+                            <SheetTitle>Navigation Menu</SheetTitle>
+                            <SheetDescription>Take your time.</SheetDescription>
+                        </SheetHeader>
+
+                        <nav className="flex flex-col gap-2">
+                            {[...menuItems, ...games].map((item) => (
+                                <SheetClose asChild key={item.href}>
+                                    <a href={item.href}>{item.label}</a>
+                                </SheetClose>
+                            ))}
+                        </nav>
+                    </SheetContent>
+                </Sheet>
+            </div>
+        </>
     )
 }
-
-export default NavBar

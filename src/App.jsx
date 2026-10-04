@@ -1,18 +1,18 @@
-import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { Routes, Route } from "react-router-dom"
 import './App.css'
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/NavBar'
 import Home from './pages/Home.jsx'
-import TipsAksi from './pages/TipsAksi.jsx'
 
 function App() {
-  
   return (
-      <div>
-        <NavBar />
-        <Home />
-        <TipsAksi />
-      </div>
+    <>
+      {/* <Header /> */}
+      <Routes>
+        <Route index element={<Home />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </>
   )
 }
 

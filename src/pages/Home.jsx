@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import '../index.css';
 import { ChevronRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 import heroImg from "../assets/hero.jpg";
 import pemandangan1 from "../assets/pemandangan1.jpg";
 import pemandangan2 from "../assets/pemandangan2.jpg";
 
-// Class tombol dipakai di 3 tempat, jadi ditaruh di satu variabel
 const btn =
-  "relative z-1 mt-4 inline-block cursor-pointer rounded-3xl bg-[#2c2c2c] px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold text-[#f0f0f0] no-underline transition-all duration-300 hover:scale-110 hover:bg-[#333] lg:text-xl lg:rounded-2xl lg:px-5 lg:py-[0.7rem]";
+  "relative z-1 mt-4 inline-block cursor-pointer rounded-3xl bg-[#2c2c2c] px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold text-[#f0f0f0] no-underline transition-all duration-300 hover:scale-110 hover:bg-[#333] lg:text-[17px] lg:rounded-2xl lg:px-5 lg:py-[0.9rem]";
 
-// Tambahkan kutipan lain di sini kalau mau
 const quotes = [
-  "Satu pohon, satu aksi, satu perubahan. Mari kita bersama bergerak, menjaga, dan melestarikan bumi tercinta.",
   "Bumi bukan warisan dari nenek moyang kita, melainkan pinjaman dari anak cucu kita.",
   "Satu pohon, satu aksi, satu perubahan. Mari kita bersama bergerak, menjaga, dan melestarikan bumi tercinta.",
+  "Satu langkah kecil untuk alam bisa jadi langkah besar untuk masa depan.",
   "Hutan yang kita jaga hari ini adalah napas yang akan menyelamatkan esok."
 ];
 
@@ -23,8 +22,7 @@ function Home() {
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-    AOS.refresh();
+    AOS.init({ duration: 1200, once: true });
   }, []);
 
   const nextQuote = () => setQuoteIndex((i) => (i + 1) % quotes.length);
@@ -51,7 +49,7 @@ function Home() {
                 data-aos="fade-left"
                 className="max-w-175 rounded-4xl px-4 py-4 shadow-[0_12px_32px_rgba(31,45,58,0.08)] lg:px-8 lg:py-[1.2rem]"
               >
-                <p className="mb-4 text-xl font-semibold text-[#f0f0f0] lg:text-[1.7rem] lg:text-[#2c2c2c]">
+                <p className="mb-4 text-[16px] font-semibold text-[#f0f0f0] lg:text-[1.7rem] lg:text-[#2c2c2c]">
                   Langkah kecil, perubahan besar untuk bumi.
                   <br />
                   Ayo bersama jaga hutan demi masa depan kita.
@@ -124,25 +122,25 @@ function Home() {
           <div>
             <div
               data-aos="fade-up"
-              className="mb-4 text-center text-[2rem] font-bold"
+              className="mb-8 text-center text-[2rem] font-bold lg:text-4xl"
             >
               Kenapa Harus Bertindak?
             </div>
             <div
               data-aos="fade-up"
-              className="rounded-2xl bg-[#e8f7eb] p-8"
+              className="rounded-2xl bg-[#e8f7eb] p-8 mb-30 lg:mx-30"
             >
               <div>
-                <h3 className="mb-2 text-base font-semibold">
+                <h3 className="mb-2 text-base font-bold lg:text-3xl lg:p-4">
                   Lingkungan adalah warisan.
                 </h3>
-                <p className="text-[0.9rem]">
+                <p className="text-[0.9rem] lg:text-[26px] lg:px-4">
                   Setiap pohon yang diselamatkan, setiap sampah yang dikurangi,
                   menjaga masa depan generasi berikutnya.
                 </p>
               </div>
-              <div className="mt-4">
-                <p className="text-[0.9rem]">
+              <div>
+                <p className="text-[0.9rem] mb-3 lg:text-[26px] lg:px-4">
                   Mulai dari hal kecil: membawa tas sendiri, memilah sampah,
                   ikut kegiatan penghijauan.
                 </p>
