@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ChevronRight } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import heroImg from "../assets/hero.jpg";
 import pemandangan1 from "../assets/pemandangan1.jpg";
 import pemandangan2 from "../assets/pemandangan2.jpg";
@@ -21,7 +23,8 @@ function Home() {
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({ duration: 1000, once: true });
+    AOS.refresh();
   }, []);
 
   const nextQuote = () => setQuoteIndex((i) => (i + 1) % quotes.length);
@@ -64,7 +67,7 @@ function Home() {
         {/* Misi */}
         <section className="mt-4 grid grid-cols-1 gap-y-[3vh] p-[2vh] lg:grid-cols-2 lg:gap-x-[3vh] lg:px-70 lg:py-0">
           <div
-            // data-aos="fade-right"
+            data-aos="fade-right"
             className="rounded-4xl bg-[#a8cba0] p-8 text-[#1b3a1a] lg:max-w-130 lg:p-12"
           >
             <div className="mb-2 text-2xl font-bold lg:text-4xl">
@@ -106,10 +109,10 @@ function Home() {
               <div className="text-[0.5rem]">
                 <p id="quote" className="text-[1rem] lg:text-[1rem]">"{quotes[quoteIndex]}"</p>
                 <button className={`${btn} mr-2`} onClick={quoteBefore}>
-                  {"<=="}
+                  <ChevronLeft />
                 </button>
                 <button className={btn} onClick={nextQuote}>
-                  {"==>"}
+                  <ChevronRight />
                 </button>
               </div>
             </div>
