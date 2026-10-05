@@ -4,6 +4,7 @@ import "aos/dist/aos.css"
 import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Home from './pages/Home.jsx'
+import ImageCard from './components/ImageCarousel.jsx'
 import NavBar from './components/NavBar.jsx'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<ImageCard />} />
         {/* <Route path="about" element={<About />} /> */}
       </Routes>
       {/* <Footer /> */}
