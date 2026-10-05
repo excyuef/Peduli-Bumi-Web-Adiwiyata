@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ChevronRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
-import heroImg from "../assets/images/hero.jpg";
-import pemandangan1 from "../assets/images/pemandangan1.jpg";
-import pemandangan2 from "../assets/images/pemandangan2.jpg";
+import heroImg from "../assets/hero.jpg";
+import pemandangan1 from "../assets/pemandangan1.jpg";
+import pemandangan2 from "../assets/pemandangan2.jpg";
 
 const btn =
   "relative z-1 mt-4 inline-block cursor-pointer rounded-3xl bg-[#2c2c2c] px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold text-[#f0f0f0] no-underline transition-all duration-300 hover:scale-110 hover:bg-[#333] lg:text-[17px] lg:rounded-2xl lg:px-5 lg:py-[0.9rem]";
