@@ -9,8 +9,13 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    }
+  },
   server: {
-    host: true, // <-- Tambahin baris ini supaya bisa diakses via IP jaringan
-    port: 5173  // (Opsional, pastikan port tetap di 5173)
+    host: true,
+    port: 5173
   }
 })
