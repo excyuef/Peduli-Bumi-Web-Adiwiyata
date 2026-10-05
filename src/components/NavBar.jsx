@@ -51,7 +51,7 @@ const GamesMenu = () => (
     <NavigationMenuItem>
         <NavigationMenuTrigger>Games</NavigationMenuTrigger>
 
-        <NavigationMenuContent className="overflow-visible">
+        <NavigationMenuContent>
             {games.map((g) => (
                 <NavigationMenuLink key={g.href} asChild>
                     <Button href={g.href} icon={g.icon}>
