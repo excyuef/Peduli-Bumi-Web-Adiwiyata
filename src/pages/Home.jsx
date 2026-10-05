@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import '../index.css';
+import { useState } from "react";
 import { ChevronRight } from 'lucide-react';
 import { ChevronLeft } from 'lucide-react';
 import heroImg from "../assets/hero.jpg";
@@ -20,10 +17,6 @@ const quotes = [
 
 function Home() {
   const [quoteIndex, setQuoteIndex] = useState(0);
-
-  useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
-  }, []);
 
   const nextQuote = () => setQuoteIndex((i) => (i + 1) % quotes.length);
   const quoteBefore = () =>

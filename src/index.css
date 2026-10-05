@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -10,9 +12,8 @@
 @theme {
   --color-custom-white: #f8f9fa;
 
-  --font-sans: "Poppins", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
-  --font-heading: "Inter Variable", sans-serif;
+  --font-sans: "Baloo 2", sans-serif;
+  --font-heading: "Lilita One", sans-serif;
 }
 
 @theme inline {
@@ -120,70 +121,81 @@
 :root {
   --radius: 0.625rem;
 
-  --background: #EEF5F1;
-  --foreground: #10271C;
+  --background: #fffdf6;
+  --foreground: #2b2118;
 
-  --card: #FFFFFF;
-  --card-foreground: #10271C;
+  --card: #fff8e7;
+  --card-foreground: #2b2118;
 
-  --popover: #FFFFFF;
-  --popover-foreground: #10271C;
+  --popover: #fff8e7;
+  --popover-foreground: #2b2118;
 
-  --primary: #1B7549;
-  --primary-foreground: #FFFFFF;
+  --primary: #4caf50;
+  --primary-foreground: #fffdf6;
 
-  --secondary: #DCEEE4;
-  --secondary-foreground: #10271C;
+  --secondary: #f6c026;
+  --secondary-foreground: #2b2118;
 
-  --muted: #DCEEE4;
-  --muted-foreground: #54685D;
+  --muted: #7b8794;
+  --muted-foreground: #4b5563;
 
-  --accent: #D5EEF1;
-  --accent-foreground: #10271C;
+  --accent: #2f6fd6;
+  --accent-foreground: #fffdf6;
 
-  --destructive: #B3261E;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #e5484d;
+  --destructive-foreground: #fffdf6;
 
-  --border: #D0DFD6;
-  --input: #D0DFD6;
-  --ring: #1B7549;
+  --border: #7b8794;
+  --input: #7b8794;
+  --ring: #4caf50;
 
-  --chart-1: #1B7549;
-  --chart-2: #2A9DAE;
-  --chart-3: #F0BE2C;
-  --chart-4: #54685D;
-  --chart-5: #B3261E;
+  --chart-1: #4caf50;
+  --chart-2: #f6c026;
+  --chart-3: #2f6fd6;
+  --chart-4: #e8862a;
+  --chart-5: #e5484d;
 
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #10271C;
+  --sidebar: #fff8e7;
+  --sidebar-foreground: #2b2118;
+  --sidebar-primary: #4caf50;
+  --sidebar-primary-foreground: #fffdf6;
+  --sidebar-accent: #f6c026;
+  --sidebar-accent-foreground: #2b2118;
+  --sidebar-border: #7b8794;
+  --sidebar-ring: #4caf50;
 
-  --sidebar-primary: #1B7549;
-  --sidebar-primary-foreground: #FFFFFF;
+  --bg: #fffdf6;
+  --surface: #fff8e7;
+  --ink: #2b2118;
+  --muted: #4b5563;
+  --line: #7b8794;
 
-  --sidebar-accent: #DCEEE4;
-  --sidebar-accent-foreground: #10271C;
+  --green: #4caf50;
+  --green-soft: #fff8e7;
 
-  --sidebar-border: #D0DFD6;
-  --sidebar-ring: #1B7549;
+  --bottle: #2f6fd6;
+  --bottle-soft: #fff8e7;
 
-  /* Custom palette */
-  --bg: #EEF5F1;
-  --surface: #FFFFFF;
-  --ink: #10271C;
-  --muted: #54685D;
-  --line: #D0DFD6;
+  --sun: #f6c026;
+  --sun-soft: #fff8e7;
+  --sun-in: #2b2118;
 
-  --green: #1B7549;
-  --green-soft: #DCEEE4;
+  --danger: #e5484d;
 
-  --bottle: #2A9DAE;
-  --bottle-soft: #D5EEF1;
-
-  --sun: #F0BE2C;
-  --sun-soft: #FCF0C8;
-  --sun-ink: #5E4500;
-
-  --danger: #B3261E;
+  --ink:#2b2118; 
+  --cream:#fff8e7; 
+  --paper:#fffdf6;
+  --organik:#4caf50; 
+  --organik-d:#2e7d32;
+  --anorganik:#f6c026; 
+  --anorganik-d:#c99700;
+  --b3:#e5484d; 
+  --b3-d:#a8262b;
+  --residu:#7b8794; 
+  --residu-d:#4b5563;
+  --player:#2f6fd6; 
+  --cpu:#d64545; 
+  --clock:#e8862a;
 }
 
 .dark {
