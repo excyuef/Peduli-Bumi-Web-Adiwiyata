@@ -23,8 +23,8 @@ import {
 } from "@/components/ui/sheet";
 
 const menuItems = [
-    { label: "Home", href: "/", icon: House },
-    { label: "Tips Dan Aksi", href: "/tips", icon: Search },
+    { label: "Beranda", href: "/", icon: House },
+    { label: "Tips Dan Aksi", href: "/tips-dan-aksi", icon: Search },
     { label: "Galeri", href: "/galeri", icon: Images },
 ];
 

@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx'
 import ImageCard from './components/ImageCarousel.jsx'
 import TipsAksi from './pages/TipsAksi.jsx'
 import NavBar from './components/NavBar.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/tips-dan-aksi' element={<TipsAksi />} />
       </Routes>
+      <Footer />
     </>
   )
 }
