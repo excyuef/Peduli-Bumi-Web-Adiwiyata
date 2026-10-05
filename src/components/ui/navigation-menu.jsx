@@ -43,7 +43,7 @@ function NavigationMenuItem({ className, ...props }) {
 }
 
 const navigationMenuTriggerStyle = cva(
-    "group/navigation-menu-trigger ml-1 inline-flex w-max items-center justify-center rounded-lg px-2 py-1 text-sm font-medium transition-all outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 bg-white text-foreground border-foreground border-3 rounded-lg hover:shadow-[0_1px_0_var(--ink)] hover:translate-y-[2px] shadow-[0_3px_0_var(--ink)] font-semibold",
+    "group/navigation-menu-trigger ml-1 inline-flex w-max items-center justify-center rounded-lg px-2 py-1 text-sm font-medium transition-all outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 bg-white text-foreground border-foreground border-3 rounded-lg hover:shadow-[0_1px_0_var(--ink)] hover:translate-y-[2px] shadow-[0_3px_0_var(--ink)] font-semibold hover:bg-secondary",
     // data-open:hover:bg-muted data-open:focus:bg-muted data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted data-open:bg-muted/50 hover:bg-muted focus:bg-muted"
 );
 
