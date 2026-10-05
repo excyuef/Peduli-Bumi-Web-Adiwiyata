@@ -12,9 +12,9 @@ function TipsAksi() {
             </hero>
             <div className='bg-linear-to-b from-green-500 to to-custom-white w-full h-4'></div>
             <div className='bg-custom-white h-80 p-8'>
-                <h1 className='text-xl font-bold '>Hal Yang Dapat Kamu Lakukan Untuk Merawat Bumi</h1>
-                <div>
-                    <div className='bg-green-500'></div>
+                <h1 className='text-xl font-bold text-center mb-4'>Hal Yang Dapat Kamu Lakukan Untuk Merawat Bumi</h1>
+                <div className='bg-red-500 w-full h-48'>
+                    <div className='bg-green-500 w-[50%] h-48'></div>
                 </div>
             </div>
         </div>
