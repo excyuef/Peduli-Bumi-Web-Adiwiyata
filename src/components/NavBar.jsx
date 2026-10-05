@@ -1,3 +1,6 @@
+import { cn } from "@/lib/utils";
+import { House, Search, Images, Gamepad, Gamepad2 } from "lucide-react"
+
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -13,27 +16,28 @@ import {
     Sheet,
     SheetClose,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
 
 const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Tips Dan Aksi", href: "/tips" },
-    { label: "Galeri", href: "/galeri" },
+    { label: "Home", href: "/", icon: House },
+    { label: "Tips Dan Aksi", href: "/tips", icon: Search },
+    { label: "Galeri", href: "/galeri", icon: Images },
 ];
 
 const games = [
-    { label: "Eko Suit", href: "/games/eko-suit" },
-    { label: "Olah Pilih Sampah", href: "/games/olah-pilih-sampah" },
+    { label: "Eko Suit", href: "/games/eko-suit", icon: Gamepad },
+    { label: "Olah Pilih Sampah", href: "/games/olah-pilih-sampah", icon: Gamepad2 },
 ];
 
-const NavItem = ({ label, href }) => (
+const NavItem = ({ label, href, icon }) => (
     <NavigationMenuItem>
         <NavigationMenuLink className="" asChild>
-            <Button href={href}>{label}</Button>
+            <Button href={href} icon={icon}>
+                {label}
+            </Button>
         </NavigationMenuLink>
     </NavigationMenuItem>
 );
@@ -42,10 +46,13 @@ const GamesMenu = () => (
     <NavigationMenuItem>
         <NavigationMenuTrigger>Games</NavigationMenuTrigger>
 
-        <NavigationMenuContent>
+        <NavigationMenuContent
+        className="overflow-visible">
             {games.map((g) => (
                 <NavigationMenuLink key={g.href} asChild>
-                    <Button href={g.href}>{g.label}</Button>
+                    <Button href={g.href} icon={g.icon}>
+                        {g.label}
+                    </Button>
                 </NavigationMenuLink>
             ))}
         </NavigationMenuContent>
@@ -55,11 +62,11 @@ const GamesMenu = () => (
 const logoChildStyle =
     "border-3 shadow-[0_3px_0_var(--ink)] border-foreground rounded-sm p-1";
 
-const Logo = () => (
-    <>
-        <div className="flex items-center gap-2" id="titleBins">
+const Logo = ({place}) => (
+    <div className="flex flex-col md:flex-row items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2" id="titleBins">
             <span className={`bg-[#4caf50] rotate-6 ${logoChildStyle}`}>
-                <svg viewBox="0 0 64 64" aria-hidden="true" className="size-6">
+                <svg viewBox="0 0 64 64" aria-hidden="true" className="md:size-5 size-4">
                     <g
                         fill="none"
                         stroke="#2b2118"
@@ -76,8 +83,8 @@ const Logo = () => (
                 </svg>
             </span>
 
-            <span className={`bg-[#f6c026] rotate-6 ${logoChildStyle}`}>
-                <svg viewBox="0 0 64 64" aria-hidden="true" className="size-6">
+            <span className={`bg-[#f6c026] rotate-355 ${logoChildStyle}`}>
+                <svg viewBox="0 0 64 64" aria-hidden="true" className="md:size-5 size-4">
                     <g
                         fill="none"
                         stroke="#2b2118"
@@ -102,7 +109,7 @@ const Logo = () => (
             </span>
 
             <span className={`bg-[#e5484d] rotate-6 ${logoChildStyle}`}>
-                <svg viewBox="0 0 64 64" aria-hidden="true" className="size-6">
+                <svg viewBox="0 0 64 64" aria-hidden="true" className="md:size-5 size-4">
                     <g
                         fill="none"
                         stroke="#2b2118"
@@ -118,7 +125,7 @@ const Logo = () => (
             </span>
 
             <span className={`bg-[#7b8794] rotate-355 ${logoChildStyle}`}>
-                <svg viewBox="0 0 64 64" aria-hidden="true" className="size-6">
+                <svg viewBox="0 0 64 64" aria-hidden="true" className="md:size-5 size-4">
                     <g
                         fill="none"
                         stroke="#2b2118"
@@ -137,10 +144,12 @@ const Logo = () => (
             </span>
         </div>
         <h1
-		className="font-['Lilita_One'] font-normal text-[clamp(30px,5vw,35px)] leading-none text-(--organik) [text-shadow:3px_3px_0_var(--ink)] tracking-[1px]">
+		className={cn("font-heading font-normal text-[clamp(30px,5vw,35px)] leading-none text-(--organik) [text-shadow:3px_3px_0_var(--ink)] tracking-[1px]",
+        place ===  true ? "" : "hidden"
+        )}>
 			Peduli Bumi
 		</h1>
-    </>
+    </div>
 );
 
 export default function NavBar() {
@@ -148,9 +157,7 @@ export default function NavBar() {
         <>
             {/* Desktop */}
             <div className="hidden md:flex md:fixed left-0 right-0 top-0 z-50 justify-between px-3 py-2 bg-background">
-                <div className="flex justify-center items-center gap-2">
-                    <Logo />
-                </div>
+                <Logo place={true} />
                 <NavigationMenu>
                     <NavigationMenuList>
                         {menuItems.map((item) => (
@@ -162,19 +169,28 @@ export default function NavBar() {
             </div>
 
             {/* Mobile */}
-            <div className="md:hidden flex items-end justify-end px-3 py-2">
+            <div className="md:hidden fixed flex left-3 right-3 top-3 z-50 items-center justify-between px-3 py-3 bg-background border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
+                <Logo place={false} />
                 <Sheet>
-                    <SheetTrigger aria-label="Open menu">☰</SheetTrigger>
-                    <SheetContent className="w-50!">
+                    <SheetTrigger aria-label="Open menu">
+                        <Button>
+                            Menu
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent className="w-55! mt-3 mr-3 border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
                         <SheetHeader>
-                            <SheetTitle>Navigation Menu</SheetTitle>
-                            <SheetDescription>Take your time.</SheetDescription>
+                            <SheetTitle>
+                                <Logo place={true} />
+                            </SheetTitle>
+                            {/* <SheetDescription>Take your time.</SheetDescription> */}
                         </SheetHeader>
 
                         <nav className="flex flex-col gap-2">
                             {[...menuItems, ...games].map((item) => (
                                 <SheetClose asChild key={item.href}>
-                                    <a href={item.href}>{item.label}</a>
+                                    <Button href={item.href} icon={item.icon}>
+                                        {item.label}
+                                    </Button>
                                 </SheetClose>
                             ))}
                         </nav>

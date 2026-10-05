@@ -7,7 +7,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white text-foreground border-foreground border-3 rounded-lg hover:shadow-[0_1px_0_var(--ink)] hover:translate-y-[2px] shadow-[0_3px_0_var(--ink)] font-semibold",
+        default: "bg-white text-foreground border-foreground border-3 rounded-lg hover:shadow-[0_1px_0_var(--ink)] hover:translate-y-[2px] shadow-[0_3px_0_var(--ink)] font-semibold hover:bg-secondary",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
@@ -41,6 +41,7 @@ const buttonVariants = cva(
 
 function Button({
   className,
+  icon: Icon,
   variant = "default",
   size = "default",
   ...props
@@ -50,7 +51,10 @@ function Button({
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {Icon && <Icon strokeWidth={3} />}
+      {props.children}
+    </ButtonPrimitive>
   )
 }
 
