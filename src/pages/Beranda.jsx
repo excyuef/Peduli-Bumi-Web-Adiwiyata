@@ -3,8 +3,8 @@ import { MoveUpRight } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import heroImg from "../assets/hero.jpg";
-import pemandangan1 from "../assets/images/pemandangan1.jpg";
-import pemandangan2 from "../assets/images/pemandangan2.jpg";
+import pemandangan1 from "../assets/pemandangan1.jpg";
+import pemandangan2 from "../assets/pemandangan2.jpg";
 
 const btn =
   "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer bg-primary border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold text-foreground no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-[#62CD63] hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
