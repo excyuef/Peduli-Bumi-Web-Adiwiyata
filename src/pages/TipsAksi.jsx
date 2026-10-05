@@ -10,8 +10,12 @@ function TipsAksi() {
                     <p className='text-sm text-center text-black sm:text-base md:text-xl  lg:text-2xl'>Langkah nyata dimulai dari kesadaran kolektif dalam mengurangi, memilah, dan mengolah sampah.</p>
                 </div>
             </hero>
-            <div className='bg-custom-white h-80'>
-
+            <div className='bg-linear-to-b from-green-500 to to-custom-white w-full h-4'></div>
+            <div className='bg-custom-white h-80 p-8'>
+                <h1 className='text-xl font-bold '>Hal Yang Dapat Kamu Lakukan Untuk Merawat Bumi</h1>
+                <div>
+                    <div className='bg-green-500'></div>
+                </div>
             </div>
         </div>
     )
