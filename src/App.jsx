@@ -3,10 +3,10 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { Routes, Route } from "react-router-dom"
 import './App.css'
-import Home from './pages/Home.jsx'
-import ImageCard from './components/ImageCarousel.jsx'
-import TipsAksi from './pages/TipsAksi.jsx'
 import NavBar from './components/NavBar.jsx'
+import Beranda from './pages/Beranda.jsx'
+import TipsAksi from './pages/TipsAksi'
+import ImageCard from './components/ImageCarousel'
 import Footer from './components/Footer.jsx'
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route index element={<ImageCard />} />
+        <Route index element={<Beranda />} />
         {/* <Route path="about" element={<About />} /> */}
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<ImageCard />} />
         <Route path='/tips-dan-aksi' element={<TipsAksi />} />
       </Routes>
       <Footer />
