@@ -68,13 +68,13 @@ function Home() {
             data-aos="fade-right"
             className="rounded-4xl bg-[#a8cba0] p-8 text-[#1b3a1a] lg:max-w-130 lg:p-12"
           >
-            <div className="mb-2 text-2xl font-bold lg:text-4xl">
+            <div className="mb-2 text-2xl font-bold md:text-3xl">
               <p>
-                Our Mission
+                Misi Kami
                 <br />
-                To Achieve
+                Untuk Memperoleh
                 <br />
-                Peace
+                Kedamaian
               </p>
             </div>
             <div className="text-left text-[13px] lg:text-[19px]">
