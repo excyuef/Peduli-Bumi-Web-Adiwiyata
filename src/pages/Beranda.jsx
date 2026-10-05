@@ -64,7 +64,7 @@ function Beranda() {
 
         <div
           aria-hidden="true"
-          className="overflow-hidden whitespace-nowrap border-y-4 border-black bg-foreground py-3 text-center font-heading text-lg uppercase text-[#fff8e7] md:text-2xl"
+          className="border-y-4 border-black bg-foreground px-4 py-3 text-center font-heading text-sm uppercase text-[#fff8e7] sm:text-lg md:whitespace-nowrap md:text-2xl"
         >
           Pilah • Olah • Reduce • Reuse • Recycle
         </div>
