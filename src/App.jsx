@@ -1,17 +1,28 @@
-import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+import { Routes, Route } from "react-router-dom"
 import './App.css'
+import Home from './pages/Home.jsx'
 import NavBar from './components/NavBar.jsx'
-import TipsAksi from './pages/TipsAksi.jsx'
 
 function App() {
-  
-  return (
-      <div>
-        <NavBar />
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    })
+  }, [])
 
-        <TipsAksi />
-      </div>
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        <Route index element={<Home />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </>
   )
 }
 
