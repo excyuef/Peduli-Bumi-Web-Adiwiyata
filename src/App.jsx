@@ -3,7 +3,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { Routes, Route } from "react-router-dom"
 import './App.css'
-import Home from './pages/Home.jsx'
+import Beranda from './pages/Beranda.jsx'
 import NavBar from './components/NavBar.jsx'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<Beranda />} />
         {/* <Route path="about" element={<About />} /> */}
       </Routes>
       {/* <Footer /> */}
