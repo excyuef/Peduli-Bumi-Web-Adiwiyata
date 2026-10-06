@@ -18,7 +18,7 @@ export default function Gallery() {
     let dataCount = data.length;
 
     return (
-        <div className={`flex flex-col gap-6 ${padding} pt-24`}>
+        <div className={`flex flex-col gap-6 ${padding} pt-24 pb-12`}>
             <div className="flex flex-col gap-4">
                 <h1 className="font-heading text-3xl">
                     BUKAN CUMA WACANA. INI AKSINYA!
