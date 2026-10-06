@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { MapPin, CalendarDays } from "lucide-react";
 
-import Jenis from "@/components/Jenis"
+import Category from "@/components/Category";
 
 export default function ImageCard({
-    name = "Sungai bersih hati happy",
-    desc = "Siswa, guru, dan warga turun bersama merawat sungai. Sebanyak 180 kg sampah berhasil diangkat dan dipilah.",
-    image = "https://placedog.net/400/400",
+    name,
+    desc,
+    image,
+    categoryId,
+    date,
+    location,
 }) {
     const [liked, setLiked] = useState(false);
 
     return (
-        <div className="w-full h-96 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] group ease duration-100 transition-all p-2">
+        <div className="w-full h-102 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] group ease duration-100 transition-all p-2">
             <div className="h-full w-full rounded-lg overflow-hidden group-hover:h-36 transition-all border-3 border-foreground">
                 <img
                     src={image}
@@ -41,27 +44,33 @@ export default function ImageCard({
             </div>
 
             <div className="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in flex flex-col gap-1 items-start justify-center mt-3 px-1">
-                <Content name={name} desc={desc}/>
+                <Content
+                    categoryId={categoryId}
+                    name={name}
+                    desc={desc}
+                    date={date}
+                    location={location}
+                />
             </div>
         </div>
     );
 }
 
-const Content = ({name ,desc}) => (
+const Content = ({ categoryId, name, desc, date, location }) => (
     <>
-        <Jenis bg="bg-primary">Edukasi</Jenis>
+        <Category id={categoryId} size="xs" isLabel={true}></Category>
         <h3 className="text-xl font-heading text-black">{name}</h3>
 
         <div className="flex gap-1 items-center">
             <CalendarDays strokeWidth={3} size={18} />
-            <span className="text-sm font-medium">8 Januari 2009</span>
+            <span className="text-sm font-medium">{date}</span>
         </div>
 
         <div className="flex gap-1 items-center">
             <MapPin strokeWidth={3} size={18} />
-            <span className="text-sm font-medium">SMKN 46 Jakarta</span>
+            <span className="text-sm font-medium">{location}</span>
         </div>
 
-        <p className="text-sm font-medium text-gray-500 mt-2">{desc}</p>
+        <p className="text-sm font-medium text-gray-500 mt-2"> {desc}</p>
     </>
 );

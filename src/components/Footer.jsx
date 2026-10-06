@@ -5,7 +5,7 @@ import { padding } from '@/lib/styles'
 
 function Footer() {
     return (
-        <footer className={`bg-custom-brown w-full h-auto p-4 flex flex-col text-custom-white gap-4 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-6 ${padding} justify-between`}>
+        <footer className={`bg-custom-brown w-full h-auto p-4 flex flex-col text-custom-white gap-4 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-6 ${padding} justify-between mt-12`}>
             <div className=''>
                 <Logo place={false}  />
                 <h1 className='text-3xl font-heading font-black text-center'>PEDULIBUMI</h1>
@@ -25,7 +25,7 @@ function Footer() {
                     <br></br>
                     <Link to='/games/suit-alam' className='hover:text-custom-yellow inline'>Suit Alam</Link>
                     <br></br>
-                    <a href='' className='hover:text-custom-yellow inline'>Pilah Sampah</a>
+                    <a href='https://game-pilah-sampah-swart.vercel.app/' className='hover:text-custom-yellow inline'>Pilah Sampah</a>
                 </div>
             </div>
             <div className='border-t border-custom-white pt-4 md:col-span-3 '>

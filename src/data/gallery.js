@@ -7,7 +7,7 @@ import gambar6 from '@/assets/06-panen-eco-enzyme-menuang-hasil-fermentasi'
 import gambar7 from '@/assets/07-mural-taman-toga-karya-dkv-di-area-biopori'
 import gambar8 from '@/assets/08-penyiraman-tanaman-dengan-larutan-eco-enzyme'
 
-const galleryData = [
+export const galleryData = [
   {
     id: 1,
     name: "Wadah Pilah Sampah di Area Taman",

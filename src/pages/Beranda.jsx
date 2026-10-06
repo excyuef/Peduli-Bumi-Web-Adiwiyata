@@ -4,8 +4,8 @@ import { ChevronLeft } from "lucide-react";
 import { padding } from "@/lib/styles";
 import { quotes } from "@/data/quotes.js";
 import heroImg from "@/assets/hero.jpg";
-import pemandangan1 from "@/assets/pemandangan1.jpg";
-import pemandangan2 from "@/assets/pemandangan2.jpg";
+import foto3r from "@/assets/foto-3r.jpg";
+import fotokertas from "@/assets/kertas-banyak.jpg";
 import GarisPolisi from "@/components/GarisPolisi.jsx";
 
 const btn =
@@ -98,13 +98,13 @@ function Beranda() {
           >
             <div
               className="h-56 border-3 border-black shadow-[4px_4px_0_#2b2118] bg-cover bg-center bg-no-repeat sm:h-72 lg:h-auto lg:min-h-64"
-              style={{ backgroundImage: `url(${pemandangan1})` }}
+              style={{ backgroundImage: `url(${foto3r})` }}
             ></div>
 
             <div className="grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-6">
               <div
                 className="h-48 border-3 border-black shadow-[4px_4px_0_#2b2118] bg-cover bg-center bg-no-repeat md:h-auto md:min-h-48"
-                style={{ backgroundImage: `url(${pemandangan2})` }}
+                style={{ backgroundImage: `url(${fotokertas})` }}
               ></div>
               <div className="text-[0.5rem]">
                 <p id="quote" className="text-[1rem] lg:text-[1rem]">
