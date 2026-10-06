@@ -16,8 +16,8 @@ export default function Category({
         <Tag
             {...(!isLabel && { type: "button", onClick })}
             className={cn(
-                "inline-block px-3 py-1 rounded-2xl border-3 border-foreground font-semibold",
-                "transition-all duration-150 ease-out motion-reduce:transition-none",
+                "inline-block px-3 py-1 border-3 border-foreground font-semibold",
+                "transition-all duration-150 ease-out motion-reduce:transition-none mb-2",
                 {
                     "text-xs": size === "xs",
                     "text-sm": size === "sm",
