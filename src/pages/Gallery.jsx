@@ -39,7 +39,8 @@ export default function Gallery() {
             </div>
 
             <div className="text-sm">
-                {data.length} cerita pilihan dari {categories.length - 1} jenis kegiatan
+                {data.length} cerita pilihan dari {categories.length - 1} jenis
+                kegiatan
             </div>
 
             <div
