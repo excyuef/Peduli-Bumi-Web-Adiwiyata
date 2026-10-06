@@ -45,7 +45,7 @@ export default function Gallery() {
             </div>
 
             <div
-                className={`grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6 ${padding}`}
+                className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 ${padding}`}
             >
                 {data.map((item, index) => {
                     return (

@@ -10,7 +10,7 @@ import GarisPolisi from "@/components/GarisPolisi.jsx";
 import { Link } from 'react-router-dom'
 
 const btn =
-  "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-[#] hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
+  "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-[0.9rem] lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
 
 function Beranda() {
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -25,8 +25,8 @@ function Beranda() {
         <section
           className={`overflow-hidden bg-[#ebebeb] px-4 pt-6 pb-2 ${padding}`}
         >
-          <div className="grid-cols-1 block lg:grid lg:grid-cols-2 md:px-4">
-            <div className="lg:py-15">
+          <div className="grid-cols-1 block md:px-4 lg:grid lg:grid-cols-2">
+            <div className="sm:px-4 lg:py-15">
               <h1
                 data-aos="fade-up"
                 className="font-heading text-[#2e2e2e] uppercase wrap-break-word text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-7xl"
@@ -55,7 +55,7 @@ function Beranda() {
               <img
                 src={heroImg}
                 alt="Kondisi saat ini"
-                className="mx-auto h-auto max-w-full md:mx-16 lg:mx-0 lg:pl-35"
+                className="h-auto max-w-full lg:mx-0 lg:pl-35"
               />
             </div>
           </div>
