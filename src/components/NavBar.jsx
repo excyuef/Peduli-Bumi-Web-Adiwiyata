@@ -31,10 +31,10 @@ const menuItems = [
 ];
 
 const games = [
-    { label: "Eko Suit", href: "/games/eko-suit", icon: Gamepad },
+    { label: "Suit Alam", href: "/games/suit-alam", icon: Gamepad },
     {
-        label: "Olah Pilih Sampah",
-        href: "/games/olah-pilih-sampah",
+        label: "Pilah Sampah",
+        href: "https://game-pilah-sampah-swart.vercel.app/",
         icon: Gamepad2,
     },
 ];

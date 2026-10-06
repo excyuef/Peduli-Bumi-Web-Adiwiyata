@@ -23,9 +23,9 @@ function Footer() {
                     <br></br>
                     <Link to='/galeri' className='hover:text-custom-yellow inline'>Galeri</Link>
                     <br></br>
-                    <Link to='/eko-suit' className='hover:text-custom-yellow inline'>Eko Suit</Link>
+                    <Link to='/games/suit-alam' className='hover:text-custom-yellow inline'>Suit Alam</Link>
                     <br></br>
-                    <Link to='/eko-pilah' className='hover:text-custom-yellow inline'>Pilah Sampah</Link>
+                    <a href='' className='hover:text-custom-yellow inline'>Pilah Sampah</a>
                 </div>
             </div>
             <div className='border-t border-custom-white pt-4 md:col-span-3 '>
