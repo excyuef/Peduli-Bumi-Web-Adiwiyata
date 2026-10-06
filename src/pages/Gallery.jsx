@@ -39,11 +39,9 @@ export default function Gallery() {
                 })}
             </div>
 
-            <div className="text-sm">
+            <div className="text-sm" data-aos="fade-up">
                 {data.length} cerita pilihan dari {categories.length - 1} jenis
                 kegiatan
-            <div className="text-sm" data-aos="fade-up">
-                {dataCount} cerita pilihan dari 6 jenis kegiatan
             </div>
 
             <div
