@@ -9,6 +9,8 @@ import Recycle from "../assets/recycle.svg?react";
 
 import { ShieldCheck } from "lucide-react";
 
+import { padding } from '@/lib/styles'
+
 const iconMap = {
     Organik,
     Anorganik,
@@ -119,7 +121,7 @@ function TrashCard({ jenis, sub, img, bg, sampah, tips }) {
 
 function Hero() {
     return (
-        <hero className="w-full h-auto bg-custom-white flex flex-col py-20 pt-28 px-4 gap-4">
+        <div className="w-full h-auto bg-custom-white flex flex-col py-20 pt-28 px-4 gap-4 sm:px-6 md:px-8 lg:px12 xl:px-16">
             <div>
                 <h1 className="font-heading text-5xl mb-4">
                     SALAH BUANG? TIDAK LAGI
@@ -153,7 +155,7 @@ function Hero() {
                     dicampur atau dibakar.
                 </p>
             </div>
-        </hero>
+        </div>
     );
 }
 
@@ -192,7 +194,7 @@ function RCard({ no, icon, judul, sub, caption, tips, className = "" }) {
 
 function Main() {
     return (
-        <div className="w-full h-auto bg-custom-green flex flex-col p-4 py-12 gap-4 border-t-3 border-black">
+        <div className={`w-full h-auto bg-custom-green flex flex-col p-4 py-12 gap-4 border-t-3 border-black ${padding} `}>
             <div>
                 <h1 className="font-heading text-5xl mb-4">
                     3R BUKAN CUMA SLOGAN
