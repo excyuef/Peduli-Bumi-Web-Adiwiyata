@@ -9,13 +9,11 @@ export default function Gallery() {
     const [selectedCategory, setSelectedCategory] = useState("semua");
     const [selectedActiveId, setActiveId] = useState(null);
 
-    let data = gallery.filter((g) => {
+    const data = gallery.filter((g) => {
         return selectedCategory === "semua"
             ? true
             : g.categoryId === selectedCategory;
     });
-
-    let dataCount = data.length;
 
     return (
         <div className={`flex flex-col gap-6 ${padding} pt-24 pb-12`}>
@@ -41,6 +39,9 @@ export default function Gallery() {
                 })}
             </div>
 
+            <div className="text-sm">
+                {data.length} cerita pilihan dari {categories.length - 1} jenis
+                kegiatan
             <div className="text-sm" data-aos="fade-up">
                 {dataCount} cerita pilihan dari 6 jenis kegiatan
             </div>

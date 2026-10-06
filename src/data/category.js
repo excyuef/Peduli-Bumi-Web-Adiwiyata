@@ -4,16 +4,16 @@ export const categories = [
         bg: "bg-primary",
         label: "Semua",
     },
-    {
-        id: "dokumen",
-        bg: "bg-muted",
-        label: "Dokumen",
-    },
-    {
-        id: "tanam-pohon",
-        bg: "bg-accent",
-        label: "Tanam Pohon",
-    },
+    // {
+    //     id: "dokumen",
+    //     bg: "bg-muted",
+    //     label: "Dokumen",
+    // },
+    // {
+    //     id: "tanam-pohon",
+    //     bg: "bg-accent",
+    //     label: "Tanam Pohon",
+    // },
     {
         id: "bersih-bersih",
         bg: "bg-secondary",
