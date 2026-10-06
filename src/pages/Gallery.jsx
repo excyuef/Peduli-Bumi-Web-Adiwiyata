@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GalleryImageCard from "@/components/GalleryImageCard";
+import ImageCard from "@/components/GalleryImageCard";
 import { padding } from "@/lib/styles";
 import Category from "@/components/Category";
 import { categories } from "@/data/category";
@@ -7,6 +7,7 @@ import { gallery } from "@/data/gallery";
 
 export default function Gallery() {
     const [selectedCategory, setSelectedCategory] = useState("semua");
+    const [selectedActiveId, setActiveId] = useState(null);
 
     let data = gallery.filter((g) => {
         return selectedCategory === "semua"
@@ -17,7 +18,7 @@ export default function Gallery() {
     let dataCount = data.length;
 
     return (
-        <div className={`flex flex-col gap-6 ${ padding } pt-24`}>
+        <div className={`flex flex-col gap-6 ${padding} pt-24`}>
             <div className="flex flex-col gap-4">
                 <h1 className="font-heading text-3xl">
                     BUKAN CUMA WACANA. INI AKSINYA!
@@ -43,13 +44,23 @@ export default function Gallery() {
                 {dataCount} cerita pilihan dari 6 jenis kegiatan
             </div>
 
-            <div className={`grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6 ${padding}`}>
+            <div
+                className={`grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6 ${padding}`}
+            >
                 {data.map((item) => {
                     return (
-                        <GalleryImageCard
+                        <ImageCard
                             key={item.id}
+                            isActive={item.id === selectedActiveId}
+                            onClick={() => {
+                                setActiveId(
+                                    selectedActiveId === item.id
+                                        ? null
+                                        : item.id,
+                                );
+                            }}
                             {...item}
-                        ></GalleryImageCard>
+                        ></ImageCard>
                     );
                 })}
             </div>
