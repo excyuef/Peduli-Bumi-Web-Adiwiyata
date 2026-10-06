@@ -14,7 +14,7 @@ export default function ImageCard({
     const [liked, setLiked] = useState(false);
 
     return (
-        <div className="w-full h-full overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] group ease duration-100 transition-all p-2">
+        <div className="w-full h-102 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] group ease duration-100 transition-all p-2">
             <div className="h-full w-full rounded-lg overflow-hidden group-hover:h-36 transition-all border-3 border-foreground">
                 <img
                     src={image}

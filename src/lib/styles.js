@@ -1,1 +1,1 @@
-export const padding = "sm:px-6 md:px-10 lg:px-18 xl:px-24"
+export const padding = "px-3 md:px-6 lg:px-12 xl:px-18"
