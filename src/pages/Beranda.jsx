@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
+import { padding } from '@/lib/styles';
 import heroImg from "../assets/hero.jpg";
 import pemandangan1 from "../assets/pemandangan1.jpg";
 import pemandangan2 from "../assets/pemandangan2.jpg";
 
 const btn =
-  "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer bg-primary border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold text-foreground no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-[#62CD63] hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
+  "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-[#] hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
 
 const quotes = [
   "Bumi bukan warisan dari nenek moyang kita, melainkan pinjaman dari anak cucu kita.",
@@ -26,12 +27,12 @@ function Beranda() {
     <>
       <main className="mt-20 overflow-x-hidden bg-background">
         {/* Hero */}
-        <section className="overflow-hidden bg-[#ebebeb] px-4 pt-6 pb-2 md:px-2">
+        <section className={`overflow-hidden bg-[#ebebeb] px-4 pt-6 pb-2 ${padding}`}>
           <div className="grid-cols-1 block lg:grid lg:grid-cols-2 md:px-4">
             <div className="lg:py-15">
               <h1
                 data-aos="fade-up"
-                className="font-heading text-[#2e2e2e] uppercase wrap-break-word text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl"
+                className="font-heading text-[#2e2e2e] uppercase wrap-break-word text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-7xl"
               >
                 <span>Jaga bumi, olah sampahmu.</span>
               </h1>
@@ -44,7 +45,7 @@ function Beranda() {
                 untuk bumi yang lebih bersih.
               </p>
               <div data-aos="fade-up" data-aos-delay="200">
-                <a className={btn}>Jelajahi Tips &amp; Aksi</a>
+                <a className={`${btn} bg-secondary`}>Jelajahi Tips &amp; Aksi</a>
               </div>
             </div>
             <div
@@ -55,7 +56,7 @@ function Beranda() {
               <img
                 src={heroImg}
                 alt="Kondisi saat ini"
-                className="mx-auto h-auto max-w-full md:mx-20 lg:mx-0 lg:pl-35"
+                className="mx-auto h-auto max-w-full md:mx-16 lg:mx-0 lg:pl-35"
               />
             </div>
           </div>
@@ -72,7 +73,7 @@ function Beranda() {
         <section className="mt-4 grid grid-cols-1 gap-y-6 p-4 md:px-15 lg:grid-cols-2 lg:gap-x-6 lg:mt-6 lg:px-12 lg:py-0 xl:px-40 2xl:px-70">
           <div
             data-aos="fade-right"
-            className="bg-accent border-3 border-black p-6 shadow-[4px_4px_0_#2b2118] text-background sm:p-8 lg:max-w-130 lg:p-12"
+            className="bg-primary border-3 border-black p-6 shadow-[4px_4px_0_#2b2118] text-background sm:p-8 lg:max-w-130 lg:p-12"
           >
             <div className="mb-2 text-2xl font-medium font-heading md:text-3xl">
               <p>
@@ -89,7 +90,7 @@ function Beranda() {
                 lingkungan dengan memberikan edukasi, informasi, dan aksi nyata
                 demi terciptanya bumi yang lebih hijau dan berkelanjutan.
               </p>
-              <a id="btnMisi" className={btn}>
+              <a id="btnMisi" className={`${btn} bg-secondary text-foreground`}>
                 Aksi Kami
               </a>
             </div>
@@ -114,10 +115,10 @@ function Beranda() {
                 <p id="quote" className="text-[1rem] lg:text-[1rem]">
                   "{quotes[quoteIndex]}"
                 </p>
-                <button className={`${btn} mr-2 mt-3`} onClick={quoteBefore}>
+                <button className={`${btn} bg-muted text-background mr-2 mt-3`} onClick={quoteBefore}>
                   <ChevronLeft />
                 </button>
-                <button className={`${btn} mt-3`} onClick={nextQuote}>
+                <button className={`${btn} bg-muted text-background mt-3`} onClick={nextQuote}>
                   <ChevronRight />
                 </button>
               </div>
@@ -152,7 +153,7 @@ function Beranda() {
                   Mulai dari hal kecil: membawa tas sendiri, memilah sampah,
                   ikut kegiatan penghijauan.
                 </p>
-                <a id="btnBawah" className={btn}>
+                <a id="btnBawah" className={`${btn} bg-secondary`}>
                   Lihat Aksi Kami
                 </a>
               </div>
@@ -170,7 +171,7 @@ function Beranda() {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="font-heading uppercase break-words text-3xl text-center px-2 pt-12 pb-6 text-foreground sm:px-9 md:text-4xl lg:text-5xl"
+              className="font-heading uppercase wrap-break-word text-3xl text-center px-2 pt-12 pb-6 text-foreground sm:px-9 md:text-4xl lg:text-5xl"
             >
               Sekolah bersih dimulai dari kamu
             </h2>
@@ -184,8 +185,8 @@ function Beranda() {
               bareng-bareng!
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
-              <a className={`${btn} uppercase items-center mb-4`}>
-                Gabung Gerakan
+              <a className={`${btn} bg-custom-purple text-background uppercase items-center mb-4`}>
+                Gabung Gerakan!
               </a>
             </div>
             <p
