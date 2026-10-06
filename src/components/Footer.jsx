@@ -5,7 +5,7 @@ import { padding } from '@/lib/styles'
 
 function Footer() {
     return (
-        <footer className={`bg-custom-brown w-full h-auto p-4 flex flex-col text-custom-white gap-4 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-6 ${padding} justify-between`}>
+        <footer className={`bg-custom-brown w-full h-auto p-4 flex flex-col text-custom-white gap-4 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-6 ${padding} justify-between mt-12`}>
             <div className=''>
                 <Logo place={false}  />
                 <h1 className='text-3xl font-heading font-black text-center'>PEDULIBUMI</h1>
