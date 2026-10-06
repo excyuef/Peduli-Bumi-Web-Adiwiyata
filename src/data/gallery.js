@@ -1,13 +1,13 @@
-import gambar1 from '@/assets/01-tempat-sampah-4-kategori-(b3,anorganik,organik,residu)-di-area-taman.jpg'
-import gambar2 from '@/assets/02-siswa-membuang-sampah-sesuai-kategori-di-area-taman'
-import gambar3 from '@/assets/03-mengecat-pot-bunga-dari-botol-plastik'
-import gambar4 from '@/assets/04-siswa-menyiapkan-bahan-pengomposan'
-import gambar5 from '@/assets/05-daun-kering-bahan-kompos'
-import gambar6 from '@/assets/06-panen-eco-enzyme-menuang-hasil-fermentasi'
-import gambar7 from '@/assets/07-mural-taman-toga-karya-dkv-di-area-biopori'
-import gambar8 from '@/assets/08-penyiraman-tanaman-dengan-larutan-eco-enzyme'
+import gambar1 from "@/assets/01-tempat-sampah-4-kategori-(b3,anorganik,organik,residu)-di-area-taman.jpg";
+import gambar2 from "@/assets/02-siswa-membuang-sampah-sesuai-kategori-di-area-taman.jpg";
+import gambar3 from "@/assets/03-mengecat-pot-bunga-dari-botol-plastik.jpg";
+import gambar4 from "@/assets/04-siswa-menyiapkan-bahan-pengomposan.jpg";
+import gambar5 from "@/assets/05-daun-kering-bahan-kompos.jpg";
+import gambar6 from "@/assets/06-panen-eco-enzyme-menuang-hasil-fermentasi.jpg";
+import gambar7 from "@/assets/07-mural-taman-toga-karya-dkv-di-area-biopori.jpg";
+import gambar8 from "@/assets/08-penyiraman-tanaman-dengan-larutan-eco-enzyme.jpg";
 
-export const galleryData = [
+export const gallery = [
   {
     id: 1,
     name: "Wadah Pilah Sampah di Area Taman",

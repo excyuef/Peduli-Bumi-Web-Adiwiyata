@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ImageCard from "@/components/GalleryImageCard";
+import ImageCard from "@/components/ImageCard";
 import { padding } from "@/lib/styles";
 import Category from "@/components/Category";
 import { categories } from "@/data/category";
