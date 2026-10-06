@@ -5,6 +5,11 @@ export const categories = [
         label: "Semua",
     },
     {
+        id: "dokumen",
+        bg: "bg-muted",
+        label: "Dokumen",
+    },
+    {
         id: "tanam-pohon",
         bg: "bg-accent",
         label: "Tanam Pohon",
