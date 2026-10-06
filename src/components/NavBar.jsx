@@ -8,7 +8,6 @@ import {
     NavigationMenu,
     NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -41,25 +40,25 @@ const games = [
 
 const NavItem = ({ label, href, icon }) => (
     <NavigationMenuItem>
-        <NavigationMenuLink className="" asChild>
-            <Button icon={icon}>
-                <Link to={href}>{label}</Link>
-            </Button>
-        </NavigationMenuLink>
+        <Button icon={icon} asChild>
+            <Link to={href}>{label}</Link>
+        </Button>
     </NavigationMenuItem>
 );
 
 const GamesMenu = () => (
-    <NavigationMenuItem>
-        <NavigationMenuTrigger>Games</NavigationMenuTrigger>
+    <NavigationMenuItem
+    className={"ml-3"}>
+        <NavigationMenuTrigger>
+            Games
+        </NavigationMenuTrigger>
 
-        <NavigationMenuContent>
+        <NavigationMenuContent
+        className={"flex flex-col gap-2"}>
             {games.map((g) => (
-                <NavigationMenuLink key={g.href} asChild>
-                    <Button icon={g.icon}>
-                        <Link to={g.href}>{g.label}</Link>
-                    </Button>
-                </NavigationMenuLink>
+                <Button key={g.href} icon={g.icon} asChild>
+                    <Link to={g.href}>{g.label}</Link>
+                </Button>
             ))}
         </NavigationMenuContent>
     </NavigationMenuItem>
@@ -72,7 +71,8 @@ export default function NavBar() {
             <div className="hidden md:flex md:fixed left-0 right-0 top-0 z-50 justify-between px-3 py-2 bg-background border-3 border-foreground shadow-[3px_3px_0_var(--ink)]">
                 <Logo />
                 <NavigationMenu>
-                    <NavigationMenuList>
+                    <NavigationMenuList
+                    className={"flex gap-2"}>
                         {menuItems.map((item) => (
                             <NavItem key={item.href} {...item} />
                         ))}
@@ -85,7 +85,7 @@ export default function NavBar() {
             <div className="md:hidden fixed flex left-3 right-3 top-3 z-50 items-center justify-between px-3 py-3 bg-background border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
                 <Logo />
                 <Sheet>
-                    <SheetTrigger aria-label="Open menu">
+                    <SheetTrigger aria-label="Open menu" asChild>
                         <Button>Menu</Button>
                     </SheetTrigger>
                     <SheetContent className="w-55! mt-3 mr-3 border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
@@ -97,13 +97,14 @@ export default function NavBar() {
                         </SheetHeader>
 
                         <nav className="flex flex-col gap-2">
-                            {[...menuItems, ...games].map((item) => (
-                                <SheetClose asChild key={item.href}>
-                                    <Button icon={item.icon}>
-                                        <Link to={item.href}>{item.label}</Link>
-                                    </Button>
-                                </SheetClose>
-                            ))}
+                            {[...menuItems, ...games]
+                                .map((item) => (
+                                    <SheetClose asChild key={item.href}>
+                                        <Button icon={item.icon} asChild>
+                                            <Link to={item.href}>{item.label}</Link>
+                                        </Button>
+                                    </SheetClose>
+                                ))}
                         </nav>
                     </SheetContent>
                 </Sheet>
