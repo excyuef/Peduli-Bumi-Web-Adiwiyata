@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MapPin, CalendarDays } from "lucide-react";
 
+import Jenis from "@/components/Jenis"
+
 export default function ImageCard({
     name = "Sungai bersih hati happy",
     desc = "Siswa, guru, dan warga turun bersama merawat sungai. Sebanyak 180 kg sampah berhasil diangkat dan dipilah.",
@@ -44,14 +46,6 @@ export default function ImageCard({
         </div>
     );
 }
-
-const Jenis = ({ children, bg }) => (
-    <button
-        className={`px-3 py-1 rounded-2xl ${bg} border-3 border-foreground text-sm font-semibold`}
-    >
-        {children}
-    </button>
-);
 
 const Content = ({name ,desc}) => (
     <>
