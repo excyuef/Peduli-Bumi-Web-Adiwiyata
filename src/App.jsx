@@ -7,6 +7,7 @@ import NavBar from './components/NavBar.jsx'
 import Beranda from './pages/Beranda.jsx'
 import TipsAksi from './pages/TipsAksi'
 import Footer from './components/Footer.jsx'
+import Galeri from "./pages/Galeri"
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
         {/* <Route path="about" element={<About />} /> */}
         <Route path='/' element={<Beranda/>} />
         <Route path='/tips-dan-aksi' element={<TipsAksi />} />
+        <Route path='/galeri' element={<Galeri />} />
       </Routes>
       <Footer />
     </>

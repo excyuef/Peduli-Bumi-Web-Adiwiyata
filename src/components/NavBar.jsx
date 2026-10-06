@@ -1,6 +1,6 @@
 import { House, Search, Images, Gamepad, Gamepad2 } from "lucide-react";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import Logo from "@/components/Logo";
 
@@ -42,9 +42,9 @@ const games = [
 const NavItem = ({ label, href, icon }) => (
     <NavigationMenuItem>
         <NavigationMenuLink className="" asChild>
-            <Link to={href} icon={icon}>
-                {label}
-            </Link>
+            <Button icon={icon}>
+                <Link to={href}>{label}</Link>
+            </Button>
         </NavigationMenuLink>
     </NavigationMenuItem>
 );
@@ -56,9 +56,9 @@ const GamesMenu = () => (
         <NavigationMenuContent>
             {games.map((g) => (
                 <NavigationMenuLink key={g.href} asChild>
-                    <Link to={g.href} icon={g.icon}>
-                        {g.label}
-                    </Link>
+                    <Button icon={g.icon}>
+                        <Link to={g.href}>{g.label}</Link>
+                    </Button>
                 </NavigationMenuLink>
             ))}
         </NavigationMenuContent>
@@ -69,7 +69,7 @@ export default function NavBar() {
     return (
         <>
             {/* Desktop */}
-            <div className="hidden md:flex md:fixed left-0 right-0 top-0 z-50 justify-between px-3 py-2 bg-background border-2">
+            <div className="hidden md:flex md:fixed left-0 right-0 top-0 z-50 justify-between px-3 py-2 bg-background border-3 border-foreground shadow-[3px_3px_0_var(--ink)]">
                 <Logo />
                 <NavigationMenu>
                     <NavigationMenuList>
@@ -99,9 +99,9 @@ export default function NavBar() {
                         <nav className="flex flex-col gap-2">
                             {[...menuItems, ...games].map((item) => (
                                 <SheetClose asChild key={item.href}>
-                                    <Link to={item.href} icon={item.icon}>
-                                        {item.label}
-                                    </Link>
+                                    <Button icon={item.icon}>
+                                        <Link to={item.href}>{item.label}</Link>
+                                    </Button>
                                 </SheetClose>
                             ))}
                         </nav>
