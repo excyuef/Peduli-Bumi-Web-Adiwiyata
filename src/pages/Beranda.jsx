@@ -66,7 +66,7 @@ function Beranda() {
         </div>
 
         {/* Misi */}
-        <section className="mt-4 grid grid-cols-1 gap-y-6 p-4 md:px-15 lg:grid-cols-2 lg:pb-7 lg:gap-x-6 lg:mt-6 lg:px-12 lg:py-0 xl:px-40 2xl:px-70">
+        <section className="mt-8 mb-8 grid grid-cols-1 gap-y-6 p-4 md:px-15 lg:grid-cols-2 lg:pb-7 lg:gap-x-6 lg:mt-12 lg:mb-12 lg:px-12 lg:py-0 xl:px-40 2xl:px-70">
           <div
             data-aos="fade-right"
             className="bg-primary border-3 border-black p-6 shadow-[4px_4px_0_#2b2118] text-background sm:p-8 lg:max-w-130 lg:p-12"
@@ -129,7 +129,7 @@ function Beranda() {
         </section>
 
         {/* Ajakan */}
-        <section className="overflow-hidden bg-secondary border-t-4 border-black px-6 py-2 sm:px-10 md:px-20 lg:px-24 xl:px-60 2xl:px-90">
+        <section className="overflow-hidden bg-secondary border-t-4 border-black px-6 pt-2 pb-6 sm:px-10 md:px-20 lg:px-24 xl:px-60 2xl:px-90">
           <div className="text-center lg:px-20">
             <div data-aos="zoom-in">
               <p className="inline-block font-heading font-medium text-[17px] uppercase rotate-4 border-[3px] border-custom-brown bg-background mt-12 px-4 py-2 shadow-[4px_4px_0_#2b2118]">
@@ -139,7 +139,7 @@ function Beranda() {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="font-heading uppercase wrap-break-word text-3xl text-center px-2 pt-12 pb-6 text-foreground sm:px-9 md:text-4xl lg:text-5xl"
+              className="font-heading uppercase wrap-break-word text-3xl text-center px-2 pt-10 pb-6 text-foreground sm:px-9 md:text-4xl lg:text-5xl"
             >
               Sekolah bersih dimulai dari kamu
             </h2>
@@ -154,7 +154,7 @@ function Beranda() {
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
               <Link to='https://edu.jakarta.go.id/joss/dashboard'
-                className={`${btn} bg-custom-purple text-background uppercase items-center mb-4`}
+                className={`${btn} bg-primary text-foreground uppercase items-center mb-8`}
               >
                 Gabung Gerakan!
               </Link>
@@ -163,7 +163,7 @@ function Beranda() {
               data-aos="fade-up"
               data-aos-delay="400"
               data-aos-anchor-placement="top-bottom"
-              className="font-heading font-medium text-lg text-center uppercase pb-4 sm:text-xl"
+              className="font-heading font-medium text-center uppercase pb-4 text-lg"
             >
               Satu tumbler, satu pilihan, satu langkah, lebih baik.
             </p>
