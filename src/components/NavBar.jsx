@@ -68,7 +68,7 @@ export default function NavBar() {
         <>
             {/* Desktop */}
             <div className="hidden md:flex md:fixed left-0 right-0 top-0 z-50 justify-between px-3 py-2 bg-background border-2">
-                <Logo place={true} />
+                <Logo />
                 <NavigationMenu>
                     <NavigationMenuList>
                         {menuItems.map((item) => (
@@ -80,8 +80,8 @@ export default function NavBar() {
             </div>
 
             {/* Mobile */}
-            <div className="md:hidden fixed flex left-3 right-3 top-3 z-50 items-center justify-between px-3 py-3 bg-background border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm border-2">
-                <Logo place={false} />
+            <div className="md:hidden fixed flex left-3 right-3 top-3 z-50 items-center justify-between px-3 py-3 bg-background border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
+                <Logo />
                 <Sheet>
                     <SheetTrigger aria-label="Open menu">
                         <Button>Menu</Button>
@@ -89,7 +89,7 @@ export default function NavBar() {
                     <SheetContent className="w-55! mt-3 mr-3 border-foreground border-3 shadow-[0_3px_0_var(--ink)] rounded-sm">
                         <SheetHeader>
                             <SheetTitle>
-                                <Logo place={true} />
+                                <Logo />
                             </SheetTitle>
                             {/* <SheetDescription>Take your time.</SheetDescription> */}
                         </SheetHeader>

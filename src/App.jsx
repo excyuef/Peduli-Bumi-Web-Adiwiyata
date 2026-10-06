@@ -6,7 +6,6 @@ import './App.css'
 import NavBar from './components/NavBar.jsx'
 import Beranda from './pages/Beranda.jsx'
 import TipsAksi from './pages/TipsAksi'
-import ImageCard from './components/ImageCarousel'
 import Footer from './components/Footer.jsx'
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
       <Routes>
         <Route index element={<Beranda />} />
         {/* <Route path="about" element={<About />} /> */}
-        <Route path='/' element={<ImageCard />} />
+        <Route path='/' element={<Beranda/>} />
         <Route path='/tips-dan-aksi' element={<TipsAksi />} />
       </Routes>
       <Footer />

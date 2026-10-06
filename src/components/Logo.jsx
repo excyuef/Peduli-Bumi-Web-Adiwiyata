@@ -1,9 +1,7 @@
-import { cn } from "@/lib/utils";
-
 const logoChildStyle =
     "border-3 shadow-[0_3px_0_var(--ink)] border-foreground rounded-sm p-1";
 
-export default function Logo({ place }) {
+export default function Logo() {
     return (
         <div className="flex flex-col md:flex-row items-center justify-center gap-2">
             <div
@@ -112,14 +110,14 @@ export default function Logo({ place }) {
                     </svg>
                 </span>
             </div>
-            <h1
+            {/* <h1
                 className={cn(
                     "font-heading font-normal text-[clamp(30px,5vw,35px)] leading-none text-(--organik) [text-shadow:3px_3px_0_var(--ink)] tracking-[1px]",
                     place === true ? "" : "hidden",
                 )}
             >
                 Peduli Bumi
-            </h1>
+            </h1> */}
         </div>
     );
 }

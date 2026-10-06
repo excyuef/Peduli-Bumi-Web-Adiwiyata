@@ -263,6 +263,6 @@
   }
 
   body {
-    @apply bg-background text-foreground pt-24 p-18;
+    @apply bg-background text-foreground;
   }
 }
