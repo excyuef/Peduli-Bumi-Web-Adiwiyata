@@ -7,6 +7,7 @@ import heroImg from "@/assets/hero.jpg";
 import foto3r from "@/assets/foto-3r.jpg";
 import fotokertas from "@/assets/kertas-banyak.jpg";
 import GarisPolisi from "@/components/GarisPolisi.jsx";
+import { Link } from 'react-router-dom'
 
 const btn =
   "relative z-1 mt-3.5 inline-flex items-center justify-center gap-2 cursor-pointer border-3 border-foreground px-[2.2vh] py-[1.2vh] text-[0.65rem] font-semibold no-underline shadow-[4px_4px_0_#2b2118] transition-all duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-[#] hover:shadow-[0_0_0_#2b2118] active:translate-x-1 active:translate-y-1 active:shadow-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-accent lg:text-[17px] lg:px-5 lg:py-[0.9rem]";
@@ -19,7 +20,7 @@ function Beranda() {
 
   return (
     <>
-      <main className="mt-20 overflow-x-hidden bg-background">
+      <main className="mt-16 overflow-x-hidden bg-background">
         {/* Hero */}
         <section
           className={`overflow-hidden bg-[#ebebeb] px-4 pt-6 pb-2 ${padding}`}
@@ -41,9 +42,9 @@ function Beranda() {
                 untuk bumi yang lebih bersih.
               </p>
               <div data-aos="fade-up" data-aos-delay="200">
-                <a className={`${btn} bg-secondary`}>
+                <Link to='/tips-dan-aksi' className={`${btn} bg-secondary`}>
                   Jelajahi Tips &amp; Aksi
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -85,9 +86,9 @@ function Beranda() {
                 lingkungan dengan memberikan edukasi, informasi, dan aksi nyata
                 demi terciptanya bumi yang lebih hijau dan berkelanjutan.
               </p>
-              <a id="btnMisi" className={`${btn} bg-secondary text-foreground`}>
+              <Link to='/galeri' id="btnMisi" className={`${btn} bg-secondary text-foreground`}>
                 Lihat Aksi Kami
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -152,11 +153,11 @@ function Beranda() {
               bareng-bareng!
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
-              <a
+              <Link to='https://edu.jakarta.go.id/joss/dashboard'
                 className={`${btn} bg-custom-purple text-background uppercase items-center mb-4`}
               >
                 Gabung Gerakan!
-              </a>
+              </Link>
             </div>
             <p
               data-aos="fade-up"
