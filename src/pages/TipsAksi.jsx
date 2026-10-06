@@ -51,10 +51,10 @@ function Hero() {
     return (
         <div className="w-full h-auto bg-custom-white flex flex-col py-20 pt-28 px-4 gap-4 sm:px-6 md:px-8 lg:px12 xl:px-16">
             <div>
-                <h1 className="font-heading text-5xl mb-4">
+                <h1 className="font-heading text-5xl mb-4" data-aos='fade-up' data-aos-delay='100'>
                     SALAH BUANG? TIDAK LAGI
                 </h1>
-                <p className="text-xl">
+                <p className="text-xl" data-aos='fade-up' data-aos-delay='100'>
                     Kenali isinya, cek labelnya, lalu pilih tempatnya. Empat
                     kategori ini bikin pilah sampah jadi lebih gampang.
                 </p>
@@ -68,11 +68,11 @@ function Hero() {
                         img={tempat.img}
                         bg={tempat.bg}
                         sampah={tempat.sampah}
-                        tips={tempat.tips}
+                        tips={tempat.tips} data-aos='fade-up' data-aos-delay='100'
                     />
                 ))}
             </div>
-            <div className="w-full min-w-0 bg-custom-yellow flex gap-3 p-4 border-3 border-black justify-center items-center">
+            <div className="w-full min-w-0 bg-custom-yellow flex gap-3 p-4 border-3 border-black justify-center items-center" data-aos='fade-up' data-aos-delay='100'>
                 <ShieldCheck
                     size={48}
                     className="size-10 md:size-14 shrink-0"
@@ -124,10 +124,10 @@ function Main() {
     return (
         <div className={`w-full h-auto bg-custom-green flex flex-col p-4 py-12 gap-4 border-t-3 border-black ${padding} `}>
             <div>
-                <h1 className="font-heading text-5xl mb-4">
+                <h1 className="font-heading text-5xl mb-4" data-aos='fade-up' data-aos-delay='100'>
                     3R BUKAN CUMA SLOGAN
                 </h1>
-                <p className="text-xl">
+                <p className="text-xl" data-aos='fade-up' data-aos-delay='100'>
                     Urutannya penting: kurangi dulu, pakai kembali, baru daur
                     ulang. Mulai dari hal yang bisa kamu lakukan hari ini.
                 </p>
@@ -144,12 +144,13 @@ function Main() {
                         tips={r.tips}
                         className={
                             index === 2 ? "md:col-span-2 lg:col-span-1" : ""
-                        }
+                        } 
+                        data-aos='fade-up' data-aos-delay='100'
                     />
                 ))}
             </div>
-            <div className="w-full min-w-0 bg-custom-yellow p-4 border-3 border-black -rotate-1 hover:rotate-0 duration-300">
-                <p className="min-w-0 wrap-break-word text-sm md:text-base font-bold text-center leading-relaxed">
+            <div className="w-full min-w-0 bg-custom-yellow p-4 border-3 border-black -rotate-1 hover:rotate-0 duration-300" data-aos='fade-up' data-aos-delay='100'>
+                <p className="min-w-0 wrap-break-word text-sm md:text-base font-bold text-center leading-relaxed" >
                     Tidak harus sempurna, yang penting rutin.
                 </p>
             </div>

@@ -96,7 +96,7 @@ function Suit() {
 						GAME EKOLOGI
 					</p>
 					<h1 className="font-heading text-4xl leading-tight sm:text-5xl md:text-6xl">
-						EKO SUIT
+						SUIT ALAM
 					</h1>
 					<p className="max-w-2xl text-lg sm:text-xl">
 						Pilih elemen alam dan adu strategi. Air mengalahkan api,
