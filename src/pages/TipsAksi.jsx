@@ -149,7 +149,7 @@ function Main() {
                 ))}
             </div>
             <div className="w-full min-w-0 bg-custom-yellow p-4 border-3 border-black -rotate-1 hover:rotate-0 duration-300">
-                <p className="min-w-0 break-words text-sm md:text-base font-bold text-center leading-relaxed">
+                <p className="min-w-0 wrap-break-word text-sm md:text-base font-bold text-center leading-relaxed">
                     Tidak harus sempurna, yang penting rutin.
                 </p>
             </div>

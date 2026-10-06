@@ -131,7 +131,7 @@ function Beranda() {
         <section className="overflow-hidden bg-secondary border-t-4 border-black px-6 py-2 sm:px-10 md:px-20 lg:px-24 xl:px-60 2xl:px-90">
           <div className="text-center lg:px-20">
             <div data-aos="zoom-in">
-              <p className="inline-block font-heading font-medium text-[17px] uppercase rotate-4 border-[3px] border-[#2b2118] bg-background mt-12 px-4 py-2 shadow-[4px_4px_0_#2b2118]">
+              <p className="inline-block font-heading font-medium text-[17px] uppercase rotate-4 border-[3px] border-custom-brown bg-background mt-12 px-4 py-2 shadow-[4px_4px_0_#2b2118]">
                 Saatnya turun tangan
               </p>
             </div>

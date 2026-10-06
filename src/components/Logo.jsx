@@ -8,7 +8,7 @@ export default function Logo() {
                 className="flex items-center justify-center gap-2"
                 id="titleBins"
             >
-                <span className={`bg-[#4caf50] rotate-6 ${logoChildStyle}`}>
+                <span className={`bg-custom-green rotate-6 ${logoChildStyle}`}>
                     <svg
                         viewBox="0 0 64 64"
                         aria-hidden="true"
@@ -30,7 +30,7 @@ export default function Logo() {
                     </svg>
                 </span>
 
-                <span className={`bg-[#f6c026] rotate-355 ${logoChildStyle}`}>
+                <span className={`bg-custom-yellow rotate-355 ${logoChildStyle}`}>
                     <svg
                         viewBox="0 0 64 64"
                         aria-hidden="true"
@@ -67,7 +67,7 @@ export default function Logo() {
                     </svg>
                 </span>
 
-                <span className={`bg-[#e5484d] rotate-6 ${logoChildStyle}`}>
+                <span className={`bg-custom-red rotate-6 ${logoChildStyle}`}>
                     <svg
                         viewBox="0 0 64 64"
                         aria-hidden="true"
@@ -87,7 +87,7 @@ export default function Logo() {
                     </svg>
                 </span>
 
-                <span className={`bg-[#7b8794] rotate-355 ${logoChildStyle}`}>
+                <span className={`bg-custom-purple rotate-355 ${logoChildStyle}`}>
                     <svg
                         viewBox="0 0 64 64"
                         aria-hidden="true"
