@@ -26,7 +26,7 @@ export default function ImageCard({
                     onClick();
                 }
             }}
-            className="w-full h-106 md:h-102 overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[6px_6px_0_0_#000] transition-all duration-100 p-2"
+            className={`w-full h-106 md:h-102 overflow-hidden rounded-2xl border-2 border-black bg-background  transition-all duration-100 p-2 hover:shadow-[1px_1px_0_var(--ink)] hover:translate-y-[5px] hover:translate-x-[5px] shadow-[7px_7px_0_var(--ink)]`}
         >
             <div
                 className={`relative w-full rounded-lg overflow-hidden border-3 border-foreground transition-all ${isActive ? "h-36" : "h-full"}`}
