@@ -1,5 +1,7 @@
 import { House, Search, Images, Gamepad, Gamepad2 } from "lucide-react";
 
+import { Link } from 'react-router-dom'
+
 import Logo from "@/components/Logo";
 
 import {
@@ -40,9 +42,9 @@ const games = [
 const NavItem = ({ label, href, icon }) => (
     <NavigationMenuItem>
         <NavigationMenuLink className="" asChild>
-            <Button href={href} icon={icon}>
+            <Link to={href} icon={icon}>
                 {label}
-            </Button>
+            </Link>
         </NavigationMenuLink>
     </NavigationMenuItem>
 );
@@ -54,9 +56,9 @@ const GamesMenu = () => (
         <NavigationMenuContent>
             {games.map((g) => (
                 <NavigationMenuLink key={g.href} asChild>
-                    <Button href={g.href} icon={g.icon}>
+                    <Link to={g.href} icon={g.icon}>
                         {g.label}
-                    </Button>
+                    </Link>
                 </NavigationMenuLink>
             ))}
         </NavigationMenuContent>
@@ -97,9 +99,9 @@ export default function NavBar() {
                         <nav className="flex flex-col gap-2">
                             {[...menuItems, ...games].map((item) => (
                                 <SheetClose asChild key={item.href}>
-                                    <Button href={item.href} icon={item.icon}>
+                                    <Link to={item.href} icon={item.icon}>
                                         {item.label}
-                                    </Button>
+                                    </Link>
                                 </SheetClose>
                             ))}
                         </nav>
