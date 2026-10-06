@@ -9,11 +9,11 @@ export const categories = [
         bg: "bg-muted",
         label: "Dokumen",
     },
-    {
-        id: "tanam-pohon",
-        bg: "bg-accent",
-        label: "Tanam Pohon",
-    },
+    // {
+    //     id: "tanam-pohon",
+    //     bg: "bg-accent",
+    //     label: "Tanam Pohon",
+    // },
     {
         id: "bersih-bersih",
         bg: "bg-secondary",
