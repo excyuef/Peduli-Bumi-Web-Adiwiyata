@@ -25,7 +25,7 @@ function Footer() {
                     <br></br>
                     <Link to='/games/suit-alam' className='hover:text-custom-yellow inline'>Suit Alam</Link>
                     <br></br>
-                    <a href='' className='hover:text-custom-yellow inline'>Pilah Sampah</a>
+                    <a href='https://game-pilah-sampah-swart.vercel.app/' className='hover:text-custom-yellow inline'>Pilah Sampah</a>
                 </div>
             </div>
             <div className='border-t border-custom-white pt-4 md:col-span-3 '>
