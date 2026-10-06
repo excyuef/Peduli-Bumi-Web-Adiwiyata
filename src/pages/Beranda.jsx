@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MoveUpRight } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import heroImg from "../assets/hero.jpg";
