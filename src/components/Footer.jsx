@@ -27,7 +27,7 @@ function Footer() {
                     <Link to='/eko-pilah' className='hover:text-custom-yellow inline'>Pilah Sampah</Link>
                 </div>
             </div>
-            <div className='border-t border-custom-white pt-4 md:col-span-3'>
+            <div className='border-t border-custom-white pt-4 md:col-span-3 '>
                 <p className='flex flex-wrap gap-2 text-gray-200 text-sm items-center'>
                     <Copyright size='14' />
                     <span>2025 PEDULI BUMI, SMKN 46 JAKARTA.</span>
